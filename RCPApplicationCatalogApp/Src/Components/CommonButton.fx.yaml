@@ -1,0 +1,50 @@
+CommonButton As CanvasComponent:
+    ButtonLabel: ="Lorem ipsum dolor sit amet."
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =105
+    NavigateToScreen: =App.ActiveScreen
+    Width: =320
+    X: =0
+    Y: =0
+    ZIndex: =2
+
+    btnMainApplication_1 As button:
+        Align: =Align.Left
+        Fill: =RGBA(12, 126, 44, 1)
+        Height: =Parent.Height
+        HoverFill: =ColorFade(RGBA(12, 126, 44, 1), -20%)
+        OnSelect: =Navigate(CommonButton.NavigateToScreen,ScreenTransition.Cover)
+        PaddingLeft: =0 + (Parent.Width * 0.05)
+        Text: =
+        Width: =Parent.Width
+        ZIndex: =1
+
+    btnLabel_1 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(135, 190, 82, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =Parent.Height - 25
+        HoverBorderColor: =btnMainApplication_1.HoverBorderColor
+        HoverColor: =btnMainApplication_1.HoverColor
+        HoverFill: =btnMainApplication_1.HoverFill
+        OnSelect: =Select(btnMainApplication_1)
+        Size: =15
+        Text: =CommonButton.ButtonLabel
+        Width: =Parent.Width - 31
+        X: =0 + (Parent.Width * 0.05)
+        Y: =Parent.Height/8
+        ZIndex: =2
+
+    btnOverlay As button:
+        Align: =Align.Left
+        Fill: =RGBA(12, 126, 44, 0)
+        Height: =Parent.Height
+        HoverFill: =ColorFade(RGBA(12, 126, 44, 50%), -20%)
+        OnSelect: =Navigate(CommonButton.NavigateToScreen,ScreenTransition.Cover)
+        PaddingLeft: =0 + (Parent.Width * 0.05)
+        PressedFill: =RGBA(0,0,0,0)
+        Text: =
+        Width: =Parent.Width
+        ZIndex: =3
+

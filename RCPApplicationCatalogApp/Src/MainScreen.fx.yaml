@@ -1,0 +1,150 @@
+MainScreen As screen:
+
+    "'Approval List Container' As groupContainer.verticalAutoLayoutContainer":
+        DropShadow: =DropShadow.None
+        Height: |-
+            =//143
+            Parent.Height * 0.19
+        LayoutGap: =5
+        LayoutMode: =LayoutMode.Auto
+        LayoutOverflowX: =LayoutOverflow.Scroll
+        LayoutOverflowY: =LayoutOverflow.Scroll
+        LayoutWrap: =true
+        PaddingLeft: |-
+            =//30
+            Parent.Width * 0.021
+        PaddingRight: |-
+            =//5
+            Parent.Width * 0.0
+        PaddingTop: |-
+            =//20
+            Parent.Height * 0.021
+        Visible: =false
+        Width: =Parent.Width
+        Y: ='Approval List Nav'.Y + 75
+        ZIndex: =1
+
+    "'Approval List Nav' As NavBar":
+        NavbarTitle: ="Approval List"
+        ShowBackButton: =false
+        ShowSubmit: =false
+        Visible: =false
+        Width: =1366
+        Y: |-
+            =//558
+            'Main Container'.Y + 475
+        ZIndex: =2
+
+    "'Main Container' As groupContainer.verticalAutoLayoutContainer":
+        DropShadow: =DropShadow.None
+        Height: |-
+            =//455
+            //Parent.Height * 0.59
+            If(Or('Approval List Nav'.Visible, 'Approval List Container'.Visible) = false, Parent.Height * 0.9, Parent.Height * 0.59)
+        LayoutGap: =5
+        LayoutMode: =LayoutMode.Auto
+        LayoutOverflowX: =LayoutOverflow.Scroll
+        LayoutOverflowY: =LayoutOverflow.Scroll
+        LayoutWrap: =true
+        PaddingLeft: |-
+            =//30
+            Parent.Width * 0.021
+        PaddingRight: |-
+            =//5
+            Parent.Width * 0.0
+        PaddingTop: |-
+            =//20
+            Parent.Height * 0.022
+        Width: =Parent.Width
+        Y: |-
+            =//75
+            TitleBar.Y + 75
+        ZIndex: =3
+
+        btnAgreementsRegardingIncidents As CommonButton:
+            ButtonLabel: |-
+                ="AGREEMENT REGARDING SECURITY INCIDENTS, QUALITY INCIDENTS, AND 
+                EMERGENCIES"
+            LayoutMinHeight: =640
+            LayoutMinWidth: =640
+            NavigateToScreen: =Sprint1_Scr_AgreementRegardingIncidents
+            Width: =(Parent.Width - 60) * 0.33
+
+        btnAssetGatePassForm As CommonButton:
+            ButtonLabel: ="ASSET GATE PASS"
+            LayoutMinHeight: =640
+            LayoutMinWidth: =640
+            NavigateToScreen: =Sprint1_Scr_AssetGatePass
+            Width: =(Parent.Width - 60) * 0.33
+            ZIndex: =3
+
+        btnBereavementApplication As CommonButton:
+            ButtonLabel: ="BEREAVEMENT CASH ASSISTANCE"
+            LayoutMinHeight: =640
+            LayoutMinWidth: =640
+            NavigateToScreen: =Sprint1_Scr_BereavementCashAssistance
+            Width: =(Parent.Width - 60) * 0.33
+            ZIndex: =4
+
+        btnEquipmentBorrowingRequest As CommonButton:
+            ButtonLabel: ="EQUIPMENT/ITEM BORROWING REQUEST"
+            LayoutMinHeight: =640
+            LayoutMinWidth: =640
+            NavigateToScreen: =Sprint1_Scr_BereavementCashAssistance
+            Width: =(Parent.Width - 60) * 0.33
+            ZIndex: =5
+
+    TitleBar As NavBar:
+        NavbarTitle: ="RGTC Application Forms"
+        ShowBackButton: =false
+        ShowSubmit: =false
+        Width: =1366
+        ZIndex: =4
+
+    Icon3 As icon.Reload:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =32
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Reload
+        OnSelect: |-
+            =//---- HERE ADD ALL LISTS TO REFRESH ----//
+            // Use Environment Variable Lists
+            Refresh('rcp_sprnt1_Agreement Regarding Incidents List ');
+            Refresh('rcp_sprint1_Bereavement Cash Assistance List');
+            Refresh(rcp_sprint1_AssetGatePassList);
+            Refresh(rcp_sprint1_AssetGatePassItemsList);
+            
+            
+            
+            //--- samples from old app ---//
+            //Refresh(Attendance);
+            //Refresh(Late);
+            //Refresh(Leave);
+            //Refresh(Undertime);
+            //Refresh(Overtime);
+            //Refresh('JLPT Salary');
+            //Refresh('Outstanding member award');
+            //Refresh('Position Salary');
+            //Refresh('Gratuities for internal transferees');
+            //Refresh('SN certificate Allowance');
+            //Refresh('Ten Years Service Award');
+            //Refresh(HMO);
+            //Refresh('RTO Allowance');
+            //Refresh('Retrospective & Adjustments Application');
+            //Refresh('Funeral Assistance');
+            //Refresh('Pag-IBIG Loan');
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =32
+        X: =TitleBar.X + TitleBar.Width - Self.Width - (TitleBar.Width * .015)
+        Y: =TitleBar.Y + (TitleBar.Height * .5) - (Self.Height *.5)
+        ZIndex: =5
+

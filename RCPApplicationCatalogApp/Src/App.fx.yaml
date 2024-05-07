@@ -1,0 +1,167 @@
+App As appinfo:
+    BackEnabled: =true
+    OnStart: |-
+        =Set(global_showPerScreenRefresh, true);
+        Set(global_screenHeaderFillColor, RGBA(73, 130, 5, 1));
+        
+        Set(global_formSectionHeaderFillColor, RGBA(204, 255, 204, 1));
+        Set(global_formSectionHeader_height, 50);
+        Set(global_approvalStatusSection_RowHeight, 50);
+        Set(global_approvalStatusSection_MinHeight, 125);
+        
+        Set(global_currencyTextFormat, "[$-en-US]#,###0.00");
+        Set(msg_noRecords, "No Previous Applications.");
+        Set(msg_selectARecord, "Please select a record.");
+        Set(msg_noApprovalStatusPlaceholder, "Approval status may not have loaded properly. Please click the Refresh button on the upper-right side.");
+        
+        Set(setApprovalLists, "Attendance");
+        
+        Set(DepartmentChoiceList, [
+            "- select -",
+            "Platform Development",
+            "Software Development",
+            "BPO - Help Desk",
+            "Infrastructure",
+            "CSD - Accounting",
+            "CSD - HR & Admin"
+        ]);
+        
+        
+        // ------ (Sample from old app) This is for routing the each screen by cliking specific record URL
+        /*
+        If(!IsBlank(Param("FuneralRecordID")),
+            Set(funeral_RecordID,Param("FuneralRecordID")));
+        If(!IsBlank(Param("SNRecordID")),
+            Set(sn_RecordID,Param("SNRecordID")));
+        If(!IsBlank(Param("RTORecordID")),
+            Set(rto_RecordID,Param("RTORecordID")));
+        If(!IsBlank(Param("OvertimeRecordID")),
+            Set(overtime_RecordID,Param("OvertimeRecordID")));
+        If(!IsBlank(Param("JLPTRecordID")),
+            Set(jlpt_RecordID,Param("JLPTRecordID")));
+        */
+        
+        // ---- (start) This is for routing the each screen by cliking specific record URL ---- //
+        // bereavement cash assistance
+        If(!IsBlank(Param("sysparm_bca_id")), 
+            Set(urlParm_BRCItem,Param("sysparm_bca_id"))
+        );
+        // Equipment Borrowing Request
+        If(!IsBlank(Param("sysparm_ebr_id")), 
+            Set(urlParm_EBRItem,Param("sysparm_ebr_id"))
+        );
+        // ---- (end) ---- //
+        
+        //-------- The following is for restricting editable group --------//
+        // ClearCollect(HRMembersfromSG,
+        //    Office365Groups.ListGroupMembers("49c94924-f183-4ba7-9986-c584674e62f7").value); // RGTC HR & Admin
+        ClearCollect(HRMembersfromSG,
+            Office365Groups.ListGroupMembers("21ee7c73-4318-4a8c-aa3d-19b02b5ee482").value); // test PDD
+        
+        // ClearCollect(ACMembersfromSG,
+        //    Office365Groups.ListGroupMembers("199c0ef9-00ad-4a92-bdbb-9a045fcc8da0").value); // RGTC ACCOUNTING
+        //ClearCollect(ACMembersfromSG,
+        //    Office365Groups.ListGroupMembers("21ee7c73-4318-4a8c-aa3d-19b02b5ee482").value); // test PDD
+        
+        //------- GetEmployeeID function using current User -------//
+        //Set(EmployeeID, GetEmployeeID.Run(EncodeUrl(User().Email)).empid)
+        
+        
+        
+        // ---- This part is for Asset Gate Pass ---- //
+        // getting the data from the Tables in SharePoint regarding Asset Gate Pas
+        ClearCollect(
+            colAssetsSPTable,
+            rcp_sprint1_AssetGatePassItemsList
+        );
+        ClearCollect(
+            colAssets,
+            {
+                Asset_x002f_Device: "", //using this in order to HAVE AND GET THE SAME NAME of the field from Asset Gate Pass Items List which CONTAINS special characters, Since ColAssets is used in Items part of Gallery to compare between the colAssets table and the Main table in SP list
+                AssetTag: "",
+                UnitModel: "",
+                SerialNumber: "",
+                Purpose_x002f_Reason: "",
+                colAssetItemId: "",
+                col_ID: 0
+            }
+        );
+        
+        
+        // ---- This part is for Equipment Borrowing Request ---- //
+        // getting data from the Tables in SharePoint regarding Equipment Borrowing Request
+        ClearCollect(
+            colItemsSPTable,
+            rcp_sprint1_EquipmentBorrowingRequestItemsList
+        );
+        
+        ClearCollect(
+            colItems,
+            {
+                Equipment_x002f_Item: "",
+                Quantity: "",
+                Reason: "",
+                colItemId: "",
+                col_Id: 0
+            }
+        );
+        
+        
+        //Set this to true and to run last
+        Set(isFirstLoad, true);
+    StartScreen: |-
+        =//---- Set this to Main Screen for now ----//
+        //MainScreen
+        
+        If (
+            !IsBlank(Param("sysparm_bca_id")) && !IsBlank(
+                LookUp(
+                    'rcp_sprint1_Bereavement Cash Assistance List',
+                    ID = Value(Param("sysparm_bca_id"))
+                )
+            ),
+            Sprint1_Scr_BereavementCashAssistance,
+            !IsBlank(Param("sysparm_ebr_id")) && !IsBlank(
+                LookUp(
+                    'rcp_sprint1_Bereavement Cash Assistance List',
+                    ID = Value(Param("sysparm_ebr_id"))
+                )
+            ),
+            'Sprint1_Scr_Equipment/ItemBorrowingRequest',
+            MainScreen
+        )
+        
+        
+        // ---- (This is a sample from the old app) This setting is used for cliking URL on Teams Notification sent to HR. ----  //
+        /*If(
+            !IsBlank(Param("FuneralRecordID")),
+            'Funeral Assistance Form',
+            !IsBlank(Param("SNRecordID")),
+            'SN certificate Allowance Form',
+            !IsBlank(Param("RTORecordID")),
+            'RTO Allowance Application',
+            !IsBlank(Param("OvertimeRecordID")),
+            'Overtime Form',
+            !IsBlank(Param("JLPTRecordID")),
+            'JLPT Salary Form',
+            MainScreen
+        )*/
+        
+        /* above function means
+        if (Param("FuneralRecordID") is not blank) {
+            go to 'Funeral Assistance Form'
+        } else if (Param("SNRecordID") is not blank) {
+            go to 'SN certificate Allowance Form'
+        } else {
+            MainScreen
+        }
+        */
+    Theme: =PowerAppsTheme
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

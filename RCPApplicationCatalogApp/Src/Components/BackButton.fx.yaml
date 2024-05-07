@@ -1,0 +1,33 @@
+BackButton As CanvasComponent:
+    ComponentFill: =RGBA(255, 255, 255, 1)
+    DefaultBack: =MainScreen
+    Fill: |-
+        =//RGBA(0, 0, 0, 0)
+        Self.ComponentFill
+    Height: =48
+    IconColor: =RGBA(99, 139, 44, 1)
+    StatusText: ="Text"
+    Width: =24
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Icon1 As icon.ChevronLeft:
+        Color: |-
+            =Parent.IconColor
+            //RGBA(0, 18, 107, 1)
+        Height: |-
+            =//64
+            Parent.Height
+        Icon: =Icon.ChevronLeft
+        OnSelect: |-
+            =//false
+            Set(isFirstLoad, false);
+            If (!Back(ScreenTransition.UnCoverRight),
+                Navigate(Parent.DefaultBack)
+            );
+        Width: |-
+            =//64
+            Parent.Width
+        ZIndex: =1
+

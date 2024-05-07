@@ -1,0 +1,51 @@
+NavBar As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =75
+    NavbarTitle: ="Text"
+    ShowBackButton: =true
+    ShowSubmit: =true
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Nav_Background As rectangle:
+        BorderColor: =RGBA(135, 190, 82, 1)
+        Fill: =RGBA(12, 126, 44, 1)
+        Height: =Parent.Height
+        Width: =Parent.Width
+        ZIndex: =1
+
+    Nav_Title As label:
+        BorderColor: =RGBA(135, 190, 82, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =Parent.Height
+        Size: =15
+        Text: =NavBar.NavbarTitle
+        Width: =493
+        X: =44
+        ZIndex: =2
+
+    Nav_BackButton As icon.ArrowLeft:
+        BorderColor: =RGBA(135, 190, 82, 1)
+        Color: =RGBA(135, 190, 82, 1)
+        Height: =Parent.Height
+        Icon: =Icon.ArrowLeft
+        OnSelect: =Back(ScreenTransition.UnCoverRight)
+        Visible: =NavBar.ShowBackButton
+        Width: =30
+        X: =8
+        ZIndex: =3
+
+    Nav_SubmitButton As button:
+        Fill: =RGBA(12, 126, 44, 1)
+        Height: =Parent.Height * 0.80
+        HoverFill: =ColorFade(RGBA(12, 126, 44, 1), -20%)
+        Size: =13
+        Text: ="Submit"
+        Visible: =NavBar.ShowSubmit
+        Width: =Parent.Width * 0.15
+        X: =Parent.Width - (Parent.Width * .16)
+        Y: =Parent.Height / 8
+        ZIndex: =4
+

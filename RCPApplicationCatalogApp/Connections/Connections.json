@@ -1,0 +1,186 @@
+{
+  "24958dea-cfa0-4f63-a8a7-1bd77700e2f2": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Users",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1677/1.0.1677.3637/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "b5e0f3a8-73bf-4a6b-a7bb-000ad90c19ef"
+    ],
+    "id": "24958dea-cfa0-4f63-a8a7-1bd77700e2f2"
+  },
+  "38ce22e3-0648-48c8-9a9f-3130d6a97058": {
+    "appActions": [
+      "MyProfile_V2"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Users",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1677/1.0.1677.3637/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Users"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "38ce22e3-0648-48c8-9a9f-3130d6a97058"
+  },
+  "6772c913-6ffa-4385-a07f-1dadd868d620": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write",
+      "providers/PowerPlatform.Governance/Operations/Delete"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1685/1.0.1685.3700/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://rococoglobal.sharepoint.com/sites/rcp-dev_new_rcpsharepointsite": {
+        "datasetOverride": {
+          "environmentVariableName": "new_rcpsharepointsite",
+          "name": "https://rococoglobal.sharepoint.com/sites/rcp-dev"
+        },
+        "dataSources": {
+          "rcp_sprint1_AssetGatePassItemsList": {
+            "tableName": "ae9bd2e3-1b37-492d-9ad0-bb4f4ab7f9b6",
+            "tableNameOverride": {
+              "environmentVariableName": "new_rcp_sprint1_AssetGatePassItemsList",
+              "name": "ae9bd2e3-1b37-492d-9ad0-bb4f4ab7f9b6"
+            }
+          },
+          "rcp_sprint1_AssetGatePassList": {
+            "tableName": "baaee35d-7a09-4d78-97a6-233d9f21cfbc",
+            "tableNameOverride": {
+              "environmentVariableName": "new_rcp_sprint1_AssetGatePass",
+              "name": "baaee35d-7a09-4d78-97a6-233d9f21cfbc"
+            }
+          },
+          "rcp_sprint1_Bereavement Cash Assistance List": {
+            "tableName": "88be242a-4d9a-4bc0-9c48-a158abcb96f9",
+            "tableNameOverride": {
+              "environmentVariableName": "new_rcp_sprint1_BereavementCashAssistanceList",
+              "name": "88be242a-4d9a-4bc0-9c48-a158abcb96f9"
+            }
+          },
+          "rcp_sprint1_EquipmentBorrowingRequestItemsList": {
+            "tableName": "b333a173-ddf4-4818-8a15-104058bbddbb",
+            "tableNameOverride": {
+              "environmentVariableName": "new_rcp_sprint1_EquipmentBorrowingRequestItemsList",
+              "name": "b333a173-ddf4-4818-8a15-104058bbddbb"
+            }
+          },
+          "rcp_sprint1_EquipmentBorrowingRequestList": {
+            "tableName": "5f0c02f7-a21c-4b84-8374-d6ad41a5602a",
+            "tableNameOverride": {
+              "environmentVariableName": "new_rcp_sprint1_EquipmentBorrowingRequestList",
+              "name": "5f0c02f7-a21c-4b84-8374-d6ad41a5602a"
+            }
+          },
+          "rcp_sprnt1_Agreement Regarding Incidents List ": {
+            "tableName": "532f14da-100a-4c2c-aa44-0d574ceff9fb",
+            "tableNameOverride": {
+              "environmentVariableName": "new_rcp_sprnt1_AgreementRegardingIncidentsList",
+              "name": "532f14da-100a-4c2c-aa44-0d574ceff9fb"
+            }
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "rcp_sprnt1_Agreement Regarding Incidents List ",
+      "rcp_sprint1_AssetGatePassList",
+      "rcp_sprint1_AssetGatePassItemsList",
+      "rcp_sprint1_Bereavement Cash Assistance List",
+      "rcp_sprint1_EquipmentBorrowingRequestList",
+      "rcp_sprint1_EquipmentBorrowingRequestItemsList"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "6772c913-6ffa-4385-a07f-1dadd868d620"
+  },
+  "b5e0f3a8-73bf-4a6b-a7bb-000ad90c19ef": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/patelronak/specialtrain-logicflows-2/1.0.1692.3734/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "24958dea-cfa0-4f63-a8a7-1bd77700e2f2": {
+          "value": "shared_office365users"
+        },
+        "workflowDisplayName": {
+          "value": "flow_GetEmployeeID"
+        },
+        "workflowEntityId": {
+          "value": "1f0b44ca-9602-ef11-9f89-000d3aa02f9f"
+        },
+        "workflowName": {
+          "value": "51f1c298-da03-afbf-0943-8d7ec47cde16"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_office365users": {
+          "value": "24958dea-cfa0-4f63-a8a7-1bd77700e2f2"
+        },
+        "workflowDisplayName": {
+          "value": "flow_GetEmployeeID"
+        },
+        "workflowEntityId": {
+          "value": "1f0b44ca-9602-ef11-9f89-000d3aa02f9f"
+        },
+        "workflowName": {
+          "value": "51f1c298-da03-afbf-0943-8d7ec47cde16"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "flow_GetEmployeeID"
+    ],
+    "dependencies": {
+      "shared_office365users": "24958dea-cfa0-4f63-a8a7-1bd77700e2f2"
+    },
+    "dependents": [],
+    "id": "b5e0f3a8-73bf-4a6b-a7bb-000ad90c19ef"
+  },
+  "e27bdd9b-00e5-4374-8344-c7d1c08ffc65": {
+    "appActions": [
+      "ListGroupMembers"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Groups",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1681/1.0.1681.3662/office365groups/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365groups",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Groups"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "e27bdd9b-00e5-4374-8344-c7d1c08ffc65"
+  }
+}

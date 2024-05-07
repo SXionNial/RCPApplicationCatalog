@@ -1587,7 +1587,7 @@
         {
           "Category": "Data",
           "PropertyName": "NavbarTitle",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",

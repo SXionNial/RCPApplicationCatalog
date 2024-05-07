@@ -95,7 +95,7 @@ MainScreen As screen:
             ZIndex: =5
 
     TitleBar As NavBar:
-        NavbarTitle: ="RGTC Application Forms"
+        NavbarTitle: ="RGTC Application Forms "
         ShowBackButton: =false
         ShowSubmit: =false
         Width: =1366

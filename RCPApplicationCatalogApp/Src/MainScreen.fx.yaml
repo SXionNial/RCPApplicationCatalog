@@ -97,7 +97,7 @@ MainScreen As screen:
             ButtonLabel: ="EQUIPMENT/ITEM BORROWING REQUEST"
             LayoutMinHeight: =640
             LayoutMinWidth: =640
-            NavigateToScreen: =Sprint1_Scr_BereavementCashAssistance
+            NavigateToScreen: ='Sprint1_Scr_Equipment/ItemBorrowingRequest'
             Width: =(Parent.Width - 60) * 0.33
             ZIndex: =5
 

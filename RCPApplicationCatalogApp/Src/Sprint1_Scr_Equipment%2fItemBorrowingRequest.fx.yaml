@@ -520,20 +520,29 @@
                         HoverFill: =RGBA(0, 0, 0, 0)
                         Icon: =Icon.Check
                         OnSelect: |-
-                            =ForAll(
-                                colItems,
-                                Patch(
-                                    rcp_sprint1_EquipmentBorrowingRequestItemsList,
-                                    {
-                                        Title: "ITM" & col_Id,
-                                        'Item ID': Value(fldVal_ItemID_EIBRList.Text),
-                                        'Equipment/Item': Equipment_x002f_Item,
-                                        Quantity: Quantity,
-                                        Reason: Reason
-                                    }
-                                )
+                            =SubmitForm('frm_Equipment/ItemBorrowingRequest'),
+                            If(
+                                And(IsBlank('Job Level/Rank_DataCard1_2'.Error)),
+                                ForAll(
+                                    colItems,
+                                    Patch(
+                                        rcp_sprint1_EquipmentBorrowingRequestItemsList,
+                                        {
+                                            Title: "ITM" & col_Id,
+                                            'Item ID': Value(fldVal_ItemID_EIBRList.Text),
+                                            'Equipment/Item': Equipment_x002f_Item,
+                                            Quantity: Quantity,
+                                            Reason: Reason
+                                        }
+                                    )
+                                );
+                                Notify(
+                                    "Please fill out the Missing Fields",
+                                    NotificationType.Error,
+                                    10000
+                                );
+                                
                             );
-                            
                             //add record id to Title
                             UpdateContext({varRequestID: 'recordsGallery_Equipment/ItemBorrowingRequest'.Selected.ID});
                             Patch(
@@ -541,7 +550,6 @@
                                 {Title: "EIBR_" & varRequestID}
                             );
                             Clear(colItems);
-                            SubmitForm('frm_Equipment/ItemBorrowingRequest')
                         PaddingBottom: =12
                         PaddingLeft: =12
                         PaddingRight: =12

@@ -1,9 +1,7 @@
 "'Sprint1_Scr_Equipment/ItemBorrowingRequest' As screen":
     Fill: =Color.White
     LoadingSpinnerColor: =RGBA(73, 130, 5, 1)
-    OnVisible: |-
-        =UpdateContext
-        ({CurrentItem:{}});
+    OnVisible: =
 
     ScreenContainer1_3 As groupContainer.verticalAutoLayoutContainer:
         DropShadow: =DropShadow.Light
@@ -662,551 +660,6 @@
                         SnapToColumns: =false
                         ZIndex: =24
 
-                        sectionHeader_ApplicantInfoSection_3 As typedDataCard.blankCard:
-                            BorderColor: =RGBA(166, 166, 166, 1)
-                            BorderStyle: =BorderStyle.Solid
-                            DisplayMode: =DisplayMode.Edit
-                            Fill: |-
-                                =//RGBA(0, 0, 0, 0)
-                                
-                                global_formSectionHeaderFillColor
-                            Height: =50
-                            Width: =Parent.Width
-                            X: =0
-                            Y: =10
-                            ZIndex: =1
-
-                            Label1_27 As label:
-                                Align: =Align.Center
-                                BorderColor: =RGBA(0, 0, 0, 0)
-                                BorderStyle: =BorderStyle.None
-                                BorderThickness: =2
-                                Color: =RGBA(51, 51, 51, 1)
-                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                DisabledColor: =RGBA(166, 166, 166, 1)
-                                FocusedBorderThickness: =4
-                                Font: =Font.'Segoe UI'
-                                FontWeight: =FontWeight.Bold
-                                Height: =Parent.Height
-                                PaddingBottom: =0
-                                PaddingLeft: =0
-                                PaddingRight: =0
-                                PaddingTop: =0
-                                Size: =13
-                                Text: ="APPLICANT INFORMATION"
-                                Width: =Parent.Width
-                                ZIndex: =1
-
-                        "'sectionHeader_Equipment/ItemInfoSection' As typedDataCard.blankCard":
-                            BorderColor: =RGBA(166, 166, 166, 1)
-                            BorderStyle: =BorderStyle.Solid
-                            DisplayMode: =DisplayMode.Edit
-                            Fill: |-
-                                =//RGBA(0, 0, 0, 0)
-                                
-                                global_formSectionHeaderFillColor
-                            Height: =50
-                            Width: =Parent.Width
-                            X: =0
-                            Y: =90
-                            ZIndex: =1
-
-                            Label1_28 As label:
-                                Align: =Align.Center
-                                BorderColor: =RGBA(0, 0, 0, 0)
-                                BorderStyle: =BorderStyle.None
-                                BorderThickness: =2
-                                Color: =RGBA(51, 51, 51, 1)
-                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                DisabledColor: =RGBA(166, 166, 166, 1)
-                                FocusedBorderThickness: =4
-                                Font: =Font.'Segoe UI'
-                                FontWeight: =FontWeight.Bold
-                                Height: =Parent.Height
-                                PaddingBottom: =0
-                                PaddingLeft: =0
-                                PaddingRight: =0
-                                PaddingTop: =0
-                                Size: =13
-                                Text: ="EQUIPMENT/ITEM"
-                                Width: =Parent.Width
-                                ZIndex: =1
-
-                        DataCard5_3 As typedDataCard.blankCard:
-                            BorderColor: =RGBA(166, 166, 166, 1)
-                            BorderStyle: =BorderStyle.Solid
-                            DisplayMode: |-
-                                =//DisplayMode.Edit
-                                If(CountRows(colItems) >= 3, DisplayMode.Disabled, DisplayMode.Edit) 
-                            Fill: =RGBA(0, 0, 0, 0)
-                            Height: =Parent.Height * 0.12
-                            Visible: |-
-                                =//true
-                                If(newMode, true, false)
-                            Width: =Parent.Width / 6
-                            X: =0
-                            Y: =100
-                            ZIndex: =1
-
-                            btn_NewAsset_AGP_1 As button:
-                                BorderColor: =RGBA(0, 0, 0, 0)
-                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                DisabledColor: =RGBA(166, 166, 166, 1)
-                                DisabledFill: =RGBA(244, 244, 244, 1)
-                                Fill: =RGBA(73, 130, 5, 1)
-                                FocusedBorderColor: =ColorFade(Self.Fill, -75%)
-                                Font: =Font.'Segoe UI'
-                                FontWeight: =FontWeight.Semibold
-                                Height: =35
-                                HoverBorderColor: =RGBA(0, 0, 0, 0)
-                                HoverColor: =RGBA(255, 255, 255, 1)
-                                HoverFill: =ColorFade(RGBA(73, 130, 5, 1), -10%)
-                                OnSelect: |-
-                                    =UpdateContext({varItemID: Last(colItems).col_Id + 1});
-                                    Collect(colItems,
-                                        {
-                                            EquipmentItem: "",
-                                            Quantity: "",
-                                            Reason: "",
-                                            colItemId: fldVal_ItemID_EIBRList.Text,
-                                            col_Id: varItemID
-                                        }
-                                    );
-                                PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -50%)
-                                PressedColor: =RGBA(255, 255, 255, 1)
-                                PressedFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
-                                RadiusBottomLeft: =0
-                                RadiusBottomRight: =0
-                                RadiusTopLeft: =0
-                                RadiusTopRight: =0
-                                Text: ="New Asset"
-                                Width: =Parent.Width - 40
-                                X: =30
-                                Y: =(Parent.Height - btn_NewAsset_AGP_1.Height) / 2
-                                ZIndex: =1
-
-                        DataCard1_2 As typedDataCard.blankCard:
-                            BorderColor: =RGBA(166, 166, 166, 1)
-                            BorderStyle: =BorderStyle.None
-                            BorderThickness: =0
-                            DisplayMode: =DisplayMode.Edit
-                            Fill: =RGBA(0, 0, 0, 0)
-                            Height: =Parent.Height* 0.12
-                            Width: =Parent.Width
-                            X: =30
-                            Y: =110
-                            ZIndex: =1
-
-                            Label1_29 As label:
-                                Align: =Align.Center
-                                BorderColor: =RGBA(153, 153, 153, 1)
-                                BorderThickness: =1
-                                Color: =RGBA(51, 51, 51, 1)
-                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                DisabledColor: =RGBA(166, 166, 166, 1)
-                                FocusedBorderThickness: =4
-                                Font: =Font.'Segoe UI'
-                                FontWeight: =FontWeight.Semibold
-                                Height: =Parent.Height/1.1
-                                PaddingBottom: =0
-                                PaddingLeft: =DataCardKey5_3.X
-                                PaddingRight: =0
-                                PaddingTop: =0
-                                Size: =13
-                                Text: ="Equipment/Item"
-                                Width: =If(newMode, Parent.Width/2.68, Parent.Width/3)
-                                X: =2
-                                Y: =Parent.Height - Label1_29.Height
-                                ZIndex: =1
-
-                            Label1_32 As label:
-                                Align: =Align.Center
-                                BorderColor: =RGBA(153, 153, 153, 1)
-                                BorderThickness: =1
-                                Color: =RGBA(51, 51, 51, 1)
-                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                DisabledColor: =RGBA(166, 166, 166, 1)
-                                FocusedBorderThickness: =4
-                                Font: =Font.'Segoe UI'
-                                FontWeight: =FontWeight.Semibold
-                                Height: =Parent.Height/1.1
-                                PaddingBottom: =0
-                                PaddingLeft: =0
-                                PaddingRight: =0
-                                PaddingTop: =0
-                                Size: =13
-                                Text: ="Action"
-                                Visible: |-
-                                    =//true
-                                    If(newMode, true, false)
-                                Width: =Parent.Width/10
-                                X: =Label1_29.Width + Label1_30.Width + Label1_31.Width + 2
-                                Y: =Parent.Height - Label1_32.Height
-                                ZIndex: =2
-
-                            Label1_30 As label:
-                                Align: =Align.Center
-                                BorderColor: =RGBA(153, 153, 153, 1)
-                                BorderThickness: =1
-                                Color: =RGBA(51, 51, 51, 1)
-                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                DisabledColor: =RGBA(166, 166, 166, 1)
-                                FocusedBorderThickness: =4
-                                Font: =Font.'Segoe UI'
-                                FontWeight: =FontWeight.Semibold
-                                Height: =Parent.Height/1.1
-                                PaddingBottom: =0
-                                PaddingLeft: =0
-                                PaddingRight: =0
-                                PaddingTop: =0
-                                Size: =13
-                                Text: ="Quantity"
-                                Width: =If(newMode, Parent.Width/9, Parent.Width/6)
-                                X: =Label1_29.Width + 2
-                                Y: =Parent.Height - Label1_30.Height
-                                ZIndex: =3
-
-                            Label1_31 As label:
-                                Align: =Align.Center
-                                BorderColor: =RGBA(153, 153, 153, 1)
-                                BorderThickness: =1
-                                Color: =RGBA(51, 51, 51, 1)
-                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                DisabledColor: =RGBA(166, 166, 166, 1)
-                                FocusedBorderThickness: =4
-                                Font: =Font.'Segoe UI'
-                                FontWeight: =FontWeight.Semibold
-                                Height: =Parent.Height/1.1
-                                PaddingBottom: =0
-                                PaddingLeft: =0
-                                PaddingRight: =0
-                                PaddingTop: =0
-                                Size: =13
-                                Text: ="Reason"
-                                Width: =If(newMode, Parent.Width/2.5, Parent.Width/2.07)
-                                X: =Label1_29.Width + Label1_30.Width + 2
-                                Y: =Parent.Height - Label1_31.Height
-                                ZIndex: =4
-
-                        EIBR_itemGallery_Card As typedDataCard.blankCard:
-                            BorderColor: =RGBA(166, 166, 166, 1)
-                            BorderStyle: =BorderStyle.Solid
-                            DisplayMode: =DisplayMode.Edit
-                            Fill: =RGBA(0, 0, 0, 0)
-                            Height: =recordGallery_EIBRItems.AllItemsCount * Label1_29.Height
-                            Width: =Parent.Width
-                            X: =0
-                            Y: =120
-                            ZIndex: =1
-
-                            recordGallery_EIBRItems As gallery.variableTemplateHeightGallery:
-                                BorderColor: =RGBA(166, 166, 166, 1)
-                                DelayItemLoading: =true
-                                Height: |-
-                                    =// Auto height gallery based on All items from the Gallery
-                                    Parent.Height + 2
-                                Items: |
-                                    =If(
-                                        'frm_Equipment/ItemBorrowingRequest'.Mode = FormMode.New,
-                                        colItems,
-                                        Filter(
-                                            [@rcp_sprint1_EquipmentBorrowingRequestItemsList],
-                                            'Item ID' = 'recordsGallery_Equipment/ItemBorrowingRequest'.Selected.'Item ID'
-                                        )
-                                    )
-                                Layout: =Layout.Vertical
-                                LoadingSpinner: =LoadingSpinner.Data
-                                TemplatePadding: =0
-                                TemplateSize: =280
-                                Width: =Parent.Width
-                                ZIndex: =2
-
-                                fldVal_Reason As text:
-                                    BorderColor: =RGBA(166, 166, 166, 1)
-                                    Color: =RGBA(51, 51, 51, 1)
-                                    Default: =ThisItem.Reason
-                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                    DisabledColor: =RGBA(166, 166, 166, 1)
-                                    DisabledFill: =RGBA(244, 244, 244, 1)
-                                    FocusedBorderThickness: =4
-                                    Font: =Font.'Segoe UI'
-                                    Height: =Label1_29.Height
-                                    HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
-                                    HoverColor: =RGBA(51, 51, 51, 1)
-                                    HoverFill: =RGBA(255, 255, 255, 1)
-                                    Mode: =TextMode.MultiLine
-                                    OnChange: |-
-                                        =//false
-                                        
-                                        Patch(
-                                            colItems,
-                                            ThisItem,
-                                            {
-                                                Reason: fldVal_Reason.Text
-                                            }
-                                        )
-                                    OnSelect: =Select(Parent)
-                                    PaddingTop: =20
-                                    PressedBorderColor: =RGBA(73, 130, 5, 1)
-                                    PressedColor: =RGBA(51, 51, 51, 1)
-                                    PressedFill: =RGBA(255, 255, 255, 1)
-                                    RadiusBottomLeft: =0
-                                    RadiusBottomRight: =0
-                                    RadiusTopLeft: =0
-                                    RadiusTopRight: =0
-                                    Size: =13
-                                    Width: =Label1_31.Width
-                                    X: =Label1_31.X
-                                    ZIndex: =1
-
-                                fldVal_Quantity As text:
-                                    BorderColor: =RGBA(166, 166, 166, 1)
-                                    Color: =RGBA(51, 51, 51, 1)
-                                    Default: =ThisItem.Quantity
-                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                    DisabledColor: =RGBA(166, 166, 166, 1)
-                                    DisabledFill: =RGBA(244, 244, 244, 1)
-                                    FocusedBorderThickness: =4
-                                    Font: =Font.'Segoe UI'
-                                    Height: =Label1_29.Height
-                                    HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
-                                    HoverColor: =RGBA(51, 51, 51, 1)
-                                    HoverFill: =RGBA(255, 255, 255, 1)
-                                    OnChange: |-
-                                        =//false
-                                        
-                                        Patch(
-                                            colItems,
-                                            ThisItem,
-                                            {
-                                                Quantity: fldVal_Quantity.Text    
-                                            }
-                                        )
-                                    OnSelect: =Select(Parent)
-                                    PressedBorderColor: =RGBA(73, 130, 5, 1)
-                                    PressedColor: =RGBA(51, 51, 51, 1)
-                                    PressedFill: =RGBA(255, 255, 255, 1)
-                                    RadiusBottomLeft: =0
-                                    RadiusBottomRight: =0
-                                    RadiusTopLeft: =0
-                                    RadiusTopRight: =0
-                                    Size: =13
-                                    Width: =Label1_30.Width
-                                    X: =Label1_30.X
-                                    ZIndex: =2
-
-                                fldVal_EquipmentItem As text:
-                                    BorderColor: =RGBA(166, 166, 166, 1)
-                                    Color: =RGBA(51, 51, 51, 1)
-                                    Default: =ThisItem.'Equipment/Item'
-                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                    DisabledColor: =RGBA(166, 166, 166, 1)
-                                    DisabledFill: =RGBA(244, 244, 244, 1)
-                                    FocusedBorderThickness: =4
-                                    Font: =Font.'Segoe UI'
-                                    Height: =Label1_29.Height
-                                    HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
-                                    HoverColor: =RGBA(51, 51, 51, 1)
-                                    HoverFill: =RGBA(255, 255, 255, 1)
-                                    OnChange: |-
-                                        =//false
-                                        
-                                        Patch(
-                                            colItems,
-                                            ThisItem,
-                                            {
-                                                Equipment_x002f_Item: fldVal_EquipmentItem.Text
-                                            }
-                                        )
-                                    OnSelect: =Select(Parent)
-                                    PressedBorderColor: =RGBA(73, 130, 5, 1)
-                                    PressedColor: =RGBA(51, 51, 51, 1)
-                                    PressedFill: =RGBA(255, 255, 255, 1)
-                                    RadiusBottomLeft: =0
-                                    RadiusBottomRight: =0
-                                    RadiusTopLeft: =0
-                                    RadiusTopRight: =0
-                                    Size: =13
-                                    Width: =Label1_29.Width
-                                    X: =Label1_29.X
-                                    ZIndex: =3
-
-                                Icon1_2 As icon.Trash:
-                                    AutoDisableOnSelect: =false
-                                    BorderColor: =RGBA(166, 166, 166, 1)
-                                    BorderThickness: =1
-                                    Color: =RGBA(73, 125, 5, 1)
-                                    DisabledBorderColor: =RGBA(153, 153, 153, 1)
-                                    DisabledColor: =RGBA(220, 220, 220, 1)
-                                    DisabledFill: =RGBA(153, 153, 153, 1)
-                                    FocusedBorderThickness: =4
-                                    Height: =Label1_32.Height
-                                    HoverBorderColor: =RGBA(51, 91, 4, 1)
-                                    HoverColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
-                                    HoverFill: =RGBA(153, 153, 153, 1)
-                                    Icon: =Icon.Trash
-                                    OnSelect: |-
-                                        =//Select(Parent)
-                                        Remove(colItems,ThisItem);
-                                    PaddingBottom: =10
-                                    PaddingLeft: =5
-                                    PaddingRight: =5
-                                    PaddingTop: =10
-                                    PressedBorderColor: =RGBA(0, 0, 0, 0)
-                                    PressedColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
-                                    PressedFill: =RGBA(0, 0, 0, 0)
-                                    Visible: |-
-                                        =//true
-                                        
-                                        If(newMode,true,false)
-                                    Width: =Label1_32.Width
-                                    X: |-
-                                        =Label1_32
-                                        .X
-                                    ZIndex: =4
-
-                        spacer As typedDataCard.blankCard:
-                            BorderColor: =RGBA(166, 166, 166, 1)
-                            BorderStyle: =BorderStyle.Solid
-                            DisplayMode: =DisplayMode.Edit
-                            Fill: =RGBA(0, 0, 0, 0)
-                            Height: =Parent.Height * .03
-                            Width: =Parent.Width
-                            X: =0
-                            Y: =130
-                            ZIndex: =1
-
-                        "'Item ID_DataCard1_1' As typedDataCard.numberEditCard":
-                            BorderColor: =RGBA(166, 166, 166, 1)
-                            BorderStyle: =BorderStyle.Solid
-                            DataField: ="ItemID"
-                            Default: |
-                                =//ThisItem.'Item ID'
-                                
-                                If(
-                                    'frm_Equipment/ItemBorrowingRequest'.Mode = FormMode.New,
-                                    First(
-                                        Sort(
-                                            [@rcp_sprint1_EquipmentBorrowingRequestList],
-                                            'Item ID',
-                                            SortOrder.Descending
-                                        )
-                                    ).'Item ID' + 1,
-                                    ThisItem.'Item ID'
-                                )
-                            DisplayMode: =Parent.DisplayMode
-                            DisplayName: =DataSourceInfo([@rcp_sprint1_EquipmentBorrowingRequestList],DataSourceInfo.DisplayName,'Item ID')
-                            Fill: =RGBA(0, 0, 0, 0)
-                            Height: =50
-                            Required: =false
-                            Update: =Value(fldVal_ItemID_EIBRList.Text)
-                            Visible: |-
-                                =//true
-                                
-                                false
-                            Width: =916
-                            X: =0
-                            Y: =121
-                            ZIndex: =1
-
-                            DataCardKey2_3 As label:
-                                AutoHeight: =true
-                                BorderColor: =RGBA(0, 0, 0, 0)
-                                BorderStyle: =BorderStyle.None
-                                BorderThickness: =2
-                                Color: =RGBA(51, 51, 51, 1)
-                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                DisabledColor: =RGBA(166, 166, 166, 1)
-                                FocusedBorderThickness: =4
-                                Font: =Font.'Segoe UI'
-                                FontWeight: =FontWeight.Semibold
-                                Height: =34
-                                PaddingLeft: =0
-                                Size: =13
-                                Text: =Parent.DisplayName
-                                Width: =(Parent.Width - 60) * 0.4
-                                Wrap: =false
-                                X: =30
-                                Y: =10 + (fldVal_ItemID_EIBRList.Height / 2) - (Self.Height / 2)
-                                ZIndex: =1
-
-                            fldVal_ItemID_EIBRList As text:
-                                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                                BorderThickness: =2
-                                Color: =RGBA(51, 51, 51, 1)
-                                Default: =Parent.Default
-                                DelayOutput: =true
-                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                DisabledColor: =RGBA(166, 166, 166, 1)
-                                DisabledFill: =RGBA(244, 244, 244, 1)
-                                DisplayMode: =Parent.DisplayMode
-                                FocusedBorderThickness: =4
-                                Font: =Font.'Segoe UI'
-                                Format: =TextFormat.Number
-                                HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
-                                HoverColor: =RGBA(51, 51, 51, 1)
-                                HoverFill: =RGBA(255, 255, 255, 1)
-                                PaddingLeft: =5
-                                PressedBorderColor: =RGBA(73, 130, 5, 1)
-                                PressedColor: =RGBA(51, 51, 51, 1)
-                                PressedFill: =RGBA(255, 255, 255, 1)
-                                RadiusBottomLeft: =0
-                                RadiusBottomRight: =0
-                                RadiusTopLeft: =0
-                                RadiusTopRight: =0
-                                Size: =13
-                                Tooltip: =Parent.DisplayName
-                                Width: =(Parent.Width - 60) * 0.6
-                                X: =DataCardKey2_3.X + DataCardKey2_3.Width
-                                Y: =10
-                                ZIndex: =2
-
-                            ErrorMessage17_3 As label:
-                                AutoHeight: =true
-                                BorderColor: =RGBA(0, 0, 0, 0)
-                                BorderStyle: =BorderStyle.None
-                                BorderThickness: =2
-                                Color: =RGBA(168, 0, 0, 1)
-                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                DisabledColor: =RGBA(168, 0, 0, 1)
-                                FocusedBorderThickness: =4
-                                Font: =Font.'Segoe UI'
-                                FontWeight: =FontWeight.Semibold
-                                Height: =10
-                                Live: =Live.Assertive
-                                PaddingBottom: =0
-                                PaddingLeft: =0
-                                PaddingRight: =0
-                                PaddingTop: =0
-                                Size: =13
-                                Text: =Parent.Error
-                                Visible: =Parent.DisplayMode=DisplayMode.Edit
-                                Width: =Parent.Width - 60
-                                X: =30
-                                Y: =fldVal_ItemID_EIBRList.Y + fldVal_ItemID_EIBRList.Height
-                                ZIndex: =3
-
-                            StarVisible17_3 As label:
-                                Align: =Align.Center
-                                BorderColor: =RGBA(0, 0, 0, 0)
-                                BorderStyle: =BorderStyle.None
-                                BorderThickness: =2
-                                Color: =RGBA(51, 51, 51, 1)
-                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                DisabledColor: =RGBA(166, 166, 166, 1)
-                                FocusedBorderThickness: =4
-                                Font: =Font.'Segoe UI'
-                                FontWeight: =FontWeight.Semibold
-                                Height: =DataCardKey2_3.Height
-                                PaddingLeft: =0
-                                Size: =13
-                                Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                                Width: =30
-                                Wrap: =false
-                                Y: =DataCardKey2_3.Y
-                                ZIndex: =4
-
                         "'Date and Time From_DataCard1' As typedDataCard.dateTimeEditCard":
                             BorderColor: =RGBA(166, 166, 166, 1)
                             BorderStyle: =BorderStyle.Solid
@@ -1625,6 +1078,420 @@
                                 Y: =DataCardKey30.Y
                                 ZIndex: =7
 
+                        sectionHeader_ApplicantInfoSection_3 As typedDataCard.blankCard:
+                            BorderColor: =RGBA(166, 166, 166, 1)
+                            BorderStyle: =BorderStyle.Solid
+                            DisplayMode: =DisplayMode.Edit
+                            Fill: |-
+                                =//RGBA(0, 0, 0, 0)
+                                
+                                global_formSectionHeaderFillColor
+                            Height: =50
+                            Width: =Parent.Width
+                            X: =0
+                            Y: =10
+                            ZIndex: =1
+
+                            Label1_27 As label:
+                                Align: =Align.Center
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =RGBA(51, 51, 51, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FocusedBorderThickness: =4
+                                Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Bold
+                                Height: =Parent.Height
+                                PaddingBottom: =0
+                                PaddingLeft: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Size: =13
+                                Text: ="APPLICANT INFORMATION"
+                                Width: =Parent.Width
+                                ZIndex: =1
+
+                        "'sectionHeader_Equipment/ItemInfoSection' As typedDataCard.blankCard":
+                            BorderColor: =RGBA(166, 166, 166, 1)
+                            BorderStyle: =BorderStyle.Solid
+                            DisplayMode: =DisplayMode.Edit
+                            Fill: |-
+                                =//RGBA(0, 0, 0, 0)
+                                
+                                global_formSectionHeaderFillColor
+                            Height: =50
+                            Width: =Parent.Width
+                            X: =0
+                            Y: =90
+                            ZIndex: =1
+
+                            Label1_28 As label:
+                                Align: =Align.Center
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =RGBA(51, 51, 51, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FocusedBorderThickness: =4
+                                Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Bold
+                                Height: =Parent.Height
+                                PaddingBottom: =0
+                                PaddingLeft: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Size: =13
+                                Text: ="EQUIPMENT/ITEM"
+                                Width: =Parent.Width
+                                ZIndex: =1
+
+                        DataCard5_3 As typedDataCard.blankCard:
+                            BorderColor: =RGBA(166, 166, 166, 1)
+                            BorderStyle: =BorderStyle.Solid
+                            DisplayMode: |-
+                                =//DisplayMode.Edit
+                                If(CountRows(colItems) >= 3, DisplayMode.Disabled, DisplayMode.Edit) 
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =Parent.Height * 0.12
+                            Visible: |-
+                                =//true
+                                If(newMode, true, false)
+                            Width: =Parent.Width / 6
+                            X: =0
+                            Y: =100
+                            ZIndex: =1
+
+                            btn_NewAsset_AGP_1 As button:
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
+                                Fill: =RGBA(73, 130, 5, 1)
+                                FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                                Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
+                                Height: =35
+                                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                HoverColor: =RGBA(255, 255, 255, 1)
+                                HoverFill: =ColorFade(RGBA(73, 130, 5, 1), -10%)
+                                OnSelect: |-
+                                    =UpdateContext({varItemID: Last(colItems).col_Id + 1});
+                                    Collect(colItems,
+                                        {
+                                            EquipmentItem: "",
+                                            Quantity: "",
+                                            Reason: "",
+                                            colItemId: fldVal_ItemID_EIBRList.Text,
+                                            col_Id: varItemID
+                                        }
+                                    );
+                                PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -50%)
+                                PressedColor: =RGBA(255, 255, 255, 1)
+                                PressedFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                                RadiusBottomLeft: =0
+                                RadiusBottomRight: =0
+                                RadiusTopLeft: =0
+                                RadiusTopRight: =0
+                                Text: ="New Asset"
+                                Width: =Parent.Width - 40
+                                X: =30
+                                Y: =(Parent.Height - btn_NewAsset_AGP_1.Height) / 2
+                                ZIndex: =1
+
+                        DataCard1_2 As typedDataCard.blankCard:
+                            BorderColor: =RGBA(166, 166, 166, 1)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =0
+                            DisplayMode: =DisplayMode.Edit
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =Parent.Height* 0.12
+                            Width: =Parent.Width
+                            X: =30
+                            Y: =110
+                            ZIndex: =1
+
+                            Label1_29 As label:
+                                Align: =Align.Center
+                                BorderColor: =RGBA(153, 153, 153, 1)
+                                BorderThickness: =1
+                                Color: =RGBA(51, 51, 51, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FocusedBorderThickness: =4
+                                Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
+                                Height: =Parent.Height/1.1
+                                PaddingBottom: =0
+                                PaddingLeft: =DataCardKey5_3.X
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Size: =13
+                                Text: ="Equipment/Item"
+                                Width: =If(newMode, Parent.Width/2.68, Parent.Width/3)
+                                X: =2
+                                Y: =Parent.Height - Label1_29.Height
+                                ZIndex: =1
+
+                            Label1_32 As label:
+                                Align: =Align.Center
+                                BorderColor: =RGBA(153, 153, 153, 1)
+                                BorderThickness: =1
+                                Color: =RGBA(51, 51, 51, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FocusedBorderThickness: =4
+                                Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
+                                Height: =Parent.Height/1.1
+                                PaddingBottom: =0
+                                PaddingLeft: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Size: =13
+                                Text: ="Action"
+                                Visible: |-
+                                    =//true
+                                    If(newMode, true, false)
+                                Width: =Parent.Width/10
+                                X: =Label1_29.Width + Label1_30.Width + Label1_31.Width + 2
+                                Y: =Parent.Height - Label1_32.Height
+                                ZIndex: =2
+
+                            Label1_30 As label:
+                                Align: =Align.Center
+                                BorderColor: =RGBA(153, 153, 153, 1)
+                                BorderThickness: =1
+                                Color: =RGBA(51, 51, 51, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FocusedBorderThickness: =4
+                                Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
+                                Height: =Parent.Height/1.1
+                                PaddingBottom: =0
+                                PaddingLeft: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Size: =13
+                                Text: ="Quantity"
+                                Width: =If(newMode, Parent.Width/9, Parent.Width/6)
+                                X: =Label1_29.Width + 2
+                                Y: =Parent.Height - Label1_30.Height
+                                ZIndex: =3
+
+                            Label1_31 As label:
+                                Align: =Align.Center
+                                BorderColor: =RGBA(153, 153, 153, 1)
+                                BorderThickness: =1
+                                Color: =RGBA(51, 51, 51, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FocusedBorderThickness: =4
+                                Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
+                                Height: =Parent.Height/1.1
+                                PaddingBottom: =0
+                                PaddingLeft: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Size: =13
+                                Text: ="Reason"
+                                Width: =If(newMode, Parent.Width/2.5, Parent.Width/2.07)
+                                X: =Label1_29.Width + Label1_30.Width + 2
+                                Y: =Parent.Height - Label1_31.Height
+                                ZIndex: =4
+
+                        EIBR_itemGallery_Card As typedDataCard.blankCard:
+                            BorderColor: =RGBA(166, 166, 166, 1)
+                            BorderStyle: =BorderStyle.Solid
+                            DisplayMode: =DisplayMode.Edit
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =recordGallery_EIBRItems.AllItemsCount * Label1_29.Height
+                            Width: =Parent.Width
+                            X: =0
+                            Y: =120
+                            ZIndex: =1
+
+                            recordGallery_EIBRItems As gallery.variableTemplateHeightGallery:
+                                BorderColor: =RGBA(166, 166, 166, 1)
+                                DelayItemLoading: =true
+                                Height: |-
+                                    =// Auto height gallery based on All items from the Gallery
+                                    Parent.Height + 2
+                                Items: |
+                                    =If(
+                                        'frm_Equipment/ItemBorrowingRequest'.Mode = FormMode.New,
+                                        colItems,
+                                        Filter(
+                                            [@rcp_sprint1_EquipmentBorrowingRequestItemsList],
+                                            'Item ID' = 'recordsGallery_Equipment/ItemBorrowingRequest'.Selected.'Item ID'
+                                        )
+                                    )
+                                Layout: =Layout.Vertical
+                                LoadingSpinner: =LoadingSpinner.Data
+                                TemplatePadding: =0
+                                TemplateSize: =280
+                                Width: =Parent.Width
+                                ZIndex: =2
+
+                                fldVal_Reason As text:
+                                    BorderColor: =RGBA(166, 166, 166, 1)
+                                    Color: =RGBA(51, 51, 51, 1)
+                                    Default: =ThisItem.Reason
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
+                                    DisabledFill: =RGBA(244, 244, 244, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Label1_29.Height
+                                    HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                                    HoverColor: =RGBA(51, 51, 51, 1)
+                                    HoverFill: =RGBA(255, 255, 255, 1)
+                                    Mode: =TextMode.MultiLine
+                                    OnChange: |-
+                                        =//false
+                                        
+                                        Patch(
+                                            colItems,
+                                            ThisItem,
+                                            {
+                                                Reason: fldVal_Reason.Text
+                                            }
+                                        )
+                                    OnSelect: =Select(Parent)
+                                    PaddingTop: =20
+                                    PressedBorderColor: =RGBA(73, 130, 5, 1)
+                                    PressedColor: =RGBA(51, 51, 51, 1)
+                                    PressedFill: =RGBA(255, 255, 255, 1)
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =13
+                                    Width: =Label1_31.Width
+                                    X: =Label1_31.X
+                                    ZIndex: =1
+
+                                fldVal_Quantity As text:
+                                    BorderColor: =RGBA(166, 166, 166, 1)
+                                    Color: =RGBA(51, 51, 51, 1)
+                                    Default: =ThisItem.Quantity
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
+                                    DisabledFill: =RGBA(244, 244, 244, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Label1_29.Height
+                                    HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                                    HoverColor: =RGBA(51, 51, 51, 1)
+                                    HoverFill: =RGBA(255, 255, 255, 1)
+                                    OnChange: |-
+                                        =//false
+                                        
+                                        Patch(
+                                            colItems,
+                                            ThisItem,
+                                            {
+                                                Quantity: fldVal_Quantity.Text    
+                                            }
+                                        )
+                                    OnSelect: =Select(Parent)
+                                    PressedBorderColor: =RGBA(73, 130, 5, 1)
+                                    PressedColor: =RGBA(51, 51, 51, 1)
+                                    PressedFill: =RGBA(255, 255, 255, 1)
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =13
+                                    Width: =Label1_30.Width
+                                    X: =Label1_30.X
+                                    ZIndex: =2
+
+                                fldVal_EquipmentItem As text:
+                                    BorderColor: =RGBA(166, 166, 166, 1)
+                                    Color: =RGBA(51, 51, 51, 1)
+                                    Default: =ThisItem.'Equipment/Item'
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
+                                    DisabledFill: =RGBA(244, 244, 244, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Label1_29.Height
+                                    HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                                    HoverColor: =RGBA(51, 51, 51, 1)
+                                    HoverFill: =RGBA(255, 255, 255, 1)
+                                    OnChange: |-
+                                        =//false
+                                        
+                                        Patch(
+                                            colItems,
+                                            ThisItem,
+                                            {
+                                                Equipment_x002f_Item: fldVal_EquipmentItem.Text
+                                            }
+                                        )
+                                    OnSelect: =Select(Parent)
+                                    PressedBorderColor: =RGBA(73, 130, 5, 1)
+                                    PressedColor: =RGBA(51, 51, 51, 1)
+                                    PressedFill: =RGBA(255, 255, 255, 1)
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Size: =13
+                                    Width: =Label1_29.Width
+                                    X: =Label1_29.X
+                                    ZIndex: =3
+
+                                Icon1_2 As icon.Trash:
+                                    AutoDisableOnSelect: =false
+                                    BorderColor: =RGBA(166, 166, 166, 1)
+                                    BorderThickness: =1
+                                    Color: =RGBA(73, 125, 5, 1)
+                                    DisabledBorderColor: =RGBA(153, 153, 153, 1)
+                                    DisabledColor: =RGBA(220, 220, 220, 1)
+                                    DisabledFill: =RGBA(153, 153, 153, 1)
+                                    FocusedBorderThickness: =4
+                                    Height: =Label1_32.Height
+                                    HoverBorderColor: =RGBA(51, 91, 4, 1)
+                                    HoverColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                                    HoverFill: =RGBA(153, 153, 153, 1)
+                                    Icon: =Icon.Trash
+                                    OnSelect: |-
+                                        =//Select(Parent)
+                                        Remove(colItems,ThisItem);
+                                    PaddingBottom: =10
+                                    PaddingLeft: =5
+                                    PaddingRight: =5
+                                    PaddingTop: =10
+                                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                    PressedColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                                    PressedFill: =RGBA(0, 0, 0, 0)
+                                    Visible: |-
+                                        =//true
+                                        
+                                        If(newMode,true,false)
+                                    Width: =Label1_32.Width
+                                    X: |-
+                                        =Label1_32
+                                        .X
+                                    ZIndex: =4
+
+                        spacer As typedDataCard.blankCard:
+                            BorderColor: =RGBA(166, 166, 166, 1)
+                            BorderStyle: =BorderStyle.Solid
+                            DisplayMode: =DisplayMode.Edit
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =Parent.Height * .03
+                            Width: =Parent.Width
+                            X: =0
+                            Y: =130
+                            ZIndex: =1
+
                         "'sectionHeader_HR&AdminFormSection_1' As typedDataCard.blankCard":
                             BorderColor: =RGBA(166, 166, 166, 1)
                             BorderStyle: =BorderStyle.Solid
@@ -1663,6 +1530,137 @@
                                 Text: ="TO BE COMPLETED BY THE HR & ADMIN"
                                 Width: =Parent.Width
                                 ZIndex: =1
+
+                        "'Item ID_DataCard1_1' As typedDataCard.numberEditCard":
+                            BorderColor: =RGBA(166, 166, 166, 1)
+                            BorderStyle: =BorderStyle.Solid
+                            DataField: ="ItemID"
+                            Default: |
+                                =//ThisItem.'Item ID'
+                                
+                                If(
+                                    'frm_Equipment/ItemBorrowingRequest'.Mode = FormMode.New,
+                                    First(
+                                        Sort(
+                                            [@rcp_sprint1_EquipmentBorrowingRequestList],
+                                            'Item ID',
+                                            SortOrder.Descending
+                                        )
+                                    ).'Item ID' + 1,
+                                    ThisItem.'Item ID'
+                                )
+                            DisplayMode: =Parent.DisplayMode
+                            DisplayName: =DataSourceInfo([@rcp_sprint1_EquipmentBorrowingRequestList],DataSourceInfo.DisplayName,'Item ID')
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =50
+                            Required: =false
+                            Update: =Value(fldVal_ItemID_EIBRList.Text)
+                            Visible: |-
+                                =//true
+                                
+                                false
+                            Width: =916
+                            X: =0
+                            Y: =121
+                            ZIndex: =1
+
+                            DataCardKey2_3 As label:
+                                AutoHeight: =true
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =RGBA(51, 51, 51, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FocusedBorderThickness: =4
+                                Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
+                                Height: =34
+                                PaddingLeft: =0
+                                Size: =13
+                                Text: =Parent.DisplayName
+                                Width: =(Parent.Width - 60) * 0.4
+                                Wrap: =false
+                                X: =30
+                                Y: =10 + (fldVal_ItemID_EIBRList.Height / 2) - (Self.Height / 2)
+                                ZIndex: =1
+
+                            fldVal_ItemID_EIBRList As text:
+                                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                BorderThickness: =2
+                                Color: =RGBA(51, 51, 51, 1)
+                                Default: =Parent.Default
+                                DelayOutput: =true
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
+                                DisplayMode: =Parent.DisplayMode
+                                FocusedBorderThickness: =4
+                                Font: =Font.'Segoe UI'
+                                Format: =TextFormat.Number
+                                HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                                HoverColor: =RGBA(51, 51, 51, 1)
+                                HoverFill: =RGBA(255, 255, 255, 1)
+                                PaddingLeft: =5
+                                PressedBorderColor: =RGBA(73, 130, 5, 1)
+                                PressedColor: =RGBA(51, 51, 51, 1)
+                                PressedFill: =RGBA(255, 255, 255, 1)
+                                RadiusBottomLeft: =0
+                                RadiusBottomRight: =0
+                                RadiusTopLeft: =0
+                                RadiusTopRight: =0
+                                Size: =13
+                                Tooltip: =Parent.DisplayName
+                                Width: =(Parent.Width - 60) * 0.6
+                                X: =DataCardKey2_3.X + DataCardKey2_3.Width
+                                Y: =10
+                                ZIndex: =2
+
+                            ErrorMessage17_3 As label:
+                                AutoHeight: =true
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(168, 0, 0, 1)
+                                FocusedBorderThickness: =4
+                                Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
+                                Height: =10
+                                Live: =Live.Assertive
+                                PaddingBottom: =0
+                                PaddingLeft: =0
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Size: =13
+                                Text: =Parent.Error
+                                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                Width: =Parent.Width - 60
+                                X: =30
+                                Y: =fldVal_ItemID_EIBRList.Y + fldVal_ItemID_EIBRList.Height
+                                ZIndex: =3
+
+                            StarVisible17_3 As label:
+                                Align: =Align.Center
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =RGBA(51, 51, 51, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FocusedBorderThickness: =4
+                                Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
+                                Height: =DataCardKey2_3.Height
+                                PaddingLeft: =0
+                                Size: =13
+                                Text: ="*"
+                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Width: =30
+                                Wrap: =false
+                                Y: =DataCardKey2_3.Y
+                                ZIndex: =4
 
                         Title_DataCard1 As typedDataCard.textualEditCard:
                             BorderColor: =RGBA(166, 166, 166, 1)

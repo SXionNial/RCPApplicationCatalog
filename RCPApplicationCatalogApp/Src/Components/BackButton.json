@@ -89,7 +89,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "BackButton",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 750,
+        "PublishOrderIndex": 2,
         "Rules": [
           {
             "Category": "Design",

@@ -3530,7 +3530,7 @@ Sprint1_Scr_AssetGatePass As screen:
                                 Y: =DataCardKey8_1.Y
                                 ZIndex: =4
 
-                    ARI_noRecordsLabel_1 As label:
+                    AGP_noRecordsLabel_1 As label:
                         Align: =Align.Center
                         BorderColor: =RGBA(0, 0, 0, 0)
                         BorderStyle: =BorderStyle.None
@@ -3544,7 +3544,7 @@ Sprint1_Scr_AssetGatePass As screen:
                         Height: =Parent.Height
                         Size: =18
                         Text: =If (CountRows(recordsGallery_AssetGatePass.AllItems) > 0, msg_selectARecord, msg_noRecords)
-                        Visible: =//And(frm_AssetGatePass.DisplayMode <> DisplayMode.Edit,IsBlank(CurrentItem.ID))
+                        Visible: =And(frm_AssetGatePass.DisplayMode <> DisplayMode.Edit,IsBlank(CurrentItem.ID))
                         Width: =Parent.Width
                         ZIndex: =25
 

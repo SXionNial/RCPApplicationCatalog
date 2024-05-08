@@ -4378,28 +4378,6 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                     X: =12
                                     ZIndex: =3
 
-                            ARI_noRecordsLabel As label:
-                                Align: =Align.Center
-                                BorderColor: =RGBA(0, 0, 0, 0)
-                                BorderStyle: =BorderStyle.None
-                                BorderThickness: =2
-                                Color: =RGBA(51, 51, 51, 1)
-                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                DisabledColor: =RGBA(166, 166, 166, 1)
-                                FocusedBorderThickness: =4
-                                Font: =Font.'Segoe UI'
-                                FontWeight: =FontWeight.Lighter
-                                Height: =Parent.Height
-                                Size: =18
-                                Text: =If (CountRows(recordsGallery_AgreementRegardingIncidents.AllItems) > 0, msg_selectARecord, msg_noRecords)
-                                Visible: |-
-                                    =And(
-                                        frm_AgreementRegardingIncidents.DisplayMode <> DisplayMode.Edit,
-                                        IsBlank(CurrentItem.ID)
-                                    )
-                                Width: =Parent.Width
-                                ZIndex: =2
-
                         Date_DataCard1 As typedDataCard.dateEditCard:
                             BorderColor: =RGBA(166, 166, 166, 1)
                             BorderStyle: =BorderStyle.Solid
@@ -5284,6 +5262,28 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 Wrap: =false
                                 Y: =DataCardKey8.Y
                                 ZIndex: =4
+
+                    ARI_noRecordsLabel As label:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(51, 51, 51, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Lighter
+                        Height: =Parent.Height
+                        Size: =18
+                        Text: =If (CountRows(recordsGallery_AgreementRegardingIncidents.AllItems) > 0, msg_selectARecord, msg_noRecords)
+                        Visible: |-
+                            =And(
+                                frm_AgreementRegardingIncidents.DisplayMode <> DisplayMode.Edit,
+                                IsBlank(CurrentItem.ID)
+                            )
+                        Width: =Parent.Width
+                        ZIndex: =25
 
             DeleteConfirmDialogContainer1 As groupContainer.verticalAutoLayoutContainer:
                 DropShadow: =DropShadow.Light

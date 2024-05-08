@@ -445,7 +445,7 @@ Sprint1_Scr_AssetGatePass As screen:
                         Icon: =Icon.Check
                         OnSelect: |
                             =If(
-                                IsBlank(DataCardValue14_1.SelectedItems),
+                                Or(IsBlank(DataCardValue14_1.SelectedItems),IsBlank(DataCardValue15_1.SelectedItems),IsBlank(DataCardValue16_1.SelectedItems),IsBlank(DataCardValue17_1.SelectedDate),IsBlank(DataCardValue18_1.SelectedDate),IsBlank(DataCardValue19_1.Text),IsBlank(DataCardValue20_1.Text)),
                                 Notify(
                                     "Please fill out the Missing Fields",
                                     NotificationType.Error,

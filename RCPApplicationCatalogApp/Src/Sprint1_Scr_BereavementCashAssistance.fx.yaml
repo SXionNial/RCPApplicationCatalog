@@ -946,6 +946,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 Color: =RGBA(51, 51, 51, 1)
                                 DefaultSelectedItems: =Parent.Default
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisplayFields: =["DisplayName","Email","Picture"]
                                 DisplayMode: =Parent.DisplayMode
                                 Font: =Font.'Segoe UI'
                                 HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
@@ -955,8 +956,11 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                                 PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
                                 PressedFill: =RGBA(73, 130, 5, 1)
+                                SearchFields: =["DisplayName"]
+                                SearchItems: =Choices('rcp_sprint1_Bereavement Cash Assistance List'.'Updated By',DataCardValue1.SearchText)
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
+                                Template: =ListItemTemplate.Person
                                 Tooltip: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.6
                                 X: =DataCardKey1_1.X + DataCardKey1_1.Width
@@ -1069,6 +1073,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                     
                                     If(frm_BereavementCashAssistanceList.Mode = FormMode.New, {Value: "New"},Parent.Default)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisplayFields: =["Value"]
                                 DisplayMode: =Parent.DisplayMode
                                 Font: =Font.'Segoe UI'
                                 HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
@@ -1078,6 +1083,8 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                                 PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
                                 PressedFill: =RGBA(73, 130, 5, 1)
+                                SearchFields: =["Value"]
+                                SearchItems: =Choices('rcp_sprint1_Bereavement Cash Assistance List'.Status,DataCardValue2_2.SearchText)
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
                                 Tooltip: =Parent.DisplayName

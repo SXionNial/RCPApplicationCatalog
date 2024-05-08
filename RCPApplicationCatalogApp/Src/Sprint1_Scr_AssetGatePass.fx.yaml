@@ -444,30 +444,38 @@ Sprint1_Scr_AssetGatePass As screen:
                         HoverFill: =RGBA(0, 0, 0, 0)
                         Icon: =Icon.Check
                         OnSelect: |
-                            =ForAll(
-                                colAssets,
+                            =If(
+                                IsBlank(DataCardValue14_1.SelectedItems),
+                                Notify(
+                                    "Please fill out the Missing Fields",
+                                    NotificationType.Error,
+                                    10000
+                                ),
+                                ForAll(
+                                    colAssets,
+                                    Patch(
+                                        rcp_sprint1_AssetGatePassItemsList,
+                                        {
+                                            Title: "ITM" & col_ID,
+                                            'Item ID': Value(fldVal_ItemID_AGPList.Text),
+                                            'Asset/Device': Asset_x002f_Device,
+                                            'Asset Tag': AssetTag,
+                                            'Unit Model': UnitModel,
+                                            'Serial Number': SerialNumber,
+                                            'Purpose/Reason': Purpose_x002f_Reason
+                                        }
+                                    )
+                                );
+                                //add record id to Title
+                                UpdateContext({varRequestID: recordsGallery_AssetGatePass.Selected.ID});
                                 Patch(
-                                    rcp_sprint1_AssetGatePassItemsList,
-                                    {
-                                        Title: "ITM" & col_ID,
-                                        'Item ID': Value(fldVal_ItemID_AGPList.Text),
-                                        'Asset/Device': Asset_x002f_Device,
-                                        'Asset Tag': AssetTag,
-                                        'Unit Model': UnitModel,
-                                        'Serial Number': SerialNumber,
-                                        'Purpose/Reason': Purpose_x002f_Reason
-                                    }
-                                )
-                            );
+                                    rcp_sprint1_AssetGatePassList,
+                                    {Title: "AGPR_" & varRequestID}
+                                );
+                                Clear(colAssets);
+                                SubmitForm(frm_AssetGatePass);
+                            )
                             
-                            //add record id to Title
-                            UpdateContext({varRequestID: recordsGallery_AssetGatePass.Selected.ID});
-                            Patch(
-                                rcp_sprint1_AssetGatePassList,
-                                {Title: "AGPR_" & varRequestID}
-                            );
-                            Clear(colAssets);
-                            SubmitForm(frm_AssetGatePass);
                             /* //TEST PATCHING TO TEST TABLE  ---- WoRKS
                             ForAll(
                                 colAssets,
@@ -539,7 +547,9 @@ Sprint1_Scr_AssetGatePass As screen:
                         HoverFill: =RGBA(0, 0, 0, 0)
                         Icon: =Icon.Cancel
                         OnSelect: |-
-                            =ResetForm(frm_AssetGatePass); UpdateContext({ editMode: false, newMode: false });
+                            =Clear(colAssets);
+                            ResetForm(frm_AssetGatePass); 
+                            UpdateContext({ editMode: false, newMode: false });
                         PaddingBottom: =12
                         PaddingLeft: =12
                         PaddingRight: =12
@@ -2251,7 +2261,7 @@ Sprint1_Scr_AssetGatePass As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
-                                Color: =RGBA(51, 51, 51, 1)
+                                Color: =RGBA(255, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
@@ -2362,7 +2372,7 @@ Sprint1_Scr_AssetGatePass As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
-                                Color: =RGBA(51, 51, 51, 1)
+                                Color: =RGBA(255, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
@@ -2473,7 +2483,7 @@ Sprint1_Scr_AssetGatePass As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
-                                Color: =RGBA(51, 51, 51, 1)
+                                Color: =RGBA(255, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
@@ -2576,7 +2586,7 @@ Sprint1_Scr_AssetGatePass As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
-                                Color: =RGBA(51, 51, 51, 1)
+                                Color: =RGBA(255, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
@@ -2679,7 +2689,7 @@ Sprint1_Scr_AssetGatePass As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
-                                Color: =RGBA(51, 51, 51, 1)
+                                Color: =RGBA(255, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
@@ -2785,7 +2795,7 @@ Sprint1_Scr_AssetGatePass As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
-                                Color: =RGBA(51, 51, 51, 1)
+                                Color: =RGBA(255, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
@@ -2891,7 +2901,7 @@ Sprint1_Scr_AssetGatePass As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
-                                Color: =RGBA(51, 51, 51, 1)
+                                Color: =RGBA(255, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'

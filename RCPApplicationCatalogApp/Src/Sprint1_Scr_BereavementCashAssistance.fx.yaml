@@ -633,6 +633,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                         OnSuccess: |-
                             =UpdateContext({ CurrentItem: Self.LastSubmit, editMode: false, newMode: false })
                         SnapToColumns: =false
+                        Visible: |-
+                            =///true
+                            Or(
+                                Self.DisplayMode = DisplayMode.Edit,
+                                // or when something is selected
+                                !IsBlank(CurrentItem.ID)    
+                            )
                         ZIndex: =24
 
                         sectionHeader_ApplicantInfoSection_2 As typedDataCard.blankCard:
@@ -2236,8 +2243,8 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                             DataField: ="NameofDeceased"
                             Default: =ThisItem.'Name of Deceased'
                             DisplayMode: |-
-                                =//Parent.DisplayMode
-                                
+                                =Parent.DisplayMode
+                                /*
                                 If(
                                     And(
                                         DataCardValue2_2.Selected.Value = "Being Filled by HR",
@@ -2252,6 +2259,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                     DisplayMode.Edit,
                                     DisplayMode.View
                                 )
+                                */
                             DisplayName: =DataSourceInfo([@'rcp_sprint1_Bereavement Cash Assistance List'],DataSourceInfo.DisplayName,'Name of Deceased')
                             Fill: =RGBA(0, 0, 0, 0)
                             Height: =Parent.Height*0.15
@@ -2370,8 +2378,8 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                             DataField: ="RelationshiptotheDeceased"
                             Default: =ThisItem.'Relationship to the Deceased'
                             DisplayMode: |-
-                                =//Parent.DisplayMode
-                                
+                                =Parent.DisplayMode
+                                /*
                                 If(
                                     And(
                                         DataCardValue2_2.Selected.Value = "Being Filled by HR",
@@ -2386,6 +2394,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                     DisplayMode.Edit,
                                     DisplayMode.View
                                 )
+                                */
                             DisplayName: =DataSourceInfo([@'rcp_sprint1_Bereavement Cash Assistance List'],DataSourceInfo.DisplayName,'Relationship to the Deceased')
                             Fill: =RGBA(0, 0, 0, 0)
                             Height: =Parent.Height*0.15
@@ -2507,8 +2516,8 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                             DataField: ="DateFrom"
                             Default: =ThisItem.'Date of Death'
                             DisplayMode: |-
-                                =//Parent.DisplayMode
-                                
+                                =Parent.DisplayMode
+                                /*
                                 If(
                                     And(
                                         DataCardValue2_2.Selected.Value = "Being Filled by HR",
@@ -2523,6 +2532,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                     DisplayMode.Edit,
                                     DisplayMode.View
                                 )
+                                */
                             DisplayName: =DataSourceInfo([@'rcp_sprint1_Bereavement Cash Assistance List'],DataSourceInfo.DisplayName,'Date of Death')
                             Fill: =RGBA(0, 0, 0, 0)
                             Height: =Parent.Height*0.15
@@ -2634,8 +2644,8 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                             DataField: ="CauseofDeath"
                             Default: =ThisItem.'Cause of Death'
                             DisplayMode: |-
-                                =//Parent.DisplayMode
-                                
+                                =Parent.DisplayMode
+                                /*
                                 If(
                                     And(
                                         DataCardValue2_2.Selected.Value = "Being Filled by HR",
@@ -2650,6 +2660,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                     DisplayMode.Edit,
                                     DisplayMode.View
                                 )
+                                */
                             DisplayName: =DataSourceInfo([@'rcp_sprint1_Bereavement Cash Assistance List'],DataSourceInfo.DisplayName,'Cause of Death')
                             Fill: =RGBA(0, 0, 0, 0)
                             Height: =Parent.Height*0.15
@@ -3171,10 +3182,10 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                         FocusedBorderThickness: =4
                         Font: =Font.'Segoe UI'
                         FontWeight: =FontWeight.Lighter
-                        Height: =125
+                        Height: =Parent.Height
                         Size: =18
                         Text: =If (CountRows(recordsGallery_BereavementCashAssistanceList.AllItems) > 0, msg_selectARecord, msg_noRecords)
-                        Visible: =//And(frm_BereavementCashAssistanceList.DisplayMode <> DisplayMode.Edit,IsBlank(CurrentItem.ID))
+                        Visible: =And(frm_BereavementCashAssistanceList.DisplayMode <> DisplayMode.Edit,IsBlank(CurrentItem.ID))
                         Width: =Parent.Width
                         Y: =80
                         ZIndex: =25

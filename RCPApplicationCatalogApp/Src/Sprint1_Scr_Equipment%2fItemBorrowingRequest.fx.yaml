@@ -522,19 +522,19 @@
                         Icon: =Icon.Check
                         OnSelect: |
                             =
+                            SubmitForm('frm_Equipment/ItemBorrowingRequest');
                             If(
                                 Or(
-                                    !IsBlank(fldVal_EquipmentItem.Text),
-                                    !IsBlank(fldVal_Quantity.Text),
-                                    !IsBlank(fldVal_Reason.HintText)
+                                    IsBlank('Job Level/Rank_DataCard1_2'.Error),
+                                    IsBlank('Office Location_DataCard1_2'.Error),
+                                    IsBlank('Date and Time From_DataCard1'.Error),
+                                    IsBlank('Date and Time To_DataCard1'.Error)
                                 ),
-                                SubmitForm('frm_Equipment/ItemBorrowingRequest');
                                 If(
                                     Or(
-                                        IsBlank('Job Level/Rank_DataCard1_2'.Error),
-                                        IsBlank('Office Location_DataCard1_2'.Error),
-                                        IsBlank('Date and Time From_DataCard1'.Error),
-                                        IsBlank('Date and Time To_DataCard1'.Error)
+                                        IsBlank(fldVal_EquipmentItem.Text),
+                                        IsBlank(fldVal_Quantity.Text),
+                                        IsBlank(fldVal_Reason.HintText)
                                     ),
                                     ForAll(
                                         colItems,
@@ -555,22 +555,24 @@
                                         rcp_sprint1_EquipmentBorrowingRequestList,
                                         {Title: "EIBR_" & varRequestID}
                                     );
-                                     Clear(colItems);
+                                    Clear(colItems);
                                     ,
                                     Notify(
-                                        "Please fill out the missing fields",
+                                        "Please add equipments",
                                         NotificationType.Error,
                                         10000
                                     );
                                 );
                                 ,
                                 Notify(
-                                    "Please add equipments",
+                                    "Please fill out the missing fields",
                                     NotificationType.Error,
                                     10000
                                 );
-                                
                             );
+                            
+                                
+                                
                         PaddingBottom: =12
                         PaddingLeft: =12
                         PaddingRight: =12

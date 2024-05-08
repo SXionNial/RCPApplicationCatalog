@@ -27956,7 +27956,8 @@
           "InvariantPropertyName": "SnapToColumns",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
-        }
+        },
+        "Visible"
       ],
       "DynamicProperties": [
         {
@@ -28023,6 +28024,11 @@
         {
           "Category": "Data",
           "PropertyName": "DefaultMode",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Design",
+          "PropertyName": "Visible",
           "RuleProviderType": "Unknown"
         },
         {

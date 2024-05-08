@@ -506,7 +506,11 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                         HoverColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
                         HoverFill: =RGBA(0, 0, 0, 0)
                         Icon: =Icon.Check
-                        OnSelect: =SubmitForm(frm_AgreementRegardingIncidents);
+                        OnSelect: |-
+                            =If(Or(IsBlank(secIncValue_a.Value),IsBlank(secIncValue_b.Value),IsBlank(secIncValue_c.Value),IsBlank(secIncValue_d.Value),IsBlank(qualIncValue_a.Value),IsBlank(qualIncValue_b.Value),IsBlank(qualIncValue_c.Value),IsBlank(qualIncValue_d.Value),IsBlank(qualIncValue_e.Value),IsBlank(emergencyCaseValue_a.Value),IsBlank(emergencyCaseValue_b.Value),IsBlank(emergencyCaseValue_c.Value),IsBlank(fldVal_ImmMgr_ARI.SelectedItems),IsBlank(DataCardValue5.Text),IsBlank(DataCardValue2.Text)),
+                            Notify("Please Fill Out the Missing Fields", NotificationType.Error, 10000),
+                            SubmitForm(frm_AgreementRegardingIncidents);
+                            )
                         PaddingBottom: =12
                         PaddingLeft: =12
                         PaddingRight: =12
@@ -764,6 +768,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                             DisplayMode: =DisplayMode.Edit
                             Fill: =RGBA(0, 0, 0, 0)
                             Height: =50
+                            Required: =false
                             Width: =Parent.Width
                             X: =0
                             Y: =7
@@ -791,6 +796,30 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 X: =DataCardKey4.X
                                 Y: =15
                                 ZIndex: =1
+
+                            StarVisible9_2 As label:
+                                Align: =Align.Center
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =RGBA(255, 0, 0, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FocusedBorderThickness: =4
+                                Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
+                                Height: =Label2_2.Height
+                                PaddingLeft: =0
+                                Size: =13
+                                Text: ="*"
+                                Visible: |-
+                                    =//And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    true
+                                Width: =30
+                                Wrap: =false
+                                X: =Label2_2.X - 20
+                                Y: =Label2_2.Y
+                                ZIndex: =2
 
                         "'1_Security Incident Cases_a_DataCard2' As typedDataCard.toggleEditCard":
                             BorderColor: =RGBA(166, 166, 166, 1)
@@ -1383,6 +1412,30 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 X: =DataCardKey4.X
                                 Y: =15
                                 ZIndex: =1
+
+                            StarVisible9_3 As label:
+                                Align: =Align.Center
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =RGBA(255, 0, 0, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FocusedBorderThickness: =4
+                                Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
+                                Height: =Label2_2.Height
+                                PaddingLeft: =0
+                                Size: =13
+                                Text: ="*"
+                                Visible: |-
+                                    =//And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    true
+                                Width: =30
+                                Wrap: =false
+                                X: =Label2_2.X - 20
+                                Y: =Label2_2.Y
+                                ZIndex: =2
 
                         "'2_Quality Incident Cases_a_DataCard1' As typedDataCard.toggleEditCard":
                             BorderColor: =RGBA(166, 166, 166, 1)
@@ -2103,6 +2156,30 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 Y: =15
                                 ZIndex: =1
 
+                            StarVisible9_4 As label:
+                                Align: =Align.Center
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =RGBA(255, 0, 0, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FocusedBorderThickness: =4
+                                Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
+                                Height: =Label2_2.Height
+                                PaddingLeft: =0
+                                Size: =13
+                                Text: ="*"
+                                Visible: |-
+                                    =//And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    true
+                                Width: =30
+                                Wrap: =false
+                                X: =Label2_2.X - 20
+                                Y: =Label2_2.Y
+                                ZIndex: =2
+
                         "'3_Emergency Cases_a_DataCard1' As typedDataCard.toggleEditCard":
                             BorderColor: =RGBA(166, 166, 166, 1)
                             BorderStyle: =BorderStyle.Solid
@@ -2725,6 +2802,30 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 X: =Label1.X
                                 Y: =Label1.Y
                                 ZIndex: =1
+
+                            StarVisible9_5 As label:
+                                Align: =Align.Center
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =RGBA(255, 0, 0, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FocusedBorderThickness: =4
+                                Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
+                                Height: =Label2_2.Height
+                                PaddingLeft: =0
+                                Size: =13
+                                Text: ="*"
+                                Visible: |-
+                                    =//And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    true
+                                Width: =30
+                                Wrap: =false
+                                X: =Label2_2.X - 20
+                                Y: =Label1_4.Y + 7
+                                ZIndex: =2
 
                         "'Immediate Manager_1_DataCard2' As typedDataCard.comboBoxEditCard":
                             BorderColor: =RGBA(166, 166, 166, 1)
@@ -4226,7 +4327,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                             BorderStyle: =BorderStyle.Solid
                             DataField: ="Date"
                             Default: =ThisItem.Date
-                            DisplayMode: =Parent.DisplayMode
+                            DisplayMode: =Parent.DisplayMode.View
                             DisplayName: =DataSourceInfo([@'rcp_sprnt1_Agreement Regarding Incidents List '],DataSourceInfo.DisplayName,Date)
                             Fill: =RGBA(0, 0, 0, 0)
                             Height: |-
@@ -4266,7 +4367,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                                 CalendarHeaderFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
                                 Color: =RGBA(51, 51, 51, 1)
-                                DefaultDate: =Parent.Default
+                                DefaultDate: |-
+                                    =//Parent.Default
+                                    Today()
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(166, 166, 166, 1)
                                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -4359,7 +4462,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                     }
                                     ,ThisItem.'Employee Name'
                                 )
-                            DisplayMode: =Parent.DisplayMode
+                            DisplayMode: =Parent.DisplayMode.View
                             DisplayName: =DataSourceInfo([@'rcp_sprnt1_Agreement Regarding Incidents List '],DataSourceInfo.DisplayName,'Employee Name')
                             Fill: =RGBA(0, 0, 0, 0)
                             Height: |-
@@ -4508,7 +4611,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 =
                                 //ThisItem.'Employee ID Number'
                                 If(frm_AgreementRegardingIncidents.Mode = FormMode.New, EmployeeID, ThisItem.'Employee ID Number')
-                            DisplayMode: =Parent.DisplayMode
+                            DisplayMode: =Parent.DisplayMode.View
                             DisplayName: =DataSourceInfo([@'rcp_sprnt1_Agreement Regarding Incidents List '],DataSourceInfo.DisplayName,'Employee ID Number')
                             Fill: =RGBA(0, 0, 0, 0)
                             Height: |-
@@ -4627,7 +4730,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                             Default: |-
                                 =//ThisItem.'Department Name'
                                 If(frm_AgreementRegardingIncidents.Mode = FormMode.New, Office365Users.MyProfileV2().department, ThisItem.'Department Name')
-                            DisplayMode: =Parent.DisplayMode
+                            DisplayMode: =Parent.DisplayMode.View
                             DisplayName: =DataSourceInfo([@'rcp_sprnt1_Agreement Regarding Incidents List '],DataSourceInfo.DisplayName,'Department Name')
                             Fill: =RGBA(0, 0, 0, 0)
                             Height: =Date_DataCard1.Height

@@ -544,7 +544,7 @@
                                     IsBlank('Office Location_DataCard1_2'.Error),
                                     IsBlank('Date and Time From_DataCard1'.Error),
                                     IsBlank('Date and Time To_DataCard1'.Error),
-                                    IsBlank('EIBR_itemGallery_Card'.Error)
+                                    IsBlank(EIBR_itemGallery_Card.Error)
                                 ),
                                 If(
                                     Or(
@@ -1133,6 +1133,10 @@
                             DisplayMode: =DisplayMode.Edit
                             Fill: =RGBA(0, 0, 0, 0)
                             Height: =Parent.Height * .03
+                            Visible: |-
+                                =//true
+                                
+                                false
                             Width: =Parent.Width
                             X: =0
                             Y: =130
@@ -1322,7 +1326,7 @@
                                 Font: =Font.'Segoe UI'
                                 HoverDateFill: =RGBA(200, 200, 200, 1)
                                 IconBackground: =RGBA(73, 130, 5, 1)
-                                InputTextPlaceholder: =If(IsBlank(Self.SelectedDate), Text(Today(), Self.Format, Self.Language))
+                                InputTextPlaceholder: =If(IsBlank(Self.SelectedDate), Text("", Self.Format, Self.Language))
                                 IsEditable: =true
                                 PaddingBottom: =0
                                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
@@ -1532,7 +1536,7 @@
                                 Font: =Font.'Segoe UI'
                                 HoverDateFill: =RGBA(200, 200, 200, 1)
                                 IconBackground: =RGBA(73, 130, 5, 1)
-                                InputTextPlaceholder: =If(IsBlank(Self.SelectedDate), Text(Today(), Self.Format, Self.Language))
+                                InputTextPlaceholder: =If(IsBlank(Self.SelectedDate), Text("", Self.Format, Self.Language))
                                 IsEditable: =true
                                 PaddingBottom: =0
                                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)

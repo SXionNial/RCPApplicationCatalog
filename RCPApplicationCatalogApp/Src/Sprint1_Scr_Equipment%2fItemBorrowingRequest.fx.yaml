@@ -526,7 +526,11 @@
                                     !IsBlank(fldVal_EquipmentItem.Text),
                                     !IsBlank(fldVal_Quantity.Text),
                                     !IsBlank(fldVal_Reason.Text)
-                                ),
+                                );
+                                Notify(
+                                    fldVal_EquipmentItem.Text
+                                );
+                                ,
                                 If(
                                     SubmitForm('frm_Equipment/ItemBorrowingRequest');
                                     And(

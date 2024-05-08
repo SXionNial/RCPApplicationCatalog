@@ -2496,8 +2496,12 @@ Sprint1_Scr_AssetGatePass As screen:
                                 Size: =13
                                 Text: =Parent.Error
                                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                                Width: =Parent.Width - 60
-                                X: =30
+                                Width: |-
+                                    =//Parent.Width - 60
+                                    DataCardValue14_1.Width
+                                X: |-
+                                    =//30
+                                    DataCardValue14_1.X
                                 Y: =DataCardValue14_1.Y + DataCardValue14_1.Height
                                 ZIndex: =3
 
@@ -2617,8 +2621,12 @@ Sprint1_Scr_AssetGatePass As screen:
                                 Size: =13
                                 Text: =Parent.Error
                                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                                Width: =Parent.Width - 60
-                                X: =30
+                                Width: |-
+                                    =//Parent.Width - 60
+                                    DataCardValue15_1.Width
+                                X: |-
+                                    =//30
+                                    DataCardValue15_1.X
                                 Y: =DataCardValue15_1.Y + DataCardValue15_1.Height
                                 ZIndex: =3
 
@@ -2738,8 +2746,12 @@ Sprint1_Scr_AssetGatePass As screen:
                                 Size: =13
                                 Text: =Parent.Error
                                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                                Width: =Parent.Width - 60
-                                X: =30
+                                Width: |-
+                                    =//Parent.Width - 60
+                                    DataCardValue16_1.Width
+                                X: |-
+                                    =//30
+                                    DataCardValue16_1.X
                                 Y: =DataCardValue16_1.Y + DataCardValue16_1.Height
                                 ZIndex: =3
 
@@ -2849,8 +2861,12 @@ Sprint1_Scr_AssetGatePass As screen:
                                 Size: =13
                                 Text: =Parent.Error
                                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                                Width: =Parent.Width - 60
-                                X: =30
+                                Width: |-
+                                    =//Parent.Width - 60
+                                    DataCardValue17_1.Width
+                                X: |-
+                                    =//30
+                                    DataCardValue17_1.X
                                 Y: =DataCardValue17_1.Y + DataCardValue17_1.Height
                                 ZIndex: =3
 
@@ -2960,8 +2976,12 @@ Sprint1_Scr_AssetGatePass As screen:
                                 Size: =13
                                 Text: =Parent.Error
                                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                                Width: =Parent.Width - 60
-                                X: =30
+                                Width: |-
+                                    =//Parent.Width - 60
+                                    DataCardValue18_1.Width
+                                X: |-
+                                    =//30
+                                    DataCardValue18_1.X
                                 Y: =DataCardValue18_1.Y + DataCardValue18_1.Height
                                 ZIndex: =3
 
@@ -3077,8 +3097,12 @@ Sprint1_Scr_AssetGatePass As screen:
                                 Size: =13
                                 Text: =Parent.Error
                                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                                Width: =Parent.Width - 60
-                                X: =30
+                                Width: |-
+                                    =//Parent.Width - 60
+                                    DataCardValue19_1.Width
+                                X: |-
+                                    =//30
+                                    DataCardValue19_1.X
                                 Y: =DataCardValue19_1.Y + DataCardValue19_1.Height
                                 ZIndex: =3
 
@@ -3194,8 +3218,12 @@ Sprint1_Scr_AssetGatePass As screen:
                                 Size: =13
                                 Text: =Parent.Error
                                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                                Width: =Parent.Width - 60
-                                X: =30
+                                Width: |-
+                                    =//Parent.Width - 60
+                                    DataCardValue20_1.Width
+                                X: |-
+                                    =//30
+                                    DataCardValue20_1.X
                                 Y: =DataCardValue20_1.Y + DataCardValue20_1.Height
                                 ZIndex: =3
 

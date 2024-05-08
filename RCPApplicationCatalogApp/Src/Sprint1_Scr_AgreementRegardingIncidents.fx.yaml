@@ -508,7 +508,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                         Icon: =Icon.Check
                         OnSelect: |-
                             =If(Or(IsBlank(secIncValue_a.Value),IsBlank(secIncValue_b.Value),IsBlank(secIncValue_c.Value),IsBlank(secIncValue_d.Value),IsBlank(qualIncValue_a.Value),IsBlank(qualIncValue_b.Value),IsBlank(qualIncValue_c.Value),IsBlank(qualIncValue_d.Value),IsBlank(qualIncValue_e.Value),IsBlank(emergencyCaseValue_a.Value),IsBlank(emergencyCaseValue_b.Value),IsBlank(emergencyCaseValue_c.Value),IsBlank(fldVal_ImmMgr_ARI.SelectedItems),IsBlank(DataCardValue5.Text),IsBlank(DataCardValue2.Text)),
-                            Notify("Please Fill Out the Missing Fields", NotificationType.Error, 10000),
+                            Notify("Please Fill Out the Missing Fields", NotificationType.Error, 10000);SubmitForm(frm_AgreementRegardingIncidents),
                             SubmitForm(frm_AgreementRegardingIncidents);
                             )
                         PaddingBottom: =12
@@ -778,7 +778,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
-                                Color: =RGBA(51, 51, 51, 1)
+                                Color: |-
+                                    =//RGBA(51, 51, 51, 1)
+                                    Color.Red
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
@@ -905,7 +907,8 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 Text: =Parent.Error
                                 Visible: |-
                                     =//Parent.DisplayMode=DisplayMode.Edit
-                                    If(secIncValue_a.Value=false,true,false)
+                                    //If(secIncValue_a.Value=false,true,false)
+                                    false
                                 Width: =Parent.Width - 60
                                 X: =30
                                 Y: =secIncValue_a.Y + secIncValue_a.Height
@@ -926,7 +929,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingLeft: =0
                                 Size: =13
                                 Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Visible: |-
+                                    =//And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    false
                                 Width: =30
                                 Wrap: =false
                                 X: =DataCardKey9.X - 35
@@ -1048,7 +1053,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingTop: =0
                                 Size: =13
                                 Text: =Parent.Error
-                                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                Visible: |-
+                                    =//Parent.DisplayMode=DisplayMode.Edit
+                                    false
                                 Width: =Parent.Width - 60
                                 X: =30
                                 Y: =secIncValue_b.Y + secIncValue_b.Height
@@ -1069,7 +1076,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingLeft: =0
                                 Size: =13
                                 Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Visible: |-
+                                    =//And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    false
                                 Width: =30
                                 Wrap: =false
                                 X: =StarVisible9.X
@@ -1185,7 +1194,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingTop: =0
                                 Size: =13
                                 Text: =Parent.Error
-                                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                Visible: |-
+                                    =//Parent.DisplayMode=DisplayMode.Edit
+                                    false
                                 Width: =Parent.Width - 60
                                 X: =30
                                 Y: =secIncValue_c.Y + secIncValue_c.Height
@@ -1206,7 +1217,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingLeft: =0
                                 Size: =13
                                 Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Visible: |-
+                                    =//And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    false
                                 Width: =30
                                 Wrap: =false
                                 X: =StarVisible9.X
@@ -1322,7 +1335,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingTop: =0
                                 Size: =13
                                 Text: =Parent.Error
-                                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                Visible: |-
+                                    =//Parent.DisplayMode=DisplayMode.Edit
+                                    false
                                 Width: =Parent.Width - 60
                                 X: =30
                                 Y: =secIncValue_d.Y + secIncValue_d.Height
@@ -1343,7 +1358,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingLeft: =0
                                 Size: =13
                                 Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Visible: |-
+                                    =//And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    false
                                 Width: =30
                                 Wrap: =false
                                 X: =StarVisible9.X
@@ -1394,7 +1411,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
-                                Color: =RGBA(51, 51, 51, 1)
+                                Color: |-
+                                    =//RGBA(51, 51, 51, 1)
+                                    Color.Red
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
@@ -1517,7 +1536,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingTop: =0
                                 Size: =13
                                 Text: =Parent.Error
-                                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                Visible: |-
+                                    =//Parent.DisplayMode=DisplayMode.Edit
+                                    false
                                 Width: =Parent.Width - 60
                                 X: =30
                                 Y: =qualIncValue_a.Y + qualIncValue_a.Height
@@ -1538,7 +1559,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingLeft: =0
                                 Size: =13
                                 Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Visible: |-
+                                    =//And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    false
                                 Width: =30
                                 Wrap: =false
                                 X: =StarVisible9.X
@@ -1654,7 +1677,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingTop: =0
                                 Size: =13
                                 Text: =Parent.Error
-                                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                Visible: |-
+                                    =//Parent.DisplayMode=DisplayMode.Edit
+                                    false
                                 Width: =Parent.Width - 60
                                 X: =30
                                 Y: =qualIncValue_b.Y + qualIncValue_b.Height
@@ -1675,7 +1700,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingLeft: =0
                                 Size: =13
                                 Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Visible: |-
+                                    =//And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    false
                                 Width: =30
                                 Wrap: =false
                                 X: =StarVisible9.X
@@ -1791,7 +1818,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingTop: =0
                                 Size: =13
                                 Text: =Parent.Error
-                                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                Visible: |-
+                                    =//Parent.DisplayMode=DisplayMode.Edit
+                                    false
                                 Width: =Parent.Width - 60
                                 X: =30
                                 Y: =qualIncValue_c.Y + qualIncValue_c.Height
@@ -1812,7 +1841,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingLeft: =0
                                 Size: =13
                                 Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Visible: |-
+                                    =//And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    false
                                 Width: =30
                                 Wrap: =false
                                 X: =StarVisible9.X
@@ -1928,7 +1959,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingTop: =0
                                 Size: =13
                                 Text: =Parent.Error
-                                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                Visible: |-
+                                    =//Parent.DisplayMode=DisplayMode.Edit
+                                    false
                                 Width: =Parent.Width - 60
                                 X: =30
                                 Y: =qualIncValue_d.Y + qualIncValue_d.Height
@@ -1949,7 +1982,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingLeft: =0
                                 Size: =13
                                 Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Visible: |-
+                                    =//And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    false
                                 Width: =30
                                 Wrap: =false
                                 X: =StarVisible9.X
@@ -2065,7 +2100,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingTop: =0
                                 Size: =13
                                 Text: =Parent.Error
-                                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                Visible: |-
+                                    =//Parent.DisplayMode=DisplayMode.Edit
+                                    false
                                 Width: =Parent.Width - 60
                                 X: =30
                                 Y: =qualIncValue_e.Y + qualIncValue_e.Height
@@ -2086,7 +2123,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingLeft: =0
                                 Size: =13
                                 Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Visible: |-
+                                    =//And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    false
                                 Width: =30
                                 Wrap: =false
                                 X: =StarVisible9.X
@@ -2137,7 +2176,20 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
-                                Color: =RGBA(51, 51, 51, 1)
+                                Color: |-
+                                    =//RGBA(51, 51, 51, 1)
+                                    Color.Red
+                                    /*
+                                    If(
+                                    
+                                            !IsBlank(emergencyCaseValue_a.Text)
+                                            //IsBlank(emergencyCaseValue_b.Value),
+                                            //IsBlank(emergencyCaseValue_c.Value)
+                                    ,
+                                        RGBA(51,51,51,1),
+                                        Color.Red
+                                    )
+                                    */
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
@@ -2260,7 +2312,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingTop: =0
                                 Size: =13
                                 Text: =Parent.Error
-                                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                Visible: |-
+                                    =//Parent.DisplayMode=DisplayMode.Edit
+                                    false
                                 Width: =Parent.Width - 60
                                 X: =30
                                 Y: =emergencyCaseValue_a.Y + emergencyCaseValue_a.Height
@@ -2281,7 +2335,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingLeft: =0
                                 Size: =13
                                 Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Visible: |-
+                                    =//And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    false
                                 Width: =30
                                 Wrap: =false
                                 X: =StarVisible9.X
@@ -2397,7 +2453,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingTop: =0
                                 Size: =13
                                 Text: =Parent.Error
-                                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                Visible: |-
+                                    =//Parent.DisplayMode=DisplayMode.Edit
+                                    false
                                 Width: =Parent.Width - 60
                                 X: =30
                                 Y: =emergencyCaseValue_b.Y + emergencyCaseValue_b.Height
@@ -2418,7 +2476,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingLeft: =0
                                 Size: =13
                                 Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Visible: |-
+                                    =//And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    false
                                 Width: =30
                                 Wrap: =false
                                 X: =StarVisible9.X
@@ -2534,7 +2594,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingTop: =0
                                 Size: =13
                                 Text: =Parent.Error
-                                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                Visible: |-
+                                    =//Parent.DisplayMode=DisplayMode.Edit
+                                    false
                                 Width: =Parent.Width - 60
                                 X: =30
                                 Y: =emergencyCaseValue_c.Y + emergencyCaseValue_c.Height
@@ -2555,7 +2617,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingLeft: =0
                                 Size: =13
                                 Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Visible: |-
+                                    =//And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    false
                                 Width: =30
                                 Wrap: =false
                                 X: =StarVisible9.X
@@ -2563,7 +2627,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 ZIndex: =4
 
                             emergencyCaseValue_c As checkbox:
-                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderColor: |-
+                                    =RGBA(0, 0, 0, 0)
+                                    //If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
                                 CheckboxBorderColor: =RGBA(102, 102, 102, 1)
@@ -2836,7 +2902,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                             DisplayName: =DataSourceInfo([@'rcp_sprnt1_Agreement Regarding Incidents List '],DataSourceInfo.DisplayName,'Immediate Manager_1')
                             Fill: =RGBA(0, 0, 0, 0)
                             Height: =Parent.Height * 0.15
-                            Required: =false
+                            Required: =true
                             Update: =fldVal_ImmMgr_ARI.Selected
                             Width: =Parent.Width/4
                             X: =1
@@ -2924,7 +2990,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingTop: =0
                                 Size: =13
                                 Text: =Parent.Error
-                                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                Visible: |-
+                                    =//Parent.DisplayMode=DisplayMode.Edit
+                                    false
                                 Width: =Parent.Width - 60
                                 X: =30
                                 Y: =fldVal_ImmMgr_ARI.Y + fldVal_ImmMgr_ARI.Height
@@ -2945,7 +3013,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingLeft: =0
                                 Size: =13
                                 Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Visible: |-
+                                    =//And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    false
                                 Width: =30
                                 Wrap: =false
                                 Y: =DataCardKey25.Y
@@ -2960,7 +3030,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                             DisplayName: =DataSourceInfo([@'rcp_sprnt1_Agreement Regarding Incidents List '],DataSourceInfo.DisplayName,'Immediate Manager_1_PhoneNumber')
                             Fill: =RGBA(0, 0, 0, 0)
                             Height: =Parent.Height * 0.15
-                            Required: =false
+                            Required: =true
                             Update: =Value(DataCardValue5.Text)
                             Width: =Parent.Width/4
                             X: =2
@@ -3043,7 +3113,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingTop: =0
                                 Size: =13
                                 Text: =Parent.Error
-                                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                Visible: |-
+                                    =//Parent.DisplayMode=DisplayMode.Edit
+                                    false
                                 Width: =Parent.Width - 60
                                 X: =30
                                 Y: =DataCardValue5.Y + DataCardValue5.Height
@@ -3064,7 +3136,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingLeft: =0
                                 Size: =13
                                 Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Visible: |-
+                                    =//And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    false
                                 Width: =30
                                 Wrap: =false
                                 Y: =DataCardKey21.Y
@@ -3080,7 +3154,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                             Fill: =RGBA(0, 0, 0, 0)
                             Height: =Parent.Height * 0.15
                             MaxLength: =DataSourceInfo([@'rcp_sprnt1_Agreement Regarding Incidents List '], DataSourceInfo.MaxLength, 'Immediate Manager_1_MailAddress')
-                            Required: =false
+                            Required: =true
                             Update: =DataCardValue2.Text
                             Width: =Parent.Width/4
                             X: =3
@@ -3163,7 +3237,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingTop: =0
                                 Size: =13
                                 Text: =Parent.Error
-                                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                Visible: |-
+                                    =//Parent.DisplayMode=DisplayMode.Edit
+                                    false
                                 Width: =Parent.Width - 60
                                 X: =30
                                 Y: =DataCardValue2.Y + DataCardValue2.Height
@@ -3184,7 +3260,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingLeft: =0
                                 Size: =13
                                 Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                Visible: |-
+                                    =//And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    false
                                 Width: =30
                                 Wrap: =false
                                 Y: =DataCardKey2.Y

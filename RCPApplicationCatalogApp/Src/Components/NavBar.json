@@ -52,7 +52,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "NavBar",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 8,
+        "PublishOrderIndex": 747,
         "Rules": [
           {
             "Category": "Design",
@@ -233,7 +233,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "NavBar",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 9,
+        "PublishOrderIndex": 748,
         "Rules": [
           {
             "Category": "Design",
@@ -488,7 +488,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "NavBar",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 10,
+        "PublishOrderIndex": 749,
         "Rules": [
           {
             "Category": "Data",
@@ -845,7 +845,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "NavBar",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 11,
+        "PublishOrderIndex": 750,
         "Rules": [
           {
             "Category": "Data",
@@ -1106,7 +1106,7 @@
       "ShowSubmit",
       "ShowBackButton"
     ],
-    "LastModifiedTimestamp": "638507438592375540",
+    "LastModifiedTimestamp": "638507446972185881",
     "Name": "NavBar",
     "Rules": [
       {
@@ -1211,7 +1211,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638507438592375540",
+  "LastModifiedTimestamp": "638507446972185881",
   "Name": "76218de4038840cbb822fa97b20b6dbc",
   "OverridableProperties": {},
   "TemplateOriginalName": "ce320d50efea4e9faa5a6caa7357d516",

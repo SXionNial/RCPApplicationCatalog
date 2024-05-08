@@ -1,7 +1,8 @@
 "'Sprint1_Scr_Equipment/ItemBorrowingRequest' As screen":
     Fill: =Color.White
     LoadingSpinnerColor: =RGBA(73, 130, 5, 1)
-    OnVisible: =
+    OnVisible: |-
+        =UpdateContext({CurrentItem:{}});
 
     ScreenContainer1_3 As groupContainer.verticalAutoLayoutContainer:
         DropShadow: =DropShadow.Light
@@ -686,6 +687,13 @@
                         OnSuccess: |-
                             =UpdateContext({ CurrentItem: Self.LastSubmit, editMode: false, newMode: false })
                         SnapToColumns: =false
+                        Visible: |-
+                            =//true
+                            Or(
+                                Self.DisplayMode = DisplayMode.Edit,
+                                // or when something is selected
+                                !IsBlank(CurrentItem.ID)    
+                            )
                         ZIndex: =24
 
                         sectionHeader_ApplicantInfoSection_3 As typedDataCard.blankCard:
@@ -4251,6 +4259,25 @@
                                 Wrap: =false
                                 Y: =DataCardKey25_1.Y
                                 ZIndex: =4
+
+                    EIBR_noRecordsLabel As label:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(51, 51, 51, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Lighter
+                        Height: =Parent.Height
+                        Size: =18
+                        Text: =If (CountRows(recordsGallery_BereavementCashAssistanceList.AllItems) > 0, msg_selectARecord, msg_noRecords)
+                        Visible: =And(frm_BereavementCashAssistanceList.DisplayMode <> DisplayMode.Edit,IsBlank(CurrentItem.ID))
+                        Width: =Parent.Width
+                        Y: =80
+                        ZIndex: =25
 
             DeleteConfirmDialogContainer1_3 As groupContainer.verticalAutoLayoutContainer:
                 DropShadow: =DropShadow.Light

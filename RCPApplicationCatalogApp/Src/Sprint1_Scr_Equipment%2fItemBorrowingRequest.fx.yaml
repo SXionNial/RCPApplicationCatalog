@@ -520,13 +520,14 @@
                         HoverFill: =RGBA(0, 0, 0, 0)
                         Icon: =Icon.Check
                         OnSelect: |
-                            =SubmitForm('frm_Equipment/ItemBorrowingRequest');
+                            =
                             If(
                                 Or(
-                                    IsBlank(fldVal_EquipmentItem.Text),
-                                    IsBlank(fldVal_Quantity.Text),
-                                    IsBlank(fldVal_Reason.HintText)
+                                    !IsBlank(fldVal_EquipmentItem.Text),
+                                    !IsBlank(fldVal_Quantity.Text),
+                                    !IsBlank(fldVal_Reason.HintText)
                                 ),
+                                SubmitForm('frm_Equipment/ItemBorrowingRequest');
                                 If(
                                     Or(
                                         IsBlank('Job Level/Rank_DataCard1_2'.Error),
@@ -563,10 +564,10 @@
                                 );
                                 ,
                                 Notify(
-                                        "Please add equipments",
-                                        NotificationType.Error,
-                                        10000
-                                    );
+                                    "Please add equipments",
+                                    NotificationType.Error,
+                                    10000
+                                );
                                 
                             );
                         PaddingBottom: =12
@@ -768,7 +769,7 @@
                             Visible: |-
                                 =//true
                                 If(newMode, true, false)
-                            Width: =Parent.Width / 6
+                            Width: =Parent.Width / 5
                             X: =0
                             Y: =100
                             ZIndex: =1
@@ -804,7 +805,7 @@
                                 RadiusBottomRight: =0
                                 RadiusTopLeft: =0
                                 RadiusTopRight: =0
-                                Text: ="New Asset"
+                                Text: ="Add Equipment"
                                 Width: =Parent.Width - 40
                                 X: =30
                                 Y: =(Parent.Height - btn_NewAsset_AGP_1.Height) / 2

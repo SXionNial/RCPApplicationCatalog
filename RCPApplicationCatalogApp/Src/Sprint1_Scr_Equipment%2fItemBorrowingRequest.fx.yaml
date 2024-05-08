@@ -523,10 +523,10 @@
                         OnSelect: |
                             =EIBR_itemGallery_Card.Error =
                             If(
-                                !IsBlank(fldVal_EquipmentItem.Text),
+                                IsBlank(fldVal_EquipmentItem.Text),
                                 "Equipment item is required.",
                                 If(
-                                    !IsBlank(fldVal_Quantity.Text),
+                                    IsBlank(fldVal_Quantity.Text),
                                     "Quantity is required.",
                                     If(
                                         !IsBlank(fldVal_Reason.Text),
@@ -543,7 +543,8 @@
                                     IsBlank('Job Level/Rank_DataCard1_2'.Error),
                                     IsBlank('Office Location_DataCard1_2'.Error),
                                     IsBlank('Date and Time From_DataCard1'.Error),
-                                    IsBlank('Date and Time To_DataCard1'.Error)
+                                    IsBlank('Date and Time To_DataCard1'.Error),
+                                    IsBlank('EIBR_itemGallery_Card'.Error)
                                 ),
                                 If(
                                     Or(
@@ -976,7 +977,10 @@
                                 fldVal_Reason As text:
                                     BorderColor: =RGBA(166, 166, 166, 1)
                                     Color: =RGBA(51, 51, 51, 1)
-                                    Default: =ThisItem.Reason
+                                    Default: |-
+                                        =//ThisItem.Reason
+                                        
+                                        ""
                                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                     DisabledColor: =RGBA(166, 166, 166, 1)
                                     DisabledFill: =RGBA(244, 244, 244, 1)
@@ -1014,7 +1018,10 @@
                                 fldVal_Quantity As text:
                                     BorderColor: =RGBA(166, 166, 166, 1)
                                     Color: =RGBA(51, 51, 51, 1)
-                                    Default: =ThisItem.Quantity
+                                    Default: |-
+                                        =//ThisItem.Quantity
+                                        
+                                        ""
                                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                     DisabledColor: =RGBA(166, 166, 166, 1)
                                     DisabledFill: =RGBA(244, 244, 244, 1)
@@ -1050,7 +1057,10 @@
                                 fldVal_EquipmentItem As text:
                                     BorderColor: =RGBA(166, 166, 166, 1)
                                     Color: =RGBA(51, 51, 51, 1)
-                                    Default: =ThisItem.'Equipment/Item'
+                                    Default: |-
+                                        =//ThisItem.'Equipment/Item'
+                                        
+                                        ""
                                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                     DisabledColor: =RGBA(166, 166, 166, 1)
                                     DisabledFill: =RGBA(244, 244, 244, 1)

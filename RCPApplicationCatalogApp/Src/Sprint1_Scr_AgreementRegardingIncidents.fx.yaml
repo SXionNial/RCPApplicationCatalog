@@ -1,8 +1,10 @@
 Sprint1_Scr_AgreementRegardingIncidents As screen:
+    LoadingSpinnerColor: =RGBA(73, 130, 5, 1)
     OnVisible: |-
         =UpdateContext({CurrentItem:{}});
 
     ScreenContainer1 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.Light
         Fill: =RGBA(250, 250, 250, 1)
         Height: =Parent.Height
         LayoutAlignItems: =LayoutAlignItems.Stretch
@@ -13,10 +15,15 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
         PaddingLeft: =16
         PaddingRight: =16
         PaddingTop: =16
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
         Width: =Parent.Width
         ZIndex: =1
 
         TableNameContainer1 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
             Fill: |-
                 =//RGBA(0, 0, 0, 0)
                 global_screenHeaderFillColor
@@ -29,6 +36,10 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
             PaddingRight: |
                 =//0
                 8
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
             ZIndex: =2
 
             BackButton_1 As BackButton:
@@ -39,12 +50,17 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
 
             TableNameLabel1 As label:
                 AlignInContainer: =AlignInContainer.Stretch
+                Color: =RGBA(255, 255, 255, 1)
                 Fill: |-
                     =//RGBA(73, 130, 5, 1)
                     global_screenHeaderFillColor
                 FillPortions: =1
                 FontWeight: =FontWeight.Semibold
                 Height: =68
+                PaddingBottom: =16
+                PaddingLeft: =16
+                PaddingRight: =16
+                PaddingTop: =16
                 Size: =16
                 Text: |-
                     =//DataSourceInfo([@'Agreement Regarding Incidents List'], DataSourceInfo.DisplayName)
@@ -83,7 +99,6 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                 ZIndex: =3
 
         BodyContainer1 As groupContainer.horizontalAutoLayoutContainer:
-            DropShadow: =DropShadow.None
             LayoutGap: =16
             LayoutMinHeight: =100
             LayoutMinWidth: =250
@@ -92,9 +107,14 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
             PaddingLeft: =2
             PaddingRight: =2
             PaddingTop: =2
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
             ZIndex: =4
 
             SidebarContainer1 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.Light
                 Fill: =RGBA(255, 255, 255, 1)
                 FillPortions: =If(And(Sprint1_Scr_AgreementRegardingIncidents.Size = ScreenSize.Small, Or(newMode, editMode, itemSelected)), 0, 3)
                 LayoutDirection: =LayoutDirection.Vertical
@@ -105,10 +125,15 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                 PaddingLeft: =16
                 PaddingRight: =16
                 PaddingTop: =10
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
                 Visible: =If(And(Sprint1_Scr_AgreementRegardingIncidents.Size = ScreenSize.Small, Or(newMode, editMode, itemSelected)), false, true)
                 ZIndex: =5
 
                 SearchContainer1 As groupContainer.horizontalAutoLayoutContainer:
+                    Fill: =RGBA(245, 245, 245, 1)
                     FillPortions: =0
                     Height: =44
                     LayoutMinHeight: =100
@@ -117,11 +142,15 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                     ZIndex: =1
 
                     srchInput_AgreementRegardingIncidents As text:
+                        BorderStyle: =BorderStyle.None
                         Default: =""
+                        Fill: =RGBA(0, 0, 0, 0)
                         FillPortions: =1
                         Height: =44
                         HintText: ="Search"
+                        HoverFill: =RGBA(0, 0, 0, 0)
                         LayoutMinWidth: =0
+                        PressedFill: =RGBA(0, 0, 0, 0)
                         ZIndex: =7
 
                     SearchIcon1 As icon:
@@ -136,11 +165,16 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                         ZIndex: =8
 
                 NewRecordButtonBarContainer1 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
                     FillPortions: =0
                     Height: =44
                     LayoutMinHeight: =100
                     LayoutMinWidth: =250
                     LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
                     ZIndex: =2
 
                     NewRecordAddIcon1 As icon:
@@ -173,10 +207,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                         BorderThickness: =2
                         Color: =RGBA(51, 51, 51, 1)
                         DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
                         FillPortions: =1
                         FocusedBorderThickness: =4
                         Font: =Font.'Segoe UI'
                         Height: =44
+                        Size: =13
                         Text: ="New"
                         ZIndex: =11
 
@@ -239,6 +275,8 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                     ZIndex: =3
 
                     Title1 As label:
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
                         Font: =Font.'Segoe UI'
                         FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
                         Height: =Self.Size * 1.8
@@ -258,6 +296,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
 
                     Subtitle1 As label:
                         Color: =RGBA(51, 51, 51, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
                         Font: =Font.'Segoe UI'
                         FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
                         Height: =Self.Size * 1.8
@@ -266,6 +305,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                         PaddingLeft: =12
                         PaddingRight: =0
                         PaddingTop: =0
+                        Size: =12
                         Text: |-
                             =//ThisItem.'Employee Name'.Claims
                             "Status: " & ThisItem.Status.Value
@@ -277,6 +317,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
 
                     Body1 As label:
                         Color: =RGBA(51, 51, 51, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
                         Font: =Font.'Segoe UI'
                         FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
                         Height: =Self.Size * 1.8
@@ -285,6 +326,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                         PaddingLeft: =12
                         PaddingRight: =0
                         PaddingTop: =0
+                        Size: =12
                         Text: |-
                             ="Created: " & ThisItem.Created
                         VerticalAlign: =VerticalAlign.Top
@@ -322,6 +364,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
 
                     Separator1 As rectangle:
                         BorderColor: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(255, 255, 255, 1)
                         Height: =8
                         OnSelect: =Select(Parent)
                         Width: =Parent.TemplateWidth
@@ -352,7 +395,6 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                     ZIndex: =4
 
             RightContainer1 As groupContainer.verticalAutoLayoutContainer:
-                DropShadow: =DropShadow.None
                 FillPortions: =7
                 LayoutAlignItems: =LayoutAlignItems.Stretch
                 LayoutDirection: =LayoutDirection.Vertical
@@ -364,11 +406,16 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                 PaddingLeft: =2
                 PaddingRight: =2
                 PaddingTop: =2
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
                 Visible: =If(Or(deleteMode, And(Sprint1_Scr_AgreementRegardingIncidents.Size = ScreenSize.Small, !newMode, !editMode, !itemSelected)), false, true)
                 Width: =0
                 ZIndex: =14
 
                 SelectedRecordHeaderContainer1 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
                     Fill: |-
                         =//RGBA(255, 255, 255, 1)
                         global_formSectionHeaderFillColor
@@ -378,6 +425,10 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                     LayoutMinHeight: =100
                     LayoutMinWidth: =250
                     LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
                     ZIndex: =15
 
                     BackIconButton1 As icon.Add:
@@ -414,12 +465,14 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                         Color: |
                             =RGBA(51, 51, 51, 1)
                         DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
                         Fill: |-
                             =//RGBA(0, 0, 0, 0)
                             global_formSectionHeaderFillColor
                         FillPortions: =1
                         FocusedBorderThickness: =4
                         Font: =Font.'Segoe UI'
+                        Size: =13
                         Text: |-
                             =//recGallery_AgreementRegardingIncidents.Selected.Title
                             If(
@@ -549,11 +602,16 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                         ZIndex: =21
 
                 MainContainer1 As groupContainer.verticalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
                     Fill: =RGBA(255, 255, 255, 1)
                     LayoutDirection: =LayoutDirection.Vertical
                     LayoutMinHeight: =100
                     LayoutMinWidth: =250
                     LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
                     ZIndex: =22
 
                     frm_AgreementRegardingIncidents As form:
@@ -597,10 +655,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Bold
                                 Height: =Parent.Height
+                                Size: =13
                                 Text: ="APPLICANT INFORMATION"
                                 Width: =Parent.Width
                                 ZIndex: =1
@@ -624,12 +684,14 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 Height: =Parent.Height
                                 PaddingLeft: |-
                                     =//DataCardKey4.X - 4
                                     0
+                                Size: =13
                                 Text: |-
                                     ="I understand the urgency, severity, and priority of security incidents, quality incidents, and emergencies and commit to adhere to the reporting line and make a verbal report either via phone or face-to-face within 30 minutes after any of these situations occur regardless.
                                     
@@ -662,12 +724,14 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 Height: =Parent.Height * .40
                                 PaddingLeft: |-
                                     =//DataCardKey4.X
                                     0
+                                Size: =13
                                 Text: ="Please read the following cases and check if you understand said cases."
                                 Width: =Parent.Width
                                 X: =DataCardKey4.X
@@ -680,6 +744,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Bold
@@ -687,6 +752,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingLeft: |-
                                     =//5
                                     0
+                                Size: =13
                                 Text: ="CASES"
                                 Width: =Parent.Width
                                 X: =DataCardKey4.X
@@ -709,6 +775,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Bold
@@ -718,6 +785,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                     =//5
                                     //DataCardKey4.X - 4
                                     0
+                                Size: =13
                                 Text: ="1) Security Incident Cases"
                                 Width: =Parent.Width
                                 X: =DataCardKey4.X
@@ -749,11 +817,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 Height: =3
                                 Overflow: =Overflow.Scroll
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="When you caused a leakage of a client's or an employee's personal information, or you noticed such a leakage." 
                                 Width: |-
                                     =//(Parent.Width - 60) * 0.4
@@ -773,8 +843,10 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 FalseHoverFill: =RGBA(33, 33, 33, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                HandleFill: =RGBA(255, 255, 255, 1)
                                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                                 PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 TrueFill: =RGBA(73, 130, 5, 1)
                                 TrueHoverFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
@@ -788,10 +860,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -815,11 +889,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey9.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -850,6 +926,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PressedBorderColor: =RGBA(0, 0, 0, 0)
                                 PressedColor: =RGBA(51, 51, 51, 1)
                                 PressedFill: =RGBA(0, 0, 0, 0)
+                                Size: =13
                                 Text: =""
                                 Width: |-
                                     =//150
@@ -885,11 +962,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 Height: =34
                                 Overflow: =Overflow.Scroll
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: |-
                                     =//Parent.DisplayName
                                     "When you lost company assets (PCs, mobile phones, keys, and all other company-supplied assets)."
@@ -909,8 +988,10 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 FalseHoverFill: =RGBA(33, 33, 33, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                HandleFill: =RGBA(255, 255, 255, 1)
                                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                                 PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 TrueFill: =RGBA(73, 130, 5, 1)
                                 TrueHoverFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
@@ -924,10 +1005,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -949,11 +1032,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey10.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -984,6 +1069,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PressedBorderColor: =RGBA(0, 0, 0, 0)
                                 PressedColor: =RGBA(51, 51, 51, 1)
                                 PressedFill: =RGBA(0, 0, 0, 0)
+                                Size: =13
                                 Text: =""
                                 Width: =secIncValue_a.Width
                                 X: =secIncValue_a.X
@@ -1013,11 +1099,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 Height: =34
                                 Overflow: =Overflow.Scroll
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: |-
                                     =//Parent.DisplayName
                                     "When the company has suffered or is likely to suffer damage due to hacking or mishandling."
@@ -1037,8 +1125,10 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 FalseHoverFill: =RGBA(33, 33, 33, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                HandleFill: =RGBA(255, 255, 255, 1)
                                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                                 PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 TrueFill: =RGBA(73, 130, 5, 1)
                                 TrueHoverFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
@@ -1052,10 +1142,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -1077,11 +1169,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey11.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -1112,6 +1206,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PressedBorderColor: =RGBA(0, 0, 0, 0)
                                 PressedColor: =RGBA(51, 51, 51, 1)
                                 PressedFill: =RGBA(0, 0, 0, 0)
+                                Size: =13
                                 Text: =""
                                 Width: =secIncValue_a.Width
                                 X: =secIncValue_a.X
@@ -1141,11 +1236,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 Height: =34
                                 Overflow: =Overflow.Scroll
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: |-
                                     =//Parent.DisplayName
                                     "All other situations where the company has suffered or is likely to suffer damage."
@@ -1165,8 +1262,10 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 FalseHoverFill: =RGBA(33, 33, 33, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                HandleFill: =RGBA(255, 255, 255, 1)
                                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                                 PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 TrueFill: =RGBA(73, 130, 5, 1)
                                 TrueHoverFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
@@ -1180,10 +1279,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -1205,11 +1306,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey12.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -1240,6 +1343,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PressedBorderColor: =RGBA(0, 0, 0, 0)
                                 PressedColor: =RGBA(51, 51, 51, 1)
                                 PressedFill: =RGBA(0, 0, 0, 0)
+                                Size: =13
                                 Text: =""
                                 Width: =secIncValue_a.Width
                                 X: =secIncValue_a.X
@@ -1263,6 +1367,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Bold
@@ -1272,6 +1377,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                     =//5
                                     //DataCardKey4.X - 4
                                     0
+                                Size: =13
                                 Text: ="2) Quality Incident Cases"
                                 Width: =Parent.Width
                                 X: =DataCardKey4.X
@@ -1301,11 +1407,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 Height: =34
                                 Overflow: =Overflow.Scroll
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: |-
                                     =//Parent.DisplayName
                                     "When you fail or are likely to fail to keep promises made to clients."
@@ -1325,8 +1433,10 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 FalseHoverFill: =RGBA(33, 33, 33, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                HandleFill: =RGBA(255, 255, 255, 1)
                                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                                 PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 TrueFill: =RGBA(73, 130, 5, 1)
                                 TrueHoverFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
@@ -1340,10 +1450,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -1365,11 +1477,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey13.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -1400,6 +1514,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PressedBorderColor: =RGBA(0, 0, 0, 0)
                                 PressedColor: =RGBA(51, 51, 51, 1)
                                 PressedFill: =RGBA(0, 0, 0, 0)
+                                Size: =13
                                 Text: =""
                                 Width: =secIncValue_a.Width
                                 X: =secIncValue_a.X
@@ -1429,11 +1544,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 Height: =34
                                 Overflow: =Overflow.Scroll
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: |-
                                     =//Parent.DisplayName
                                     "When you caused damage or inconvenience to the clients."
@@ -1453,8 +1570,10 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 FalseHoverFill: =RGBA(33, 33, 33, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                HandleFill: =RGBA(255, 255, 255, 1)
                                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                                 PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 TrueFill: =RGBA(73, 130, 5, 1)
                                 TrueHoverFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
@@ -1468,10 +1587,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -1493,11 +1614,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey14.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -1528,6 +1651,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PressedBorderColor: =RGBA(0, 0, 0, 0)
                                 PressedColor: =RGBA(51, 51, 51, 1)
                                 PressedFill: =RGBA(0, 0, 0, 0)
+                                Size: =13
                                 Text: =""
                                 Width: =secIncValue_a.Width
                                 X: =secIncValue_a.X
@@ -1557,11 +1681,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 Height: =34
                                 Overflow: =Overflow.Scroll
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: |-
                                     =//Parent.DisplayName
                                     "When you fail or are likely to fail to comply with internal rules and regulations."
@@ -1581,8 +1707,10 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 FalseHoverFill: =RGBA(33, 33, 33, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                HandleFill: =RGBA(255, 255, 255, 1)
                                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                                 PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 TrueFill: =RGBA(73, 130, 5, 1)
                                 TrueHoverFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
@@ -1596,10 +1724,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -1621,11 +1751,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey15.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -1656,6 +1788,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PressedBorderColor: =RGBA(0, 0, 0, 0)
                                 PressedColor: =RGBA(51, 51, 51, 1)
                                 PressedFill: =RGBA(0, 0, 0, 0)
+                                Size: =13
                                 Text: =""
                                 Width: =secIncValue_a.Width
                                 X: =secIncValue_a.X
@@ -1685,11 +1818,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 Height: =34
                                 Overflow: =Overflow.Scroll
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: |-
                                     =//Parent.DisplayName
                                     "When the client is angry with you or makes a complaint against you."
@@ -1709,8 +1844,10 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 FalseHoverFill: =RGBA(33, 33, 33, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                HandleFill: =RGBA(255, 255, 255, 1)
                                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                                 PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 TrueFill: =RGBA(73, 130, 5, 1)
                                 TrueHoverFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
@@ -1724,10 +1861,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -1749,11 +1888,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey16.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -1784,6 +1925,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PressedBorderColor: =RGBA(0, 0, 0, 0)
                                 PressedColor: =RGBA(51, 51, 51, 1)
                                 PressedFill: =RGBA(0, 0, 0, 0)
+                                Size: =13
                                 Text: =""
                                 Width: =secIncValue_a.Width
                                 X: =secIncValue_a.X
@@ -1813,11 +1955,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 Height: =34
                                 Overflow: =Overflow.Scroll
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: |-
                                     =//Parent.DisplayName
                                     "All other situations where the client’s trust has been damaged or is likely to suffer damage."
@@ -1837,8 +1981,10 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 FalseHoverFill: =RGBA(33, 33, 33, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                HandleFill: =RGBA(255, 255, 255, 1)
                                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                                 PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 TrueFill: =RGBA(73, 130, 5, 1)
                                 TrueHoverFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
@@ -1852,10 +1998,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -1877,11 +2025,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey17.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -1912,6 +2062,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PressedBorderColor: =RGBA(0, 0, 0, 0)
                                 PressedColor: =RGBA(51, 51, 51, 1)
                                 PressedFill: =RGBA(0, 0, 0, 0)
+                                Size: =13
                                 Text: =""
                                 Width: =secIncValue_a.Width
                                 X: =secIncValue_a.X
@@ -1935,6 +2086,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Bold
@@ -1944,6 +2096,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                     =//5
                                     //DataCardKey4.X - 4
                                     0
+                                Size: =13
                                 Text: ="3) Emergency Cases"
                                 Width: =Parent.Width
                                 X: =DataCardKey4.X
@@ -1973,11 +2126,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 Height: =34
                                 Overflow: =Overflow.Scroll
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: |-
                                     =//Parent.DisplayName
                                     "When an employee becomes unable to perform his/her duties due to illness or accident while on duty."
@@ -1997,8 +2152,10 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 FalseHoverFill: =RGBA(33, 33, 33, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                HandleFill: =RGBA(255, 255, 255, 1)
                                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                                 PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 TrueFill: =RGBA(73, 130, 5, 1)
                                 TrueHoverFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
@@ -2012,10 +2169,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -2037,11 +2196,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey18.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -2072,6 +2233,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PressedBorderColor: =RGBA(0, 0, 0, 0)
                                 PressedColor: =RGBA(51, 51, 51, 1)
                                 PressedFill: =RGBA(0, 0, 0, 0)
+                                Size: =13
                                 Text: =""
                                 Width: =secIncValue_a.Width
                                 X: =secIncValue_a.X
@@ -2101,11 +2263,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 Height: =34
                                 Overflow: =Overflow.Scroll
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: |-
                                     =//Parent.DisplayName
                                     "When an employee becomes unable to perform his/her duties due to causing an incident or involvement in an incident."
@@ -2125,8 +2289,10 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 FalseHoverFill: =RGBA(33, 33, 33, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                HandleFill: =RGBA(255, 255, 255, 1)
                                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                                 PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 TrueFill: =RGBA(73, 130, 5, 1)
                                 TrueHoverFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
@@ -2140,10 +2306,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -2165,11 +2333,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey19.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -2200,6 +2370,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PressedBorderColor: =RGBA(0, 0, 0, 0)
                                 PressedColor: =RGBA(51, 51, 51, 1)
                                 PressedFill: =RGBA(0, 0, 0, 0)
+                                Size: =13
                                 Text: =""
                                 Width: =secIncValue_a.Width
                                 X: =secIncValue_a.X
@@ -2229,11 +2400,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 Height: =34
                                 Overflow: =Overflow.Scroll
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: |-
                                     =//Parent.DisplayName
                                     "All other situations when an employee becomes unable to perform his/her duties."
@@ -2253,8 +2426,10 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 FalseHoverFill: =RGBA(33, 33, 33, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                HandleFill: =RGBA(255, 255, 255, 1)
                                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                                 PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 TrueFill: =RGBA(73, 130, 5, 1)
                                 TrueHoverFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
@@ -2268,10 +2443,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -2293,11 +2470,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey20.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -2328,6 +2507,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PressedBorderColor: =RGBA(0, 0, 0, 0)
                                 PressedColor: =RGBA(51, 51, 51, 1)
                                 PressedFill: =RGBA(0, 0, 0, 0)
+                                Size: =13
                                 Text: =""
                                 Width: =secIncValue_a.Width
                                 X: =secIncValue_a.X
@@ -2353,12 +2533,14 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 Height: =Parent.Height * .40
                                 PaddingLeft: |-
                                     =//DataCardKey4.X
                                     0
+                                Size: =13
                                 Text: ="Please understand the following reporting line."
                                 Width: =Parent.Width
                                 X: =DataCardKey4.X
@@ -2371,6 +2553,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Bold
@@ -2378,6 +2561,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 PaddingLeft: |-
                                     =//5
                                     0
+                                Size: =13
                                 Text: ="REPORTING LINE"
                                 Width: =Parent.Width
                                 X: =DataCardKey4.X
@@ -2401,9 +2585,11 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
+                                Size: =13
                                 Text: ="Manager"
                                 Width: =Parent.Width - 50
                                 X: =DataCardKey4.X * 0.88
@@ -2430,10 +2616,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="Name"
                                 Width: |-
                                     =//Parent.Width - 50
@@ -2462,10 +2650,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="Phone Number"
                                 Width: |-
                                     =//Parent.Width - 50
@@ -2494,10 +2684,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="Mail Address"
                                 Width: |-
                                     =//Parent.Width - 50
@@ -2524,8 +2716,10 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                Size: =13
                                 Text: ="Immediate Manager 1"
                                 Width: =Parent.Width - 50
                                 X: =Label1.X
@@ -2555,11 +2749,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Visible: =false
                                 Width: =(Parent.Width - 60) * 0.4
@@ -2579,6 +2775,8 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 Color: =RGBA(51, 51, 51, 1)
                                 DefaultSelectedItems: =Parent.Default
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayFields: =["DisplayName","Email","Picture"]
                                 DisplayMode: =Parent.DisplayMode
                                 Font: =Font.'Segoe UI'
@@ -2588,11 +2786,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 Items: =Choices([@'rcp_sprnt1_Agreement Regarding Incidents List '].'Immediate Manager_1')
                                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                                 PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                                PressedColor: =RGBA(255, 255, 255, 1)
                                 PressedFill: =RGBA(73, 130, 5, 1)
                                 SearchFields: =["DisplayName"]
                                 SearchItems: =Choices('rcp_sprnt1_Agreement Regarding Incidents List '.'Immediate Manager_1',fldVal_ImmMgr_ARI.SearchText)
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: |-
                                     =//(Parent.Width - 60) * 0.6
@@ -2609,10 +2809,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -2634,11 +2836,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey25.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -2669,11 +2873,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Visible: =false
                                 Width: =(Parent.Width - 60) * 0.4
@@ -2684,11 +2890,15 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
 
                             DataCardValue5 As text:
                                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 Default: =Parent.Default
                                 DelayOutput: =true
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayMode: =Parent.DisplayMode
+                                FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 Format: =TextFormat.Number
                                 HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
@@ -2702,6 +2912,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 RadiusBottomRight: =0
                                 RadiusTopLeft: =0
                                 RadiusTopRight: =0
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: |-
                                     =//(Parent.Width - 60) * 0.6
@@ -2717,10 +2928,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -2742,11 +2955,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey21.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -2778,11 +2993,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Visible: =false
                                 Width: =(Parent.Width - 60) * 0.4
@@ -2793,11 +3010,15 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
 
                             DataCardValue2 As text:
                                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 Default: =Parent.Default
                                 DelayOutput: =true
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayMode: =Parent.DisplayMode
+                                FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
                                 HoverColor: =RGBA(51, 51, 51, 1)
@@ -2811,6 +3032,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 RadiusBottomRight: =0
                                 RadiusTopLeft: =0
                                 RadiusTopRight: =0
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: |-
                                     =//(Parent.Width - 60) * 0.6
@@ -2826,10 +3048,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -2851,11 +3075,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey2.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -2880,8 +3106,10 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                Size: =13
                                 Text: ="Immediate Manager 2"
                                 Width: =Parent.Width - 50
                                 X: =Label1.X
@@ -2911,11 +3139,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Visible: =false
                                 Width: =(Parent.Width - 60) * 0.4
@@ -2935,6 +3165,8 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 Color: =RGBA(51, 51, 51, 1)
                                 DefaultSelectedItems: =Parent.Default
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayFields: =["DisplayName","Email","Picture"]
                                 DisplayMode: =Parent.DisplayMode
                                 Font: =Font.'Segoe UI'
@@ -2944,11 +3176,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 Items: =Choices([@'rcp_sprnt1_Agreement Regarding Incidents List '].'Immediate Manager_2')
                                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                                 PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                                PressedColor: =RGBA(255, 255, 255, 1)
                                 PressedFill: =RGBA(73, 130, 5, 1)
                                 SearchFields: =["DisplayName"]
                                 SearchItems: =Choices('rcp_sprnt1_Agreement Regarding Incidents List '.'Immediate Manager_2',DataCardValue21.SearchText)
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: |-
                                     =//(Parent.Width - 60) * 0.6
@@ -2964,10 +3198,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -2989,11 +3225,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey22.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -3024,11 +3262,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Visible: =false
                                 Width: =(Parent.Width - 60) * 0.4
@@ -3039,11 +3279,15 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
 
                             DataCardValue23 As text:
                                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 Default: =Parent.Default
                                 DelayOutput: =true
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayMode: =Parent.DisplayMode
+                                FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 Format: =TextFormat.Number
                                 HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
@@ -3057,6 +3301,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 RadiusBottomRight: =0
                                 RadiusTopLeft: =0
                                 RadiusTopRight: =0
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: |-
                                     =//(Parent.Width - 60) * 0.6
@@ -3072,10 +3317,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -3097,11 +3344,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey24.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -3133,11 +3382,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Visible: =false
                                 Width: =(Parent.Width - 60) * 0.4
@@ -3148,11 +3399,15 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
 
                             DataCardValue22 As text:
                                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 Default: =Parent.Default
                                 DelayOutput: =true
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayMode: =Parent.DisplayMode
+                                FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
                                 HoverColor: =RGBA(51, 51, 51, 1)
@@ -3166,6 +3421,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 RadiusBottomRight: =0
                                 RadiusTopLeft: =0
                                 RadiusTopRight: =0
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: |-
                                     =//(Parent.Width - 60) * 0.6
@@ -3181,10 +3437,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -3206,11 +3464,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey23.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -3235,8 +3495,10 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                Size: =13
                                 Text: ="Immediate Manager 3"
                                 Width: =Parent.Width - 50
                                 X: =Label1.X
@@ -3266,11 +3528,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Visible: =false
                                 Width: =(Parent.Width - 60) * 0.4
@@ -3290,6 +3554,8 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 Color: =RGBA(51, 51, 51, 1)
                                 DefaultSelectedItems: =Parent.Default
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayFields: =["DisplayName","Email","Picture"]
                                 DisplayMode: =Parent.DisplayMode
                                 Font: =Font.'Segoe UI'
@@ -3299,11 +3565,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 Items: =Choices([@'rcp_sprnt1_Agreement Regarding Incidents List '].'Immediate Manager_3')
                                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                                 PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                                PressedColor: =RGBA(255, 255, 255, 1)
                                 PressedFill: =RGBA(73, 130, 5, 1)
                                 SearchFields: =["DisplayName"]
                                 SearchItems: =Choices('rcp_sprnt1_Agreement Regarding Incidents List '.'Immediate Manager_3',DataCardValue25.SearchText)
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: |-
                                     =//(Parent.Width - 60) * 0.6
@@ -3319,10 +3587,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -3344,11 +3614,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey26.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -3379,11 +3651,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Visible: =false
                                 Width: =(Parent.Width - 60) * 0.4
@@ -3394,11 +3668,15 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
 
                             DataCardValue27 As text:
                                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 Default: =Parent.Default
                                 DelayOutput: =true
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayMode: =Parent.DisplayMode
+                                FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 Format: =TextFormat.Number
                                 HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
@@ -3412,6 +3690,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 RadiusBottomRight: =0
                                 RadiusTopLeft: =0
                                 RadiusTopRight: =0
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: |-
                                     =//(Parent.Width - 60) * 0.6
@@ -3427,10 +3706,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -3452,11 +3733,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey28.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -3488,11 +3771,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Visible: =false
                                 Width: =(Parent.Width - 60) * 0.4
@@ -3503,11 +3788,15 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
 
                             DataCardValue26 As text:
                                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 Default: =Parent.Default
                                 DelayOutput: =true
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayMode: =Parent.DisplayMode
+                                FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
                                 HoverColor: =RGBA(51, 51, 51, 1)
@@ -3521,6 +3810,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 RadiusBottomRight: =0
                                 RadiusTopLeft: =0
                                 RadiusTopRight: =0
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: |-
                                     =//(Parent.Width - 60) * 0.6
@@ -3536,10 +3826,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -3561,11 +3853,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey27.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -3591,8 +3885,10 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                Size: =13
                                 Text: |-
                                     ="Executive Managers
                                     "
@@ -3710,10 +4006,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Bold
                                 Height: =Parent.Height
+                                Size: =13
                                 Text: ="APPROVAL STATUS"
                                 Width: =Parent.Width
                                 ZIndex: =1
@@ -3738,9 +4036,11 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
+                                Size: =13
                                 Text: ="Approver"
                                 Width: =Parent.Width - 50
                                 X: =DataCardKey4.X * .50
@@ -3769,9 +4069,11 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
+                                Size: =13
                                 Text: ="Approver Name"
                                 Width: =Parent.Width - 50
                                 X: |-
@@ -3802,9 +4104,11 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
+                                Size: =13
                                 Text: ="Approval Date"
                                 Width: =Parent.Width - 50
                                 X: |-
@@ -3853,9 +4157,11 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                     BorderThickness: =2
                                     Color: =RGBA(51, 51, 51, 1)
                                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
                                     FocusedBorderThickness: =4
                                     Font: =Font.'Segoe UI'
                                     OnSelect: =Select(Parent)
+                                    Size: =13
                                     Text: =ThisItem.ApprovalDate
                                     Width: =266
                                     X: =DataCard4.X
@@ -3867,10 +4173,11 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                     BorderThickness: =2
                                     Color: =RGBA(51, 51, 51, 1)
                                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
                                     FocusedBorderThickness: =4
                                     Font: =Font.'Segoe UI'
-                                    Italic: =!ThisItem.hasApprover
                                     OnSelect: =Select(Parent)
+                                    Size: =13
                                     Text: =ThisItem.ApproverName
                                     Width: =(Parent.TemplateWidth - 12) / 3
                                     X: =306.66666666666663
@@ -3882,9 +4189,11 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                     BorderThickness: =2
                                     Color: =RGBA(51, 51, 51, 1)
                                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
                                     FocusedBorderThickness: =4
                                     Font: =Font.'Segoe UI'
                                     OnSelect: =Select(Parent)
+                                    Size: =13
                                     Text: =ThisItem.Approver
                                     Width: =(Parent.TemplateWidth - 12) / 3
                                     X: =12
@@ -3897,6 +4206,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Lighter
@@ -3936,11 +4246,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: |-
                                     =//Parent.DisplayName
                                     "Application Date"
@@ -3956,6 +4268,8 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 Color: =RGBA(51, 51, 51, 1)
                                 DefaultDate: =Parent.Default
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayMode: =Parent.DisplayMode
                                 EndYear: =Year(Today())+100
                                 Font: =Font.'Segoe UI'
@@ -3983,10 +4297,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -4012,11 +4328,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey5.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -4061,11 +4379,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.4
                                 Wrap: =false
@@ -4099,6 +4419,8 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                         [Parent.Default]
                                     )
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayFields: =["DisplayName","Email","Picture"]
                                 DisplayMode: =Parent.DisplayMode
                                 Font: =Font.'Segoe UI'
@@ -4119,11 +4441,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                     )
                                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                                 PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                                PressedColor: =RGBA(255, 255, 255, 1)
                                 PressedFill: =RGBA(73, 130, 5, 1)
                                 SearchFields: =["DisplayName"]
                                 SearchItems: =Choices('rcp_sprnt1_Agreement Regarding Incidents List '.'Employee Name',fldVal_EmployeeName_ARI.SearchText)
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.6
                                 X: =fldLbl_EmployeeName_ARI.X + fldLbl_EmployeeName_ARI.Width
@@ -4135,10 +4459,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -4160,11 +4486,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =fldLbl_EmployeeName_ARI.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -4201,11 +4529,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.4
                                 Wrap: =false
@@ -4215,11 +4545,15 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
 
                             DataCardValue3 As text:
                                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 Default: =Parent.Default
                                 DelayOutput: =true
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayMode: =Parent.DisplayMode
+                                FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
                                 HoverColor: =RGBA(51, 51, 51, 1)
@@ -4233,6 +4567,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 RadiusBottomRight: =0
                                 RadiusTopLeft: =0
                                 RadiusTopRight: =0
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.6
                                 X: =DataCardKey3.X + DataCardKey3.Width
@@ -4244,10 +4579,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -4269,11 +4606,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey3.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -4307,11 +4646,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.4
                                 Wrap: =false
@@ -4321,11 +4662,15 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
 
                             DataCardValue4 As text:
                                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 Default: =Parent.Default
                                 DelayOutput: =true
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayMode: =Parent.DisplayMode
+                                FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
                                 HoverColor: =RGBA(51, 51, 51, 1)
@@ -4339,6 +4684,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 RadiusBottomRight: =0
                                 RadiusTopLeft: =0
                                 RadiusTopRight: =0
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.6
                                 X: =DataCardKey4.X + DataCardKey4.Width
@@ -4350,10 +4696,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -4375,11 +4723,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey4.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -4413,11 +4763,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.4
                                 Wrap: =false
@@ -4436,6 +4788,8 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 Color: =RGBA(51, 51, 51, 1)
                                 DefaultSelectedItems: =Parent.Default
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayFields: =["Value"]
                                 DisplayMode: =Parent.DisplayMode
                                 Font: =Font.'Segoe UI'
@@ -4445,11 +4799,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 Items: =Choices([@'rcp_sprnt1_Agreement Regarding Incidents List '].Status)
                                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                                 PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                                PressedColor: =RGBA(255, 255, 255, 1)
                                 PressedFill: =RGBA(73, 130, 5, 1)
                                 SearchFields: =["Value"]
                                 SearchItems: =Choices('rcp_sprnt1_Agreement Regarding Incidents List '.Status,DataCardValue6.SearchText)
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.6
                                 X: =DataCardKey6.X + DataCardKey6.Width
@@ -4461,10 +4817,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -4486,11 +4844,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey6.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -4530,11 +4890,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.4
                                 Wrap: =false
@@ -4553,6 +4915,8 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 Color: =RGBA(51, 51, 51, 1)
                                 DefaultSelectedItems: =Parent.Default
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayFields: =["DisplayName","Email","Picture"]
                                 DisplayMode: =Parent.DisplayMode
                                 Font: =Font.'Segoe UI'
@@ -4562,11 +4926,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 Items: =Choices([@'rcp_sprnt1_Agreement Regarding Incidents List '].'Submitted By')
                                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                                 PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                                PressedColor: =RGBA(255, 255, 255, 1)
                                 PressedFill: =RGBA(73, 130, 5, 1)
                                 SearchFields: =["DisplayName"]
                                 SearchItems: =Choices('rcp_sprnt1_Agreement Regarding Incidents List '.'Submitted By',DataCardValue7.SearchText)
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.6
                                 X: =DataCardKey7.X + DataCardKey7.Width
@@ -4578,10 +4944,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -4603,11 +4971,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey7.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -4639,11 +5009,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.4
                                 Wrap: =false
@@ -4662,6 +5034,8 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 Color: =RGBA(51, 51, 51, 1)
                                 DefaultSelectedItems: =Parent.Default
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayFields: =["DisplayName","Email","Picture"]
                                 DisplayMode: =Parent.DisplayMode
                                 Font: =Font.'Segoe UI'
@@ -4671,11 +5045,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 Items: =Choices([@'rcp_sprnt1_Agreement Regarding Incidents List '].'Assigned To')
                                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                                 PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                                PressedColor: =RGBA(255, 255, 255, 1)
                                 PressedFill: =RGBA(73, 130, 5, 1)
                                 SearchFields: =["DisplayName"]
                                 SearchItems: =Choices('rcp_sprnt1_Agreement Regarding Incidents List '.'Assigned To',DataCardValue8.SearchText)
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.6
                                 X: =DataCardKey8.X + DataCardKey8.Width
@@ -4687,10 +5063,12 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -4712,11 +5090,13 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey8.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -4725,11 +5105,16 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 ZIndex: =4
 
             DeleteConfirmDialogContainer1 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.Light
                 FillPortions: =7
                 LayoutDirection: =LayoutDirection.Vertical
                 LayoutMinHeight: =100
                 LayoutMinWidth: =250
                 LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
                 Visible: =If(deleteMode, true, false)
                 Width: =0
                 ZIndex: =24
@@ -4742,28 +5127,39 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                     BorderThickness: =2
                     Color: =RGBA(51, 51, 51, 1)
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
                     FillPortions: =1
                     FocusedBorderThickness: =4
                     Font: =Font.'Segoe UI'
+                    Size: =13
                     Text: ="Are you sure you want to delete this record?"
                     ZIndex: =25
 
                 ConfirmDeleteButtonBarContainer1 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
                     LayoutGap: =15
                     LayoutJustifyContent: =LayoutJustifyContent.Center
                     LayoutMinHeight: =100
                     LayoutMinWidth: =250
                     LayoutMode: =LayoutMode.Auto
                     LayoutWrap: =true
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
                     ZIndex: =26
 
                     CancelDeleteButton1 As button:
                         BorderColor: =RGBA(0, 0, 0, 0)
                         DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
                         Fill: =RGBA(73, 130, 5, 1)
                         FocusedBorderColor: =ColorFade(Self.Fill, -75%)
                         Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Semibold
                         HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =RGBA(255, 255, 255, 1)
                         HoverFill: =ColorFade(RGBA(73, 130, 5, 1), -10%)
                         OnSelect: |-
                             =UpdateContext({ deleteMode: false, deleteCancelled: true })
@@ -4774,16 +5170,21 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                         RadiusBottomRight: =0
                         RadiusTopLeft: =0
                         RadiusTopRight: =0
+                        Size: =15
                         Text: ="Cancel"
                         ZIndex: =27
 
                     ConfirmDeleteButton1 As button:
                         BorderColor: =RGBA(0, 0, 0, 0)
                         DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
                         Fill: =RGBA(73, 130, 5, 1)
                         FocusedBorderColor: =ColorFade(Self.Fill, -75%)
                         Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Semibold
                         HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =RGBA(255, 255, 255, 1)
                         HoverFill: =ColorFade(RGBA(73, 130, 5, 1), -10%)
                         OnSelect: |-
                             =Remove([@'rcp_sprnt1_Agreement Regarding Incidents List '], selectedRecord); If(IsEmpty(Errors([@'rcp_sprnt1_Agreement Regarding Incidents List '], selectedRecord)), UpdateContext( { CurrentItem: First([@'rcp_sprnt1_Agreement Regarding Incidents List ']), itemSelected: false, editMode: false, newMode: false, deleteMode: false }));
@@ -4794,6 +5195,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                         RadiusBottomRight: =0
                         RadiusTopLeft: =0
                         RadiusTopRight: =0
+                        Size: =15
                         Text: ="Delete"
                         ZIndex: =28
 

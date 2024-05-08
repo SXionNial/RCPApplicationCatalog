@@ -1,8 +1,10 @@
 Sprint1_Scr_BereavementCashAssistance As screen:
+    LoadingSpinnerColor: =RGBA(73, 130, 5, 1)
     OnVisible: |-
         =UpdateContext({CurrentItem:{}});
 
     ScreenContainer1_2 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.Light
         Fill: =RGBA(250, 250, 250, 1)
         Height: =Parent.Height
         LayoutAlignItems: =LayoutAlignItems.Stretch
@@ -13,10 +15,15 @@ Sprint1_Scr_BereavementCashAssistance As screen:
         PaddingLeft: =16
         PaddingRight: =16
         PaddingTop: =16
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
         Width: =Parent.Width
         ZIndex: =1
 
         TableNameContainer1_2 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
             Fill: |-
                 =//RGBA(0, 0, 0, 0)
                 
@@ -27,6 +34,10 @@ Sprint1_Scr_BereavementCashAssistance As screen:
             LayoutMinHeight: =100
             LayoutMinWidth: =250
             LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
             ZIndex: =2
 
             BackButton_3 As BackButton:
@@ -36,6 +47,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
 
             TableNameLabel1_2 As label:
                 AlignInContainer: =AlignInContainer.Stretch
+                Color: =RGBA(255, 255, 255, 1)
                 Fill: |-
                     =//RGBA(73, 130, 5, 1)
                     
@@ -43,6 +55,10 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                 FillPortions: =1
                 FontWeight: =FontWeight.Semibold
                 Height: =68
+                PaddingBottom: =16
+                PaddingLeft: =16
+                PaddingRight: =16
+                PaddingTop: =16
                 Size: =16
                 Text: |-
                     =//DataSourceInfo([@'Bereavement Cash Assistance List'], DataSourceInfo.DisplayName)
@@ -81,6 +97,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                 ZIndex: =3
 
         BodyContainer1_2 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
             LayoutGap: =16
             LayoutMinHeight: =100
             LayoutMinWidth: =250
@@ -89,9 +106,14 @@ Sprint1_Scr_BereavementCashAssistance As screen:
             PaddingLeft: =2
             PaddingRight: =2
             PaddingTop: =2
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
             ZIndex: =5
 
             SidebarContainer1_2 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.Light
                 Fill: =RGBA(255, 255, 255, 1)
                 FillPortions: =If(And(Sprint1_Scr_BereavementCashAssistance.Size = ScreenSize.Small, Or(newMode, editMode, itemSelected)), 0, 3)
                 LayoutDirection: =LayoutDirection.Vertical
@@ -102,10 +124,15 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                 PaddingLeft: =16
                 PaddingRight: =16
                 PaddingTop: =10
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
                 Visible: =If(And(Sprint1_Scr_BereavementCashAssistance.Size = ScreenSize.Small, Or(newMode, editMode, itemSelected)), false, true)
                 ZIndex: =6
 
                 SearchContainer1_2 As groupContainer.horizontalAutoLayoutContainer:
+                    Fill: =RGBA(245, 245, 245, 1)
                     FillPortions: =0
                     Height: =44
                     LayoutMinHeight: =100
@@ -114,11 +141,15 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                     ZIndex: =7
 
                     srchInput_BereavementCashAssistanceList As text:
+                        BorderStyle: =BorderStyle.None
                         Default: =""
+                        Fill: =RGBA(0, 0, 0, 0)
                         FillPortions: =1
                         Height: =44
                         HintText: ="Search"
+                        HoverFill: =RGBA(0, 0, 0, 0)
                         LayoutMinWidth: =0
+                        PressedFill: =RGBA(0, 0, 0, 0)
                         ZIndex: =8
 
                     SearchIcon1_2 As icon:
@@ -133,11 +164,16 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                         ZIndex: =9
 
                 NewRecordButtonBarContainer1_2 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
                     FillPortions: =0
                     Height: =44
                     LayoutMinHeight: =100
                     LayoutMinWidth: =250
                     LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
                     ZIndex: =10
 
                     NewRecordAddIcon1_2 As icon:
@@ -170,10 +206,12 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                         BorderThickness: =2
                         Color: =RGBA(51, 51, 51, 1)
                         DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
                         FillPortions: =1
                         FocusedBorderThickness: =4
                         Font: =Font.'Segoe UI'
                         Height: =44
+                        Size: =13
                         Text: ="New"
                         ZIndex: =12
 
@@ -251,6 +289,8 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                     ZIndex: =14
 
                     Title1_2 As label:
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
                         Font: =Font.'Segoe UI'
                         FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
                         Height: =Self.Size * 1.8
@@ -268,6 +308,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
 
                     Subtitle1_2 As label:
                         Color: =RGBA(51, 51, 51, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
                         Font: =Font.'Segoe UI'
                         FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
                         Height: =Self.Size * 1.8
@@ -276,6 +317,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                         PaddingLeft: =12
                         PaddingRight: =0
                         PaddingTop: =0
+                        Size: =12
                         Text: |-
                             =//ThisItem.'Employee Name'.Claims
                             "Status: " & ThisItem.Status.Value
@@ -287,6 +329,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
 
                     Body1_2 As label:
                         Color: =RGBA(51, 51, 51, 1)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
                         Font: =Font.'Segoe UI'
                         FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
                         Height: =Self.Size * 1.8
@@ -295,6 +338,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                         PaddingLeft: =12
                         PaddingRight: =0
                         PaddingTop: =0
+                        Size: =12
                         Text: |-
                             ="Created: " & ThisItem.Created
                         VerticalAlign: =VerticalAlign.Top
@@ -332,6 +376,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
 
                     Separator1_2 As rectangle:
                         BorderColor: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(255, 255, 255, 1)
                         Height: =8
                         OnSelect: =Select(Parent)
                         Width: =Parent.TemplateWidth
@@ -348,6 +393,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                         ZIndex: =6
 
             RightContainer1_2 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.Light
                 FillPortions: =7
                 LayoutAlignItems: =LayoutAlignItems.Stretch
                 LayoutDirection: =LayoutDirection.Vertical
@@ -359,11 +405,16 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                 PaddingLeft: =2
                 PaddingRight: =2
                 PaddingTop: =2
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
                 Visible: =If(Or(deleteMode, And(Sprint1_Scr_BereavementCashAssistance.Size = ScreenSize.Small, !newMode, !editMode, !itemSelected)), false, true)
                 Width: =0
                 ZIndex: =15
 
                 SelectedRecordHeaderContainer1_2 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
                     Fill: =global_formSectionHeaderFillColor
                     FillPortions: =0
                     Height: =50
@@ -371,6 +422,10 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                     LayoutMinHeight: =100
                     LayoutMinWidth: =250
                     LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
                     ZIndex: =16
 
                     BackIconButton1_2 As icon.Add:
@@ -406,9 +461,11 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                         BorderThickness: =2
                         Color: =RGBA(51, 51, 51, 1)
                         DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
                         FillPortions: =1
                         FocusedBorderThickness: =4
                         Font: =Font.'Segoe UI'
+                        Size: =13
                         Text: |-
                             =//recGallery_AgreementRegardingIncidents.Selected.Title
                             If(
@@ -552,11 +609,16 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                         ZIndex: =22
 
                 MainContainer1_2 As groupContainer.verticalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
                     Fill: =RGBA(255, 255, 255, 1)
                     LayoutDirection: =LayoutDirection.Vertical
                     LayoutMinHeight: =100
                     LayoutMinWidth: =250
                     LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
                     ZIndex: =23
 
                     frm_BereavementCashAssistanceList As form:
@@ -594,6 +656,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Bold
@@ -602,6 +665,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 PaddingLeft: =0
                                 PaddingRight: =0
                                 PaddingTop: =0
+                                Size: =13
                                 Text: ="APPLICANT INFORMATION"
                                 Width: =Parent.Width
                                 ZIndex: =1
@@ -627,6 +691,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Bold
@@ -635,6 +700,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 PaddingLeft: =0
                                 PaddingRight: =0
                                 PaddingTop: =0
+                                Size: =13
                                 Text: ="DECEASED INFORMATION"
                                 Width: =Parent.Width
                                 ZIndex: =1
@@ -664,6 +730,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Bold
@@ -672,6 +739,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 PaddingLeft: =0
                                 PaddingRight: =0
                                 PaddingTop: =0
+                                Size: =13
                                 Text: ="TO BE COMPLETED BY THE HR & ADMIN"
                                 Width: =Parent.Width
                                 ZIndex: =1
@@ -702,6 +770,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Bold
@@ -710,6 +779,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 PaddingLeft: =0
                                 PaddingRight: =0
                                 PaddingTop: =0
+                                Size: =13
                                 Text: ="Approval Request"
                                 Width: =Parent.Width
                                 ZIndex: =1
@@ -734,9 +804,11 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
+                                Size: =13
                                 Text: ="Approver"
                                 Width: =Parent.Width - 50
                                 X: =DataCardKey4_2.X * .50
@@ -765,9 +837,11 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
+                                Size: =13
                                 Text: ="Approver Name"
                                 Width: =Parent.Width - 50
                                 X: |-
@@ -798,9 +872,11 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
+                                Size: =13
                                 Text: ="Approval Date"
                                 Width: =Parent.Width - 50
                                 X: |-
@@ -850,9 +926,11 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                     BorderThickness: =2
                                     Color: =RGBA(51, 51, 51, 1)
                                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
                                     FocusedBorderThickness: =4
                                     Font: =Font.'Segoe UI'
                                     OnSelect: =Select(Parent)
+                                    Size: =13
                                     Text: =ThisItem.ApprovalDate
                                     Width: =(Parent.TemplateWidth - 12) / 4
                                     X: =DataCard4_2.X
@@ -864,10 +942,11 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                     BorderThickness: =2
                                     Color: =RGBA(51, 51, 51, 1)
                                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
                                     FocusedBorderThickness: =4
                                     Font: =Font.'Segoe UI'
-                                    Italic: =!ThisItem.hasApprover
                                     OnSelect: =Select(Parent)
+                                    Size: =13
                                     Text: =ThisItem.ApproverName
                                     Width: =(Parent.TemplateWidth - 12) / 4
                                     X: =DataCard3_2.X
@@ -879,9 +958,11 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                     BorderThickness: =2
                                     Color: =RGBA(51, 51, 51, 1)
                                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
                                     FocusedBorderThickness: =4
                                     Font: =Font.'Segoe UI'
                                     OnSelect: =Select(Parent)
+                                    Size: =13
                                     Text: =ThisItem.Approver
                                     Width: =(Parent.TemplateWidth - 12) / 4
                                     X: =Label1_24.X
@@ -923,11 +1004,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.4
                                 Wrap: =false
@@ -946,6 +1029,8 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 Color: =RGBA(51, 51, 51, 1)
                                 DefaultSelectedItems: =Parent.Default
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayFields: =["DisplayName","Email","Picture"]
                                 DisplayMode: =Parent.DisplayMode
                                 Font: =Font.'Segoe UI'
@@ -955,11 +1040,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 Items: =Choices([@'rcp_sprint1_Bereavement Cash Assistance List'].'Updated By')
                                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                                 PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                                PressedColor: =RGBA(255, 255, 255, 1)
                                 PressedFill: =RGBA(73, 130, 5, 1)
                                 SearchFields: =["DisplayName"]
                                 SearchItems: =Choices('rcp_sprint1_Bereavement Cash Assistance List'.'Updated By',DataCardValue1.SearchText)
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
+                                Size: =13
                                 Template: =ListItemTemplate.Person
                                 Tooltip: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.6
@@ -972,10 +1059,12 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -997,11 +1086,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey1_1.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -1047,11 +1138,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.4
                                 Wrap: =false
@@ -1073,6 +1166,8 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                     
                                     If(frm_BereavementCashAssistanceList.Mode = FormMode.New, {Value: "New"},Parent.Default)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayFields: =["Value"]
                                 DisplayMode: =Parent.DisplayMode
                                 Font: =Font.'Segoe UI'
@@ -1082,11 +1177,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 Items: =Choices([@'rcp_sprint1_Bereavement Cash Assistance List'].Status)
                                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                                 PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                                PressedColor: =RGBA(255, 255, 255, 1)
                                 PressedFill: =RGBA(73, 130, 5, 1)
                                 SearchFields: =["Value"]
                                 SearchItems: =Choices('rcp_sprint1_Bereavement Cash Assistance List'.Status,DataCardValue2_2.SearchText)
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.6
                                 X: =DataCardKey2_2.X + DataCardKey2_2.Width
@@ -1098,10 +1195,12 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -1123,11 +1222,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey2_2.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -1161,11 +1262,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.4
                                 Wrap: =false
@@ -1182,6 +1285,8 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                     
                                     Today()
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayMode: =Parent.DisplayMode
                                 EndYear: =Year(Today())+100
                                 Font: =Font.'Segoe UI'
@@ -1204,10 +1309,12 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -1229,11 +1336,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey5_2.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -1279,11 +1388,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.4
                                 Wrap: =false
@@ -1317,6 +1428,8 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                         [Parent.Default]
                                     )
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayFields: =["DisplayName","Email","Picture"]
                                 DisplayMode: =Parent.DisplayMode
                                 Font: =Font.'Segoe UI'
@@ -1336,11 +1449,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                     )
                                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                                 PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                                PressedColor: =RGBA(255, 255, 255, 1)
                                 PressedFill: =RGBA(73, 130, 5, 1)
                                 SearchFields: =["DisplayName"]
                                 SearchItems: =Choices('rcp_sprint1_Bereavement Cash Assistance List'.'Employee Name',fldVal_EmployeeName_BCA.SearchText)
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.6
                                 X: =fldLbl_EmployeeName_BCA.X + fldLbl_EmployeeName_BCA.Width
@@ -1352,10 +1467,12 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -1377,11 +1494,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =fldLbl_EmployeeName_BCA.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -1418,11 +1537,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.4
                                 Wrap: =false
@@ -1432,11 +1553,15 @@ Sprint1_Scr_BereavementCashAssistance As screen:
 
                             DataCardValue3_2 As text:
                                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 Default: =Parent.Default
                                 DelayOutput: =true
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayMode: =Parent.DisplayMode
+                                FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
                                 HoverColor: =RGBA(51, 51, 51, 1)
@@ -1450,6 +1575,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 RadiusBottomRight: =0
                                 RadiusTopLeft: =0
                                 RadiusTopRight: =0
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.6
                                 X: =DataCardKey3_2.X + DataCardKey3_2.Width
@@ -1461,10 +1587,12 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -1486,11 +1614,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey3_2.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -1527,11 +1657,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.4
                                 Wrap: =false
@@ -1541,11 +1673,15 @@ Sprint1_Scr_BereavementCashAssistance As screen:
 
                             DataCardValue4_2 As text:
                                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 Default: =Parent.Default
                                 DelayOutput: =true
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayMode: =Parent.DisplayMode
+                                FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
                                 HoverColor: =RGBA(51, 51, 51, 1)
@@ -1559,6 +1695,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 RadiusBottomRight: =0
                                 RadiusTopLeft: =0
                                 RadiusTopRight: =0
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.6
                                 X: =DataCardKey4_2.X + DataCardKey4_2.Width
@@ -1570,10 +1707,12 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -1595,11 +1734,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey4_2.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -1636,11 +1777,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.4
                                 Wrap: =false
@@ -1650,11 +1793,15 @@ Sprint1_Scr_BereavementCashAssistance As screen:
 
                             DataCardValue13_2 As text:
                                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 Default: =Parent.Default
                                 DelayOutput: =true
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayMode: =Parent.DisplayMode
+                                FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
                                 HoverColor: =RGBA(51, 51, 51, 1)
@@ -1668,6 +1815,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 RadiusBottomRight: =0
                                 RadiusTopLeft: =0
                                 RadiusTopRight: =0
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.6
                                 X: =DataCardKey13_2.X + DataCardKey13_2.Width
@@ -1679,10 +1827,12 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -1704,11 +1854,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey13_2.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -1743,11 +1895,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.4
                                 Wrap: =false
@@ -1766,6 +1920,8 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 Color: =RGBA(51, 51, 51, 1)
                                 DefaultSelectedItems: =Parent.Default
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayFields: =["Value"]
                                 DisplayMode: =Parent.DisplayMode
                                 Font: =Font.'Segoe UI'
@@ -1775,11 +1931,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 Items: =Choices([@'rcp_sprint1_Bereavement Cash Assistance List'].'Job Level/Rank')
                                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                                 PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                                PressedColor: =RGBA(255, 255, 255, 1)
                                 PressedFill: =RGBA(73, 130, 5, 1)
                                 SearchFields: =["Value"]
                                 SearchItems: =Choices('rcp_sprint1_Bereavement Cash Assistance List'.'Job Level/Rank',DataCardValue14_2.SearchText)
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.6
                                 X: =DataCardKey14_2.X + DataCardKey14_2.Width
@@ -1791,10 +1949,12 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -1816,11 +1976,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey14_2.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -1853,11 +2015,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.4
                                 Wrap: =false
@@ -1876,6 +2040,8 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 Color: =RGBA(51, 51, 51, 1)
                                 DefaultSelectedItems: =Parent.Default
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayFields: =["Value"]
                                 DisplayMode: =Parent.DisplayMode
                                 Font: =Font.'Segoe UI'
@@ -1885,11 +2051,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 Items: =Choices([@'rcp_sprint1_Bereavement Cash Assistance List'].'Office Location')
                                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                                 PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                                PressedColor: =RGBA(255, 255, 255, 1)
                                 PressedFill: =RGBA(73, 130, 5, 1)
                                 SearchFields: =["Value"]
                                 SearchItems: =Choices('rcp_sprint1_Bereavement Cash Assistance List'.'Office Location',DataCardValue15_2.SearchText)
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.6
                                 X: =DataCardKey15_2.X + DataCardKey15_2.Width
@@ -1901,10 +2069,12 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -1926,11 +2096,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey15_2.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -1963,11 +2135,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.4
                                 Wrap: =false
@@ -1986,6 +2160,8 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 Color: =RGBA(51, 51, 51, 1)
                                 DefaultSelectedItems: =Parent.Default
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayFields: =["Value"]
                                 DisplayMode: =Parent.DisplayMode
                                 Font: =Font.'Segoe UI'
@@ -1995,11 +2171,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 Items: =Choices([@'rcp_sprint1_Bereavement Cash Assistance List'].'Work Arrangement')
                                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                                 PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                                PressedColor: =RGBA(255, 255, 255, 1)
                                 PressedFill: =RGBA(73, 130, 5, 1)
                                 SearchFields: =["Value"]
                                 SearchItems: =Choices('rcp_sprint1_Bereavement Cash Assistance List'.'Work Arrangement',DataCardValue16_2.SearchText)
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.6
                                 X: =DataCardKey16_2.X + DataCardKey16_2.Width
@@ -2011,10 +2189,12 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -2036,11 +2216,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey16_2.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -2091,11 +2273,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.4
                                 Wrap: =false
@@ -2105,11 +2289,15 @@ Sprint1_Scr_BereavementCashAssistance As screen:
 
                             DataCardValue19_2 As text:
                                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 Default: =Parent.Default
                                 DelayOutput: =true
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayMode: =Parent.DisplayMode
+                                FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
                                 HoverColor: =RGBA(51, 51, 51, 1)
@@ -2123,6 +2311,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 RadiusBottomRight: =0
                                 RadiusTopLeft: =0
                                 RadiusTopRight: =0
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.6
                                 X: =DataCardKey19_2.X + DataCardKey19_2.Width
@@ -2134,10 +2323,12 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -2159,11 +2350,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey19_2.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -2213,11 +2406,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.4
                                 Wrap: =false
@@ -2236,6 +2431,8 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 Color: =RGBA(51, 51, 51, 1)
                                 DefaultSelectedItems: =Parent.Default
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayFields: =["Value"]
                                 DisplayMode: =Parent.DisplayMode
                                 Font: =Font.'Segoe UI'
@@ -2245,11 +2442,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 Items: =Choices([@'rcp_sprint1_Bereavement Cash Assistance List'].'Relationship to the Deceased')
                                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
                                 PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                                PressedColor: =RGBA(255, 255, 255, 1)
                                 PressedFill: =RGBA(73, 130, 5, 1)
                                 SearchFields: =["Value"]
                                 SearchItems: =Choices('rcp_sprint1_Bereavement Cash Assistance List'.'Relationship to the Deceased',DataCardValue20_2.SearchText)
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.6
                                 X: =DataCardKey20_2.X + DataCardKey20_2.Width
@@ -2261,10 +2460,12 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -2286,11 +2487,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey20_2.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -2340,11 +2543,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.4
                                 Wrap: =false
@@ -2358,6 +2563,8 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 Color: =RGBA(51, 51, 51, 1)
                                 DefaultDate: =Parent.Default
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayMode: =Parent.DisplayMode
                                 EndYear: =Year(Today())+100
                                 Font: =Font.'Segoe UI'
@@ -2380,10 +2587,12 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -2405,11 +2614,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey17_2.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -2460,11 +2671,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.4
                                 Wrap: =false
@@ -2474,11 +2687,15 @@ Sprint1_Scr_BereavementCashAssistance As screen:
 
                             DataCardValue21_1 As text:
                                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 Default: =Parent.Default
                                 DelayOutput: =true
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayMode: =Parent.DisplayMode
+                                FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
                                 HoverColor: =RGBA(51, 51, 51, 1)
@@ -2492,6 +2709,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 RadiusBottomRight: =0
                                 RadiusTopLeft: =0
                                 RadiusTopRight: =0
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.6
                                 X: =DataCardKey21_1.X + DataCardKey21_1.Width
@@ -2503,10 +2721,12 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -2528,11 +2748,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey21_1.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -2583,11 +2805,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.4
                                 Wrap: =false
@@ -2597,11 +2821,15 @@ Sprint1_Scr_BereavementCashAssistance As screen:
 
                             DataCardValue22_1 As text:
                                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 Default: =Parent.Default
                                 DelayOutput: =true
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayMode: =Parent.DisplayMode
+                                FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 Format: =TextFormat.Number
                                 HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
@@ -2615,6 +2843,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 RadiusBottomRight: =0
                                 RadiusTopLeft: =0
                                 RadiusTopRight: =0
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.6
                                 X: =DataCardKey22_1.X + DataCardKey22_1.Width
@@ -2626,10 +2855,12 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -2651,11 +2882,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey22_1.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -2706,11 +2939,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.4
                                 Wrap: =false
@@ -2724,6 +2959,8 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 Color: =RGBA(51, 51, 51, 1)
                                 DefaultDate: =Parent.Default
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayMode: =Parent.DisplayMode
                                 EndYear: =Year(Today())+100
                                 Font: =Font.'Segoe UI'
@@ -2747,10 +2984,12 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -2772,11 +3011,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey18_2.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -2828,11 +3069,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =34
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.4
                                 Wrap: =false
@@ -2842,11 +3085,15 @@ Sprint1_Scr_BereavementCashAssistance As screen:
 
                             DataCardValue23_1 As text:
                                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 Default: =Parent.Default
                                 DelayOutput: =true
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                DisabledFill: =RGBA(244, 244, 244, 1)
                                 DisplayMode: =Parent.DisplayMode
+                                FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 HoverBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
                                 HoverColor: =RGBA(51, 51, 51, 1)
@@ -2860,6 +3107,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 RadiusBottomRight: =0
                                 RadiusTopLeft: =0
                                 RadiusTopRight: =0
+                                Size: =13
                                 Tooltip: =Parent.DisplayName
                                 Width: =(Parent.Width - 60) * 0.6
                                 X: =DataCardKey23_1.X + DataCardKey23_1.Width
@@ -2871,10 +3119,12 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderColor: =RGBA(0, 0, 0, 0)
                                 BorderStyle: =BorderStyle.None
                                 BorderThickness: =2
+                                Color: =RGBA(168, 0, 0, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(168, 0, 0, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
                                 Height: =10
                                 Live: =Live.Assertive
                                 PaddingBottom: =0
@@ -2896,11 +3146,13 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                                 BorderThickness: =2
                                 Color: =RGBA(51, 51, 51, 1)
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
                                 FocusedBorderThickness: =4
                                 Font: =Font.'Segoe UI'
                                 FontWeight: =FontWeight.Semibold
                                 Height: =DataCardKey23_1.Height
                                 PaddingLeft: =0
+                                Size: =13
                                 Text: ="*"
                                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
                                 Width: =30
@@ -2915,6 +3167,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                         BorderThickness: =2
                         Color: =RGBA(51, 51, 51, 1)
                         DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
                         FocusedBorderThickness: =4
                         Font: =Font.'Segoe UI'
                         FontWeight: =FontWeight.Lighter
@@ -2927,11 +3180,16 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                         ZIndex: =25
 
             DeleteConfirmDialogContainer1_2 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.Light
                 FillPortions: =7
                 LayoutDirection: =LayoutDirection.Vertical
                 LayoutMinHeight: =100
                 LayoutMinWidth: =250
                 LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
                 Visible: =If(deleteMode, true, false)
                 Width: =0
                 ZIndex: =25
@@ -2944,28 +3202,39 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                     BorderThickness: =2
                     Color: =RGBA(51, 51, 51, 1)
                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(166, 166, 166, 1)
                     FillPortions: =1
                     FocusedBorderThickness: =4
                     Font: =Font.'Segoe UI'
+                    Size: =13
                     Text: ="Are you sure you want to delete this record?"
                     ZIndex: =26
 
                 ConfirmDeleteButtonBarContainer1_2 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Light
                     LayoutGap: =15
                     LayoutJustifyContent: =LayoutJustifyContent.Center
                     LayoutMinHeight: =100
                     LayoutMinWidth: =250
                     LayoutMode: =LayoutMode.Auto
                     LayoutWrap: =true
+                    RadiusBottomLeft: =4
+                    RadiusBottomRight: =4
+                    RadiusTopLeft: =4
+                    RadiusTopRight: =4
                     ZIndex: =27
 
                     CancelDeleteButton1_2 As button:
                         BorderColor: =RGBA(0, 0, 0, 0)
                         DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
                         Fill: =RGBA(73, 130, 5, 1)
                         FocusedBorderColor: =ColorFade(Self.Fill, -75%)
                         Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Semibold
                         HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =RGBA(255, 255, 255, 1)
                         HoverFill: =ColorFade(RGBA(73, 130, 5, 1), -10%)
                         OnSelect: |-
                             =UpdateContext({ deleteMode: false, deleteCancelled: true })
@@ -2976,16 +3245,21 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                         RadiusBottomRight: =0
                         RadiusTopLeft: =0
                         RadiusTopRight: =0
+                        Size: =15
                         Text: ="Cancel"
                         ZIndex: =28
 
                     ConfirmDeleteButton1_2 As button:
                         BorderColor: =RGBA(0, 0, 0, 0)
                         DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
                         Fill: =RGBA(73, 130, 5, 1)
                         FocusedBorderColor: =ColorFade(Self.Fill, -75%)
                         Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Semibold
                         HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =RGBA(255, 255, 255, 1)
                         HoverFill: =ColorFade(RGBA(73, 130, 5, 1), -10%)
                         OnSelect: |-
                             =Remove([@'rcp_sprint1_Bereavement Cash Assistance List'], selectedRecord); If(IsEmpty(Errors([@'rcp_sprint1_Bereavement Cash Assistance List'], selectedRecord)), UpdateContext( { CurrentItem: First([@'rcp_sprint1_Bereavement Cash Assistance List']), itemSelected: false, editMode: false, newMode: false, deleteMode: false }));
@@ -2996,6 +3270,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                         RadiusBottomRight: =0
                         RadiusTopLeft: =0
                         RadiusTopRight: =0
+                        Size: =15
                         Text: ="Delete"
                         ZIndex: =29
 

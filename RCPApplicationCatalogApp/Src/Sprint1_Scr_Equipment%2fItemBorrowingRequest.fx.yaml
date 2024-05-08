@@ -523,13 +523,13 @@
                         OnSelect: |
                             =If(
                                 Or(
-                                    IsBlank(fldVal_EquipmentItem.Text),
-                                    IsBlank(fldVal_Quantity.Text),
-                                    IsBlank(fldVal_Reason.Text)
+                                    !IsBlank(fldVal_EquipmentItem.Text),
+                                    !IsBlank(fldVal_Quantity.Text),
+                                    !IsBlank(fldVal_Reason.Text)
                                 ),
                                 If(
                                     SubmitForm('frm_Equipment/ItemBorrowingRequest');
-                                    Or(
+                                    And(
                                         IsBlank('Job Level/Rank_DataCard1_2'.Error),
                                         IsBlank('Office Location_DataCard1_2'.Error),
                                         IsBlank('Date and Time From_DataCard1'.Error),

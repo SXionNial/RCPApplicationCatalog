@@ -519,37 +519,56 @@
                         HoverColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
                         HoverFill: =RGBA(0, 0, 0, 0)
                         Icon: =Icon.Check
-                        OnSelect: |-
-                            =SubmitForm('frm_Equipment/ItemBorrowingRequest'),
+                        OnSelect: |
+                            =SubmitForm('frm_Equipment/ItemBorrowingRequest');
                             If(
-                                And(IsBlank('Job Level/Rank_DataCard1_2'.Error)),
-                                ForAll(
-                                    colItems,
+                                Or(
+                                    IsBlank(fldVal_EquipmentItem.Text),
+                                    IsBlank(fldVal_Quantity.Text),
+                                    IsBlank(fldVal_Reason.HintText)
+                                ),
+                                If(
+                                    Or(
+                                        IsBlank('Job Level/Rank_DataCard1_2'.Error),
+                                        IsBlank('Office Location_DataCard1_2'.Error),
+                                        IsBlank('Date and Time From_DataCard1'.Error),
+                                        IsBlank('Date and Time To_DataCard1'.Error)
+                                    ),
+                                    ForAll(
+                                        colItems,
+                                        Patch(
+                                            rcp_sprint1_EquipmentBorrowingRequestItemsList,
+                                            {
+                                                Title: "ITM" & col_Id,
+                                                'Item ID': Value(fldVal_ItemID_EIBRList.Text),
+                                                'Equipment/Item': Equipment_x002f_Item,
+                                                Quantity: Quantity,
+                                                Reason: Reason
+                                            }
+                                        )
+                                    );
+                                    //add record id to Title
+                                    UpdateContext({varRequestID: 'recordsGallery_Equipment/ItemBorrowingRequest'.Selected.ID});
                                     Patch(
-                                        rcp_sprint1_EquipmentBorrowingRequestItemsList,
-                                        {
-                                            Title: "ITM" & col_Id,
-                                            'Item ID': Value(fldVal_ItemID_EIBRList.Text),
-                                            'Equipment/Item': Equipment_x002f_Item,
-                                            Quantity: Quantity,
-                                            Reason: Reason
-                                        }
-                                    )
+                                        rcp_sprint1_EquipmentBorrowingRequestList,
+                                        {Title: "EIBR_" & varRequestID}
+                                    );
+                                    Clear(colItems);
+                                    ,
+                                    Notify(
+                                        "Please fill out the missing fields",
+                                        NotificationType.Error,
+                                        10000
+                                    );
                                 );
+                                ,
                                 Notify(
-                                    "Please fill out the Missing Fields",
-                                    NotificationType.Error,
-                                    10000
-                                );
+                                        "Please add equipments",
+                                        NotificationType.Error,
+                                        10000
+                                    );
                                 
                             );
-                            //add record id to Title
-                            UpdateContext({varRequestID: 'recordsGallery_Equipment/ItemBorrowingRequest'.Selected.ID});
-                            Patch(
-                                rcp_sprint1_EquipmentBorrowingRequestList,
-                                {Title: "EIBR_" & varRequestID}
-                            );
-                            Clear(colItems);
                         PaddingBottom: =12
                         PaddingLeft: =12
                         PaddingRight: =12
@@ -1257,10 +1276,7 @@
                                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                                 CalendarHeaderFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
                                 Color: =RGBA(51, 51, 51, 1)
-                                DefaultDate: |-
-                                    =//Parent.Default 
-                                    
-                                    Today()
+                                DefaultDate: =Parent.Default 
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(166, 166, 166, 1)
                                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -1269,6 +1285,7 @@
                                 Font: =Font.'Segoe UI'
                                 HoverDateFill: =RGBA(200, 200, 200, 1)
                                 IconBackground: =RGBA(73, 130, 5, 1)
+                                InputTextPlaceholder: =If(IsBlank(Self.SelectedDate), Text(Today(), Self.Format, Self.Language))
                                 IsEditable: =true
                                 PaddingBottom: =0
                                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
@@ -1469,10 +1486,7 @@
                                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                                 CalendarHeaderFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
                                 Color: =RGBA(51, 51, 51, 1)
-                                DefaultDate: |-
-                                    =//Parent.Default
-                                    
-                                    Today()
+                                DefaultDate: =Parent.Default
                                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                 DisabledColor: =RGBA(166, 166, 166, 1)
                                 DisabledFill: =RGBA(244, 244, 244, 1)
@@ -1481,6 +1495,7 @@
                                 Font: =Font.'Segoe UI'
                                 HoverDateFill: =RGBA(200, 200, 200, 1)
                                 IconBackground: =RGBA(73, 130, 5, 1)
+                                InputTextPlaceholder: =If(IsBlank(Self.SelectedDate), Text(Today(), Self.Format, Self.Language))
                                 IsEditable: =true
                                 PaddingBottom: =0
                                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)

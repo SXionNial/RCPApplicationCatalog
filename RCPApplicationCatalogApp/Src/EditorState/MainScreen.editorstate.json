@@ -934,7 +934,7 @@
         {
           "Category": "Data",
           "PropertyName": "NavigateToScreen",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Data",

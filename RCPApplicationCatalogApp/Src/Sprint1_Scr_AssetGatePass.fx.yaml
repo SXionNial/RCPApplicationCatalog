@@ -3222,7 +3222,7 @@ Sprint1_Scr_AssetGatePass As screen:
                                 PressedColor: =RGBA(255, 255, 255, 1)
                                 PressedFill: =RGBA(73, 130, 5, 1)
                                 SearchFields: =["Value"]
-                                SearchItems: =[]
+                                SearchItems: =Choices(rcp_sprint1_AssetGatePassList.Status,fldVal_Status_AGP.SearchText)
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
                                 Size: =13

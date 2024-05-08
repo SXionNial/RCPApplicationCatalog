@@ -1754,66 +1754,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.BodyContainer1_1.RightContainer1_1.SelectedRecordHeaderContainer1_1.EditIconButton1_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.BodyContainer1_1.RightContainer1_1.SelectedRecordHeaderContainer1_1.EditIconButton1_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Sprint1_Scr_AssetGatePass",
-                "type": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.BodyContainer1_1.RightContainer1_1.SelectedRecordHeaderContainer1_1.EditIconButton1_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.BodyContainer1_1.RightContainer1_1.SelectedRecordHeaderContainer1_1.DeleteIconButton1_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.BodyContainer1_1.RightContainer1_1.SelectedRecordHeaderContainer1_1.DeleteIconButton1_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Sprint1_Scr_AssetGatePass",
-                "type": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.BodyContainer1_1.RightContainer1_1.SelectedRecordHeaderContainer1_1.DeleteIconButton1_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.BodyContainer1_1.RightContainer1_1.SelectedRecordHeaderContainer1_1.SubmitFormButton1_1.AccessibleLabel"
                 }
               ],
@@ -1857,6 +1797,66 @@
                 "member": "AccessibleLabel",
                 "module": "Sprint1_Scr_AssetGatePass",
                 "type": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.BodyContainer1_1.RightContainer1_1.SelectedRecordHeaderContainer1_1.ResetFormButton1_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.BodyContainer1_1.RightContainer1_1.SelectedRecordHeaderContainer1_1.EditIconButton1_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.BodyContainer1_1.RightContainer1_1.SelectedRecordHeaderContainer1_1.EditIconButton1_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Sprint1_Scr_AssetGatePass",
+                "type": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.BodyContainer1_1.RightContainer1_1.SelectedRecordHeaderContainer1_1.EditIconButton1_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.BodyContainer1_1.RightContainer1_1.SelectedRecordHeaderContainer1_1.DeleteIconButton1_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.BodyContainer1_1.RightContainer1_1.SelectedRecordHeaderContainer1_1.DeleteIconButton1_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Sprint1_Scr_AssetGatePass",
+                "type": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.BodyContainer1_1.RightContainer1_1.SelectedRecordHeaderContainer1_1.DeleteIconButton1_1"
               }
             }
           ],
@@ -3854,66 +3854,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "'Sprint1_Scr_Equipment/ItemBorrowingRequest'.ScreenContainer1_3.BodyContainer1_3.RightContainer1_3.SelectedRecordHeaderContainer1_3.EditIconButton1_3.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Sprint1_Scr_Equipment/ItemBorrowingRequest'.ScreenContainer1_3.BodyContainer1_3.RightContainer1_3.SelectedRecordHeaderContainer1_3.EditIconButton1_3.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Sprint1_Scr_Equipment/ItemBorrowingRequest",
-                "type": "'Sprint1_Scr_Equipment/ItemBorrowingRequest'.ScreenContainer1_3.BodyContainer1_3.RightContainer1_3.SelectedRecordHeaderContainer1_3.EditIconButton1_3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Sprint1_Scr_Equipment/ItemBorrowingRequest'.ScreenContainer1_3.BodyContainer1_3.RightContainer1_3.SelectedRecordHeaderContainer1_3.DeleteIconButton1_3.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Sprint1_Scr_Equipment/ItemBorrowingRequest'.ScreenContainer1_3.BodyContainer1_3.RightContainer1_3.SelectedRecordHeaderContainer1_3.DeleteIconButton1_3.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Sprint1_Scr_Equipment/ItemBorrowingRequest",
-                "type": "'Sprint1_Scr_Equipment/ItemBorrowingRequest'.ScreenContainer1_3.BodyContainer1_3.RightContainer1_3.SelectedRecordHeaderContainer1_3.DeleteIconButton1_3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "'Sprint1_Scr_Equipment/ItemBorrowingRequest'.ScreenContainer1_3.BodyContainer1_3.RightContainer1_3.SelectedRecordHeaderContainer1_3.SubmitFormButton1_3.AccessibleLabel"
                 }
               ],
@@ -3957,6 +3897,66 @@
                 "member": "AccessibleLabel",
                 "module": "Sprint1_Scr_Equipment/ItemBorrowingRequest",
                 "type": "'Sprint1_Scr_Equipment/ItemBorrowingRequest'.ScreenContainer1_3.BodyContainer1_3.RightContainer1_3.SelectedRecordHeaderContainer1_3.ResetFormButton1_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Sprint1_Scr_Equipment/ItemBorrowingRequest'.ScreenContainer1_3.BodyContainer1_3.RightContainer1_3.SelectedRecordHeaderContainer1_3.EditIconButton1_3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Sprint1_Scr_Equipment/ItemBorrowingRequest'.ScreenContainer1_3.BodyContainer1_3.RightContainer1_3.SelectedRecordHeaderContainer1_3.EditIconButton1_3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Sprint1_Scr_Equipment/ItemBorrowingRequest",
+                "type": "'Sprint1_Scr_Equipment/ItemBorrowingRequest'.ScreenContainer1_3.BodyContainer1_3.RightContainer1_3.SelectedRecordHeaderContainer1_3.EditIconButton1_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Sprint1_Scr_Equipment/ItemBorrowingRequest'.ScreenContainer1_3.BodyContainer1_3.RightContainer1_3.SelectedRecordHeaderContainer1_3.DeleteIconButton1_3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Sprint1_Scr_Equipment/ItemBorrowingRequest'.ScreenContainer1_3.BodyContainer1_3.RightContainer1_3.SelectedRecordHeaderContainer1_3.DeleteIconButton1_3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Sprint1_Scr_Equipment/ItemBorrowingRequest",
+                "type": "'Sprint1_Scr_Equipment/ItemBorrowingRequest'.ScreenContainer1_3.BodyContainer1_3.RightContainer1_3.SelectedRecordHeaderContainer1_3.DeleteIconButton1_3"
               }
             }
           ],
@@ -5485,36 +5485,6 @@
               },
               "properties": {
                 "member": "Text",
-                "module": "Sprint1_Scr_Equipment/ItemBorrowingRequest",
-                "type": "'Sprint1_Scr_Equipment/ItemBorrowingRequest'.ScreenContainer1_3.BodyContainer1_3.RightContainer1_3.MainContainer1_3.EIBR_noRecordsLabel"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "'Sprint1_Scr_Equipment/ItemBorrowingRequest'.ScreenContainer1_3.BodyContainer1_3.RightContainer1_3.MainContainer1_3.EIBR_noRecordsLabel.Visible"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "'Sprint1_Scr_Equipment/ItemBorrowingRequest'.ScreenContainer1_3.BodyContainer1_3.RightContainer1_3.MainContainer1_3.EIBR_noRecordsLabel.Visible",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Visible",
                 "module": "Sprint1_Scr_Equipment/ItemBorrowingRequest",
                 "type": "'Sprint1_Scr_Equipment/ItemBorrowingRequest'.ScreenContainer1_3.BodyContainer1_3.RightContainer1_3.MainContainer1_3.EIBR_noRecordsLabel"
               }

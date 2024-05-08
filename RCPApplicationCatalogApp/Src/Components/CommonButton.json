@@ -124,7 +124,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "CommonButton",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 744,
+        "PublishOrderIndex": 4,
         "Rules": [
           {
             "Category": "Data",
@@ -491,7 +491,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "CommonButton",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 745,
+        "PublishOrderIndex": 5,
         "Rules": [
           {
             "Category": "Data",
@@ -903,7 +903,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "CommonButton",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 746,
+        "PublishOrderIndex": 6,
         "Rules": [
           {
             "Category": "Data",
@@ -1200,7 +1200,7 @@
       },
       "NavigateToScreen"
     ],
-    "LastModifiedTimestamp": "638507446972183516",
+    "LastModifiedTimestamp": "638507454807945692",
     "Name": "CommonButton",
     "Rules": [
       {
@@ -1290,7 +1290,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638507446972183516",
+  "LastModifiedTimestamp": "638507454807945692",
   "Name": "8f98bb6c823843be9f83cbf099586c9f",
   "OverridableProperties": {},
   "TemplateOriginalName": "20f1e78e499646b1a7e6849739871d57",

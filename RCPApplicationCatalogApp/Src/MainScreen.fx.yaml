@@ -127,7 +127,8 @@ MainScreen As screen:
             Refresh('rcp_sprint1_Bereavement Cash Assistance List');
             Refresh(rcp_sprint1_AssetGatePassList);
             Refresh(rcp_sprint1_AssetGatePassItemsList);
-            
+            Refresh(rcp_sprint1_EquipmentBorrowingRequestList);
+            Refresh(rcp_sprint1_EquipmentBorrowingRequestItemsList);
             
             
             //--- samples from old app ---//

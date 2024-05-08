@@ -124,7 +124,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "CommonButton",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 4,
+        "PublishOrderIndex": 743,
         "Rules": [
           {
             "Category": "Data",
@@ -491,7 +491,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "CommonButton",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 5,
+        "PublishOrderIndex": 744,
         "Rules": [
           {
             "Category": "Data",
@@ -903,7 +903,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "CommonButton",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 6,
+        "PublishOrderIndex": 745,
         "Rules": [
           {
             "Category": "Data",

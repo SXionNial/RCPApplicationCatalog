@@ -17036,14 +17036,7 @@
         },
         "DateTimeZone",
         "Format",
-        {
-          "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "If(IsBlank(Self.SelectedDate), Text(Date(2001,12,31), Self.Format, Self.Language))",
-          "InvariantPropertyName": "InputTextPlaceholder",
-          "IsLockable": false,
-          "NameMapSourceSchema": "?"
-        },
+        "InputTextPlaceholder",
         "StartYear",
         "EndYear",
         "StartOfWeek",
@@ -17116,7 +17109,7 @@
         {
           "Category": "Data",
           "PropertyName": "InputTextPlaceholder",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Data",
@@ -17337,8 +17330,8 @@
       "ControlPropertyState": [
         {
           "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": true,
-          "AutoRuleBindingString": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "Parent.Default",
           "InvariantPropertyName": "DefaultDate",
           "IsLockable": true,
           "NameMapSourceSchema": "?"
@@ -17369,14 +17362,7 @@
         },
         "DateTimeZone",
         "Format",
-        {
-          "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "If(IsBlank(Self.SelectedDate), Text(Date(2001,12,31), Self.Format, Self.Language))",
-          "InvariantPropertyName": "InputTextPlaceholder",
-          "IsLockable": false,
-          "NameMapSourceSchema": "?"
-        },
+        "InputTextPlaceholder",
         "StartYear",
         "EndYear",
         "StartOfWeek",
@@ -17449,7 +17435,7 @@
         {
           "Category": "Data",
           "PropertyName": "InputTextPlaceholder",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Data",

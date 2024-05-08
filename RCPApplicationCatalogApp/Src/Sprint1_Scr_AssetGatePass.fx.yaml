@@ -2041,7 +2041,7 @@ Sprint1_Scr_AssetGatePass As screen:
                                 PressedColor: =RGBA(255, 255, 255, 1)
                                 PressedFill: =RGBA(73, 130, 5, 1)
                                 SearchFields: =["DisplayName"]
-                                SearchItems: =[]
+                                SearchItems: =Choices(rcp_sprint1_AssetGatePassList.'Employee Name',DataCardValue2_1.SearchText)
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
                                 Size: =13
@@ -3474,7 +3474,7 @@ Sprint1_Scr_AssetGatePass As screen:
                                 PressedColor: =RGBA(255, 255, 255, 1)
                                 PressedFill: =RGBA(73, 130, 5, 1)
                                 SearchFields: =["DisplayName"]
-                                SearchItems: =[]
+                                SearchItems: =Choices(rcp_sprint1_AssetGatePassList.'Assigned To',DataCardValue8_1.SearchText)
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
                                 Size: =13

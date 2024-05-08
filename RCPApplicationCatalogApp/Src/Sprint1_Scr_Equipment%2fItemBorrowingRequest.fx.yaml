@@ -4276,7 +4276,7 @@
                         Height: =Parent.Height
                         Size: =18
                         Text: =If (CountRows(recordsGallery_BereavementCashAssistanceList.AllItems) > 0, msg_selectARecord, msg_noRecords)
-                        Visible: =And(frm_BereavementCashAssistanceList.DisplayMode <> DisplayMode.Edit,IsBlank(CurrentItem.ID))
+                        Visible: =And('frm_Equipment/ItemBorrowingRequest'.DisplayMode <> DisplayMode.Edit,IsBlank(CurrentItem.ID))
                         Width: =Parent.Width
                         Y: =80
                         ZIndex: =25

@@ -521,10 +521,25 @@
                         HoverFill: =RGBA(0, 0, 0, 0)
                         Icon: =Icon.Check
                         OnSelect: |
-                            =
+                            =EIBR_itemGallery_Card.Error =
+                            If(
+                                !IsBlank(fldVal_EquipmentItem.Text),
+                                "Equipment item is required.",
+                                If(
+                                    !IsBlank(fldVal_Quantity.Text),
+                                    "Quantity is required.",
+                                    If(
+                                        !IsBlank(fldVal_Reason.Text),
+                                        "Reason is required.",
+                                        ""
+                                    )
+                                )
+                            );
+                            
+                            
                             SubmitForm('frm_Equipment/ItemBorrowingRequest');
                             If(
-                                Or(
+                                And(
                                     IsBlank('Job Level/Rank_DataCard1_2'.Error),
                                     IsBlank('Office Location_DataCard1_2'.Error),
                                     IsBlank('Date and Time From_DataCard1'.Error),
@@ -532,10 +547,11 @@
                                 ),
                                 If(
                                     Or(
-                                        IsBlank(fldVal_EquipmentItem.Text),
-                                        IsBlank(fldVal_Quantity.Text),
-                                        IsBlank(fldVal_Reason.HintText)
+                                        !IsBlank(fldVal_EquipmentItem.Text),
+                                        !IsBlank(fldVal_Quantity.Text),
+                                        !IsBlank(fldVal_Reason.Text)
                                     ),
+                                    SubmitForm('frm_Equipment/ItemBorrowingRequest');
                                     ForAll(
                                         colItems,
                                         Patch(

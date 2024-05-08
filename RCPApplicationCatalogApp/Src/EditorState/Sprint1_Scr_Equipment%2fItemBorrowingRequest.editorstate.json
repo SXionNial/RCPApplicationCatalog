@@ -17945,7 +17945,7 @@
       "MetaDataIDKey": "%DeleteIconButton.ID%",
       "Name": "DeleteIconButton1_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -18381,7 +18381,7 @@
       "MetaDataIDKey": "%EditIconButton.ID%",
       "Name": "EditIconButton1_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -18801,7 +18801,7 @@
         {
           "Category": "Design",
           "PropertyName": "Visible",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -36066,7 +36066,7 @@
       "MetaDataIDKey": "%ResetFormButton.ID%",
       "Name": "ResetFormButton1_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -46384,7 +46384,7 @@
       "MetaDataIDKey": "%SubmitFormButton.ID%",
       "Name": "SubmitFormButton1_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

@@ -1106,7 +1106,7 @@
       "ShowSubmit",
       "ShowBackButton"
     ],
-    "LastModifiedTimestamp": "638507424808380376",
+    "LastModifiedTimestamp": "638507435405716850",
     "Name": "NavBar",
     "Rules": [
       {
@@ -1211,7 +1211,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638507424808380376",
+  "LastModifiedTimestamp": "638507435405716850",
   "Name": "76218de4038840cbb822fa97b20b6dbc",
   "OverridableProperties": {},
   "TemplateOriginalName": "ce320d50efea4e9faa5a6caa7357d516",

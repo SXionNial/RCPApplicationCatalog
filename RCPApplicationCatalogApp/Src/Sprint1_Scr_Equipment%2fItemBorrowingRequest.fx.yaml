@@ -553,7 +553,7 @@
                                         rcp_sprint1_EquipmentBorrowingRequestList,
                                         {Title: "EIBR_" & varRequestID}
                                     );
-                                    Clear(colItems);
+                                     Clear(colItems);
                                     ,
                                     Notify(
                                         "Please fill out the missing fields",

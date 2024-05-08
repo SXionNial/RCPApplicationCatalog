@@ -501,9 +501,9 @@ Sprint1_Scr_AssetGatePass As screen:
                         HoverFill: =RGBA(0, 0, 0, 0)
                         Icon: =Icon.Check
                         OnSelect: |
-                            =
+                            =/* ---- Error (to be used as final test) ---- 
                             If(
-                                Or(
+                                Or( // error here, returns blank fields even if filled out
                                     !IsBlank(fldVal_AssetDevice.Text),
                                     !IsBlank(fldVal_AssetTag.Text),
                                     !IsBlank(fldVal_UnitModel.Text),
@@ -558,7 +558,7 @@ Sprint1_Scr_AssetGatePass As screen:
                                     10000
                                 );
                             )
-                            
+                            */
                             
                             /*  ------ For Validation Testing to show errors even without using SubmitForm() function
                             If(
@@ -580,7 +580,7 @@ Sprint1_Scr_AssetGatePass As screen:
                             */
                             
                             
-                            /*
+                            //--- Main Working Test ----
                             If(
                                 Or(
                                     IsBlank(DataCardValue14_1.SelectedItems),
@@ -591,13 +591,13 @@ Sprint1_Scr_AssetGatePass As screen:
                                     IsBlank(DataCardValue19_1.Text),
                                     IsBlank(DataCardValue20_1.Text)
                                 ),
-                                UpdateContext({requiredFieldsMissing: false}); //for creating a variable to check if the field is blank and to change the color of the field
+                                //UpdateContext({requiredFieldsMissing: false}); //for creating a variable to check if the field is blank and to change the color of the field
                                 Notify(
                                     "Please fill out the Missing Fields",
                                     NotificationType.Error,
                                     10000
                                 );
-                                //SubmitForm(frm_AssetGatePass)
+                                SubmitForm(frm_AssetGatePass)
                                 ,
                                 ForAll(
                                     colAssets,
@@ -621,10 +621,10 @@ Sprint1_Scr_AssetGatePass As screen:
                                     {Title: "AGPR_" & varRequestID}
                                 );
                                 Clear(colAssets);
-                                //SubmitForm(frm_AssetGatePass);
+                                SubmitForm(frm_AssetGatePass);
                                 
                             )
-                            */
+                            
                             
                             /* //TEST PATCHING TO TEST TABLE  ---- WoRKS
                             ForAll(

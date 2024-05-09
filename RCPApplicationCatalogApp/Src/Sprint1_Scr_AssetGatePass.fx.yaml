@@ -1932,7 +1932,11 @@ Sprint1_Scr_AssetGatePass As screen:
                             DataField: ="Title"
                             Default: |-
                                 =//ThisItem.Title
-                                "AGPR_" & varAssetItemID
+                                If(
+                                    frm_AssetGatePass.Mode = FormMode.New,
+                                    "AGPR_" & varAssetItemID,
+                                    ThisItem.Title
+                                )
                             DisplayMode: =Parent.DisplayMode
                             DisplayName: =DataSourceInfo([@rcp_sprint1_AssetGatePassList],DataSourceInfo.DisplayName,Title)
                             Fill: =RGBA(0, 0, 0, 0)

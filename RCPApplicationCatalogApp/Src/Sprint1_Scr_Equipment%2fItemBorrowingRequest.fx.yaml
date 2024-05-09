@@ -528,7 +528,9 @@
                                     !IsBlank(fldVal_Reason.Text)
                                 );
                                 Notify(
-                                    fldVal_EquipmentItem.Text
+                                    fldVal_EquipmentItem.Text,
+                                    NotificationType.Error,
+                                    5000
                                 );
                                 ,
                                 If(
@@ -553,30 +555,31 @@
                                         )
                                     );
                                     //add record id to Title
-                                    UpdateContext({varRequestID: 'recordsGallery_Equipment/ItemBorrowingRequest'.Selected.ID});
+                            UpdateContext({varRequestID: 'recordsGallery_Equipment/ItemBorrowingRequest'.Selected.ID});
                                     Patch(
                                         rcp_sprint1_EquipmentBorrowingRequestList,
                                         {Title: "EIBR_" & varRequestID}
                                     );
                                     Clear(colItems);
                                     ,
-                                    
                                     Notify(
-                                    "Please fill out the missing fields",
-                                    NotificationType.Error,
-                                    10000
+                                        "Please fill out the missing fields",
+                                        NotificationType.Error,
+                                        10000
                                     );
                                 );
                                 ,
                                 Notify(
+                                    fldVal_EquipmentItem.Text,
+                                    NotificationType.Error,
+                                    5000
+                                );
+                                /*Notify(
                                     "Please add equipments",
                                     NotificationType.Error,
                                     10000
-                                );
+                                );*/
                             );
-                            
-                                
-                                
                         PaddingBottom: =12
                         PaddingLeft: =12
                         PaddingRight: =12

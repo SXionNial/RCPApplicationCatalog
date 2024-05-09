@@ -566,8 +566,10 @@
                             );
                             
                             If(
-                                equipmentFieldsCount = numberOfRows && quantityFieldsCount = numberOfRows && reasonFieldsCount = numberOfRows && numberOfRows <> 0,
+                                numberOfRows <> 0,
                                 If(
+                                    equipmentFieldsCount = numberOfRows && quantityFieldsCount = numberOfRows && reasonFieldsCount = numberOfRows,
+                                    If(
                                     SubmitForm('frm_Equipment/ItemBorrowingRequest');
                                     And(
                                         IsBlank('Job Level/Rank_DataCard1_2'.Error),
@@ -595,7 +597,13 @@
                                         {Title: "EIBR_" & varRequestID}
                                     );*/
                                     Clear(colItems);
+                                );
                                     ,
+                                    fldVal_EquipmentItem.BorderColor = If(
+                                IsBlank(fldVal_EquipmentItem.Text),
+                                Color.Red, // Set border color to red if the control is blank
+                                Color.Black // Set border color to black if the control is not blank
+                            );
                                     Notify(
                                         "Please fill out the missing fields",
                                         NotificationType.Error,

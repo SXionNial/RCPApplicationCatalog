@@ -597,18 +597,32 @@
                                         {Title: "EIBR_" & varRequestID}
                                     );*/
                                     Clear(colItems);
-                                );
+                                    );
                                     ,
-                                    fldVal_EquipmentItem.BorderColor = If(
-                                IsBlank(fldVal_EquipmentItem.Text),
-                                Color.Red, // Set border color to red if the control is blank
-                                Color.Black // Set border color to black if the control is not blank
-                            );
+                                    If(
+                                        IsBlank(fldVal_EquipmentItem.Text),
+                                        UpdateContext({equFieldBlank: true})
+                                        ,
+                                        UpdateContext({equFieldBlank: false})
+                                    );
+                                    If(
+                                        IsBlank(fldVal_EquipmentItem.Text),
+                                        UpdateContext({quaFieldBlank: true})
+                                        ,
+                                        UpdateContext({quaFieldBlank: false})
+                                    );
+                                    If(
+                                        IsBlank(fldVal_EquipmentItem.Text),
+                                        UpdateContext({resFieldBlank: true})
+                                        ,
+                                        UpdateContext({resFieldBlank: false})
+                                    );
                                     Notify(
                                         "Please fill out the missing fields",
                                         NotificationType.Error,
                                         10000
                                     );
+                                    
                                 );
                                 ,
                                 Notify(
@@ -644,6 +658,9 @@
                         OnSelect: |-
                             =ResetForm('frm_Equipment/ItemBorrowingRequest'); UpdateContext({ editMode: false, newMode: false });
                             Clear(colItems);
+                            UpdateContext({equFieldBlank: false});
+                            UpdateContext({quaFieldBlank: false});
+                            UpdateContext({resFieldBlank: false});
                         PaddingBottom: =12
                         PaddingLeft: =12
                         PaddingRight: =12
@@ -1002,7 +1019,14 @@
                                 ZIndex: =2
 
                                 fldVal_Reason As text:
-                                    BorderColor: =RGBA(166, 166, 166, 1)
+                                    BorderColor: |-
+                                        =//RGBA(166, 166, 166, 1)
+                                        If (
+                                            resFieldBlank
+                                        && IsBlank (Self.Text),
+                                            Color.Red,
+                                            RGBA(166, 166, 166, 1)
+                                        )
                                     Color: =RGBA(51, 51, 51, 1)
                                     Default: =ThisItem.Reason
                                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
@@ -1040,7 +1064,14 @@
                                     ZIndex: =1
 
                                 fldVal_Quantity As text:
-                                    BorderColor: =RGBA(166, 166, 166, 1)
+                                    BorderColor: |-
+                                        =//RGBA(166, 166, 166, 1)
+                                        If (
+                                            quaFieldBlank
+                                        && IsBlank (Self.Text),
+                                            Color.Red,
+                                            RGBA(166, 166, 166, 1)
+                                        )
                                     Color: =RGBA(51, 51, 51, 1)
                                     Default: =ThisItem.Quantity
                                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
@@ -1076,12 +1107,28 @@
                                     ZIndex: =2
 
                                 fldVal_EquipmentItem As text:
-                                    BorderColor: =RGBA(166, 166, 166, 1)
+                                    BorderColor: |-
+                                        =//RGBA(166, 166, 166, 1)
+                                        If (
+                                            equFieldBlank
+                                        && IsBlank (Self.Text),
+                                            Color.Red,
+                                            RGBA(166, 166, 166, 1)
+                                        )
                                     Color: =RGBA(51, 51, 51, 1)
                                     Default: =ThisItem.'Equipment/Item'
                                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                     DisabledColor: =RGBA(166, 166, 166, 1)
                                     DisabledFill: =RGBA(244, 244, 244, 1)
+                                    Fill: |-
+                                        =//RGBA(255, 255, 255, 1)
+                                        
+                                        If (
+                                            equFieldBlank
+                                        && IsBlank (Self.Text),
+                                            Color.Red,
+                                            RGBA(255, 151, 158, 1)
+                                        )
                                     FocusedBorderThickness: =4
                                     Font: =Font.'Segoe UI'
                                     Height: =Label1_29.Height

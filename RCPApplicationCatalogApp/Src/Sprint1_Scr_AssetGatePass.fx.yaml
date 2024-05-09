@@ -501,7 +501,130 @@ Sprint1_Scr_AssetGatePass As screen:
                         HoverFill: =RGBA(0, 0, 0, 0)
                         Icon: =Icon.Check
                         OnSelect: |
-                            =/* ---- Error (to be used as final test) ---- 
+                            =Set(
+                                numberOfRows,
+                                CountRows(colAssets)
+                            );
+                            
+                            Set(
+                                assetDeviceFieldsCount,
+                                CountRows(
+                                    ShowColumns(
+                                        Filter(
+                                            colAssets,
+                                            !IsBlank(Asset_x002f_Device)
+                                        ),
+                                        Asset_x002f_Device
+                                    )
+                                )
+                            );
+                            
+                            Set(
+                                assetTagFieldsCount,
+                                CountRows(
+                                    ShowColumns(
+                                        Filter(
+                                            colAssets,
+                                            !IsBlank(AssetTag)
+                                        ),
+                                        AssetTag
+                                    )
+                                )
+                            );
+                            
+                            Set(
+                                unitModelFieldsCount,
+                                CountRows(
+                                    ShowColumns(
+                                        Filter(
+                                            colAssets,
+                                            !IsBlank(UnitModel)
+                                        ),
+                                        UnitModel
+                                    )
+                                )
+                            );
+                            
+                            Set(
+                                serialNumberFieldsCount,
+                                CountRows(
+                                    ShowColumns(
+                                        Filter(
+                                            colAssets,
+                                            !IsBlank(SerialNumber)
+                                        ),
+                                        SerialNumber
+                                    )
+                                )
+                            );
+                            
+                            Set(
+                                purposeReasonFieldsCount,
+                                CountRows(
+                                    ShowColumns(
+                                        Filter(
+                                            colAssets,
+                                            !IsBlank(Purpose_x002f_Reason)
+                                        ),
+                                        Purpose_x002f_Reason
+                                    )
+                                )
+                            );
+                            
+                            If(
+                                assetDeviceFieldsCount = numberOfRows && assetTagFieldsCount = numberOfRows && unitModelFieldsCount = numberOfRows && purposeReasonFieldsCount = numberOfRows && serialNumberFieldsCount = numberOfRows && numberOfRows <> 0,
+                                If(
+                                    SubmitForm(frm_AssetGatePass);
+                                    And(
+                                        IsBlank('Job Level/Rank_DataCard1'.Error),
+                                        IsBlank('Office Location_DataCard1'.Error),
+                                        IsBlank('Work Arrangement_DataCard1'.Error),
+                            	    IsBlank('Date From_DataCard1'.Error),
+                                        IsBlank('Date To_DataCard1'.Error),
+                                        IsBlank('Location From_DataCard1'.Error),
+                                        IsBlank('Location To_DataCard1'.Error)
+                                    ),
+                                    ForAll(
+                                    colAssets,
+                                    Patch(
+                                        rcp_sprint1_AssetGatePassItemsList,
+                                        {
+                                            Title: "ITM" & col_ID,
+                                            'Item ID': Value(fldVal_ItemID_AGPList.Text),
+                                            'Asset/Device': Asset_x002f_Device,
+                                            'Asset Tag': AssetTag,
+                                            'Unit Model': UnitModel,
+                                            'Serial Number': SerialNumber,
+                                            'Purpose/Reason': Purpose_x002f_Reason
+                                        }
+                                    )
+                                );
+                                    //add record id to Title (Update 05-09-2024: Moved this to the Title DataCard)
+                                    /*UpdateContext({varRequestID: recordsGallery_AssetGatePass.Selected.ID});
+                                Patch(
+                                    rcp_sprint1_AssetGatePassList,
+                                    {Title: "AGPR_" & varRequestID}
+                                );*/
+                                    Clear(colAssets);
+                                    ,
+                                    Notify(
+                                        "Please fill out the missing fields",
+                                        NotificationType.Error,
+                                        10000
+                                    );
+                                );
+                                ,
+                                Notify(
+                                    "Please add equipments",
+                                    NotificationType.Error,
+                                    10000
+                                );
+                            );
+                            
+                            
+                            
+                            
+                            /* ---- Error (to be used as final test) ---- 
                             If(
                                 Or( // error here, returns blank fields even if filled out
                                     !IsBlank(fldVal_AssetDevice.Text),
@@ -581,7 +704,7 @@ Sprint1_Scr_AssetGatePass As screen:
                             
                             
                             //--- Main Working Test ----
-                            If(
+                            /*If(
                                 Or(
                                     IsBlank(DataCardValue14_1.SelectedItems),
                                     IsBlank(DataCardValue15_1.SelectedItems),
@@ -623,7 +746,7 @@ Sprint1_Scr_AssetGatePass As screen:
                                 Clear(colAssets);
                                 SubmitForm(frm_AssetGatePass);
                                 
-                            )
+                            )*/
                             
                             
                             /* //TEST PATCHING TO TEST TABLE  ---- WoRKS

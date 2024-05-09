@@ -1341,7 +1341,7 @@
                                 Size: =13
                                 StartYear: =1899
                                 Tooltip: =Parent.DisplayName
-                                Width: =(Parent.Width - 60) * 0.4
+                                Width: =If('frm_Equipment/ItemBorrowingRequest'.Mode = FormMode.New,(Parent.Width - 60) * 0.4,(Parent.Width - 700) * 0.4)
                                 X: =DataCardKey29.X + DataCardKey29.Width
                                 Y: =Parent.Height/2 - Parent.Height/4
                                 ZIndex: =2
@@ -1376,7 +1376,7 @@
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 Size: =13
                                 Tooltip: =Parent.DisplayName
-                                Width: =If('frm_Equipment/ItemBorrowingRequest'.Mode = FormMode.New,DateValue1.Width / 5.5,DateValue1.Width / 12-10)
+                                Width: =If('frm_Equipment/ItemBorrowingRequest'.Mode = FormMode.New,DateValue1.Width / 5.5,DateValue1.Width / 4)
                                 X: =DateValue1.X + DateValue1.Width + 20
                                 Y: =Parent.Height/2 - Parent.Height/4
                                 ZIndex: =3
@@ -1551,7 +1551,7 @@
                                 Size: =13
                                 StartYear: =1899
                                 Tooltip: =Parent.DisplayName
-                                Width: =(Parent.Width - 60) * 0.4
+                                Width: =If('frm_Equipment/ItemBorrowingRequest'.Mode = FormMode.New,(Parent.Width - 60) * 0.4,(Parent.Width - 700) * 0.4)
                                 X: =DataCardKey30.X + DataCardKey30.Width
                                 Y: =Parent.Height/2 - Parent.Height/4
                                 ZIndex: =2
@@ -1586,7 +1586,7 @@
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 Size: =13
                                 Tooltip: =Parent.DisplayName
-                                Width: =If('frm_Equipment/ItemBorrowingRequest'.Mode = FormMode.New,DateValue2.Width / 5.5,DateValue2.Width / 12-10)
+                                Width: =If('frm_Equipment/ItemBorrowingRequest'.Mode = FormMode.New,DateValue2.Width / 5.5,DateValue2.Width / 4)
                                 X: =DateValue2.X + DateValue2.Width + 20
                                 Y: =Parent.Height/2 - Parent.Height/4
                                 ZIndex: =3
@@ -1820,7 +1820,7 @@
                                 Size: =13
                                 StartYear: =1899
                                 Tooltip: =Parent.DisplayName
-                                Width: =(Parent.Width - 60) * 0.4
+                                Width: =If('frm_Equipment/ItemBorrowingRequest'.Mode = FormMode.New,(Parent.Width - 60) * 0.4,(Parent.Width - 700) * 0.4)
                                 X: =DataCardKey31.X + DataCardKey31.Width
                                 Y: =Parent.Height/2 - Parent.Height/4
                                 ZIndex: =2
@@ -1855,7 +1855,11 @@
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 Size: =13
                                 Tooltip: =Parent.DisplayName
-                                Width: =If('frm_Equipment/ItemBorrowingRequest'.Mode = FormMode.New,DateValue3.Width / 5.5,DateValue3.Width / 12-10)
+                                Visible: |-
+                                    =//true
+                                    
+                                    If(IsBlank(DateValue3.SelectedDate),false,true)
+                                Width: =If('frm_Equipment/ItemBorrowingRequest'.Mode = FormMode.New,DateValue3.Width / 5.5,DateValue3.Width / 4)
                                 X: =DateValue3.X + DateValue3.Width + 20
                                 Y: =Parent.Height/2 - Parent.Height/4
                                 ZIndex: =3
@@ -1879,6 +1883,10 @@
                                 Size: =13
                                 Text: |-
                                     =":"
+                                Visible: |-
+                                    =//true
+                                    
+                                    If(IsBlank(DateValue3.SelectedDate),false,true)
                                 Width: =10
                                 Wrap: =false
                                 X: =HourValue3.X + HourValue3.Width
@@ -1915,6 +1923,10 @@
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 Size: =13
                                 Tooltip: =Parent.DisplayName
+                                Visible: |-
+                                    =//true
+                                    
+                                    If(IsBlank(DateValue3.SelectedDate),false,true)
                                 Width: =HourValue3.Width
                                 X: =HourValue3.X + HourValue3.Width + Separator4.Width
                                 Y: =HourValue3.Y

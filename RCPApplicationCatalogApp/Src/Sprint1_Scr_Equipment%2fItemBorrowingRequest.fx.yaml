@@ -521,21 +521,59 @@
                         HoverFill: =RGBA(0, 0, 0, 0)
                         Icon: =Icon.Check
                         OnSelect: |
-                            =/*Set(
-                                emptyFieldsCount,
-                                Count(
+                            =Set(
+                                numberOfRows,
+                                CountRows(colItems)
+                            );
+                            
+                            Set(
+                                equipmentFieldsCount,
+                                CountRows(
                                     ShowColumns(
                                         Filter(
                                             colItems,
-                                            IsBlank(Equipment_x002f_Item)
+                                            !IsBlank(Equipment_x002f_Item)
                                         ),
-                                        "Equipment_x002f_Item"
+                                        Equipment_x002f_Item
                                     )
                                 )
+                            );
+                            
+                            Set(
+                                quantityFieldsCount,
+                                CountRows(
+                                    ShowColumns(
+                                        Filter(
+                                            colItems,
+                                            !IsBlank(Quantity)
+                                        ),
+                                        Quantity
+                                    )
+                                )
+                            );
+                            
+                            Set(
+                                reasonFieldsCount,
+                                CountRows(
+                                    ShowColumns(
+                                        Filter(
+                                            colItems,
+                                            !IsBlank(Reason)
+                                        ),
+                                        Reason
+                                    )
+                                )
+                            );
+                            
+                            /*If(
+                                numberOfRows != 0,
+                                "frue",
+                                "false"
                             );*/
                             
                             If(
-                                CountRows(colItems) < 1 && IsBlank(colItems.Equipment_x002f_Item), 
+                                //CountRows(colItems) > 0 && !IsBlank(colItems.Equipment_x002f_Item), 
+                                equipmentFieldsCount = numberOfRows && quantityFieldsCount = numberOfRows && reasonFieldsCount = numberOfRows && numberOfRows <> 0,
                                 If(
                                     SubmitForm('frm_Equipment/ItemBorrowingRequest');
                                     And(
@@ -571,7 +609,7 @@
                                         10000
                                     );
                                 );
-                                
+                                ,
                                 Notify(
                                     "Please add equipments",
                                     NotificationType.Error,

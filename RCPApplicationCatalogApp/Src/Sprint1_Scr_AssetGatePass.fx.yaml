@@ -188,7 +188,11 @@ Sprint1_Scr_AssetGatePass As screen:
                         HoverFill: =RGBA(0, 0, 0, 0)
                         Icon: =Icon.Add
                         OnSelect: |-
-                            =NewForm(frm_AssetGatePass); UpdateContext({ newMode: true });
+                            =NewForm(frm_AssetGatePass); 
+                            Refresh(rcp_sprint1_AssetGatePassItemsList);
+                            Refresh(rcp_sprint1_AssetGatePassList);
+                            UpdateContext({ varAssetItemID: Last(rcp_sprint1_AssetGatePassList).ID + 1});
+                            UpdateContext({ newMode: true });
                         PaddingBottom: =10
                         PaddingLeft: =10
                         PaddingRight: =10
@@ -253,7 +257,7 @@ Sprint1_Scr_AssetGatePass As screen:
                     OnSelect: |-
                         =UpdateContext({ itemSelected: true, CurrentItem: ThisItem });
                         
-                        UpdateContext({ varAssetItemID: recordsGallery_AssetGatePass.Selected.ID});
+                        //UpdateContext({ exvarAssetItemID: recordsGallery_AssetGatePass.Selected.ID});
                         
                         UpdateContext(
                             {
@@ -507,7 +511,6 @@ Sprint1_Scr_AssetGatePass As screen:
                                 numberOfRows,
                                 CountRows(colAssets)
                             );
-                            
                             Set(
                                 assetDeviceFieldsCount,
                                 CountRows(
@@ -520,7 +523,6 @@ Sprint1_Scr_AssetGatePass As screen:
                                     )
                                 )
                             );
-                            
                             Set(
                                 assetTagFieldsCount,
                                 CountRows(
@@ -533,7 +535,6 @@ Sprint1_Scr_AssetGatePass As screen:
                                     )
                                 )
                             );
-                            
                             Set(
                                 unitModelFieldsCount,
                                 CountRows(
@@ -546,7 +547,6 @@ Sprint1_Scr_AssetGatePass As screen:
                                     )
                                 )
                             );
-                            
                             Set(
                                 serialNumberFieldsCount,
                                 CountRows(
@@ -559,7 +559,6 @@ Sprint1_Scr_AssetGatePass As screen:
                                     )
                                 )
                             );
-                            
                             Set(
                                 purposeReasonFieldsCount,
                                 CountRows(
@@ -572,7 +571,6 @@ Sprint1_Scr_AssetGatePass As screen:
                                     )
                                 )
                             );
-                            
                             If(
                                 assetDeviceFieldsCount = numberOfRows && assetTagFieldsCount = numberOfRows && unitModelFieldsCount = numberOfRows && purposeReasonFieldsCount = numberOfRows && serialNumberFieldsCount = numberOfRows && numberOfRows <> 0,
                                 If(
@@ -581,32 +579,32 @@ Sprint1_Scr_AssetGatePass As screen:
                                         IsBlank('Job Level/Rank_DataCard1'.Error),
                                         IsBlank('Office Location_DataCard1'.Error),
                                         IsBlank('Work Arrangement_DataCard1'.Error),
-                            	    IsBlank('Date From_DataCard1'.Error),
+                                        IsBlank('Date From_DataCard1'.Error),
                                         IsBlank('Date To_DataCard1'.Error),
                                         IsBlank('Location From_DataCard1'.Error),
                                         IsBlank('Location To_DataCard1'.Error)
                                     ),
                                     ForAll(
-                                    colAssets,
-                                    Patch(
-                                        rcp_sprint1_AssetGatePassItemsList,
-                                        {
-                                            Title: "ITM" & col_ID,
-                                            'Item ID': Value(fldVal_ItemID_AGPList.Text),
-                                            'Asset/Device': Asset_x002f_Device,
-                                            'Asset Tag': AssetTag,
-                                            'Unit Model': UnitModel,
-                                            'Serial Number': SerialNumber,
-                                            'Purpose/Reason': Purpose_x002f_Reason
-                                        }
-                                    )
-                                );
+                                        colAssets,
+                                        Patch(
+                                            rcp_sprint1_AssetGatePassItemsList,
+                                            {
+                                                Title: "ITM" & col_ID,
+                                                'Item ID': Value(colAssetItemId)/*Value(fldVal_ItemID_AGPList.Text)*/,
+                                                'Asset/Device': Asset_x002f_Device,
+                                                'Asset Tag': AssetTag,
+                                                'Unit Model': UnitModel,
+                                                'Serial Number': SerialNumber,
+                                                'Purpose/Reason': Purpose_x002f_Reason
+                                            }
+                                        )
+                                    );
                                     //add record id to Title (Update 05-09-2024: Moved this to the Title DataCard)
                                     /*UpdateContext({varRequestID: recordsGallery_AssetGatePass.Selected.ID});
-                                Patch(
-                                    rcp_sprint1_AssetGatePassList,
-                                    {Title: "AGPR_" & varRequestID}
-                                );*/
+                                    Patch(
+                                        rcp_sprint1_AssetGatePassList,
+                                        {Title: "AGPR_" & varRequestID}
+                                    );*/
                                     Clear(colAssets);
                                     ,
                                     Notify(
@@ -621,11 +619,8 @@ Sprint1_Scr_AssetGatePass As screen:
                                     NotificationType.Error,
                                     10000
                                 );
+                                
                             );
-                            
-                            
-                            
-                            
                             /* ---- Error (to be used as final test) ---- 
                             If(
                                 Or( // error here, returns blank fields even if filled out
@@ -676,7 +671,6 @@ Sprint1_Scr_AssetGatePass As screen:
                                         10000
                                     );
                                 ),
-                                
                                 Notify(
                                     "Please fill out the Missing Fields",
                                     NotificationType.Error,
@@ -684,7 +678,6 @@ Sprint1_Scr_AssetGatePass As screen:
                                 );
                             )
                             */
-                            
                             /*  ------ For Validation Testing to show errors even without using SubmitForm() function
                             If(
                                 Or(
@@ -703,8 +696,6 @@ Sprint1_Scr_AssetGatePass As screen:
                                 UpdateContext({requiredFieldsMissing: false}); 
                             )
                             */
-                            
-                            
                             //--- Main Working Test ----
                             /*If(
                                 Or(
@@ -749,8 +740,6 @@ Sprint1_Scr_AssetGatePass As screen:
                                 SubmitForm(frm_AssetGatePass);
                                 
                             )*/
-                            
-                            
                             /* //TEST PATCHING TO TEST TABLE  ---- WoRKS
                             ForAll(
                                 colAssets,
@@ -1944,6 +1933,9 @@ Sprint1_Scr_AssetGatePass As screen:
                             MaxLength: =DataSourceInfo([@rcp_sprint1_AssetGatePassList], DataSourceInfo.MaxLength, Title)
                             Required: =false
                             Update: =DataCardValue24.Text
+                            Visible: |-
+                                =//true
+                                false
                             Width: =916
                             X: =0
                             Y: =9999

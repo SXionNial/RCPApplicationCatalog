@@ -253,7 +253,7 @@
                     LoadingSpinner: =LoadingSpinner.Data
                     OnSelect: |-
                         =UpdateContext({ itemSelected: true, CurrentItem: ThisItem });
-                        UpdateContext({varRequestID: 'recordsGallery_Equipment/ItemBorrowingRequest'.Selected.ID});
+                        UpdateContext({ varRequestID: 'recordsGallery_Equipment/ItemBorrowingRequest'.Selected.ID });
                         UpdateContext(
                             {
                                 approvalStatusTable: Table(

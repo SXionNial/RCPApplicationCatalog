@@ -253,7 +253,7 @@
                     LoadingSpinner: =LoadingSpinner.Data
                     OnSelect: |-
                         =UpdateContext({ itemSelected: true, CurrentItem: ThisItem });
-                        
+                        UpdateContext({varRequestID: 'recordsGallery_Equipment/ItemBorrowingRequest'.Selected.ID});
                         UpdateContext(
                             {
                                 approvalStatusTable: Table(
@@ -588,12 +588,12 @@
                                             }
                                         )
                                     );
-                                    //add record id to Title
-                                    UpdateContext({varRequestID: 'recordsGallery_Equipment/ItemBorrowingRequest'.Selected.ID});
+                                    //add record id to Title (Update 05-09-2024: Moved this to the Title DataCard)
+                                    /*UpdateContext({varRequestID: 'recordsGallery_Equipment/ItemBorrowingRequest'.Selected.ID});
                                     Patch(
                                         rcp_sprint1_EquipmentBorrowingRequestList,
                                         {Title: "EIBR_" & varRequestID}
-                                    );
+                                    );*/
                                     Clear(colItems);
                                     ,
                                     Notify(
@@ -1973,7 +1973,14 @@
                             BorderColor: =RGBA(166, 166, 166, 1)
                             BorderStyle: =BorderStyle.Solid
                             DataField: ="Title"
-                            Default: =ThisItem.Title
+                            Default: |-
+                                =//ThisItem.Title
+                                
+                                If(
+                                    'frm_Equipment/ItemBorrowingRequest'.Mode = FormMode.New,
+                                    "EIBR_" & varRequestID,
+                                    ThisItem.'Item ID'
+                                )
                             DisplayMode: =Parent.DisplayMode
                             DisplayName: =DataSourceInfo([@rcp_sprint1_EquipmentBorrowingRequestList],DataSourceInfo.DisplayName,Title)
                             Fill: =RGBA(0, 0, 0, 0)

@@ -105,7 +105,6 @@ App As appinfo:
                 col_Id: 0
             }
         );
-        Clear(colItemsSPTable);
         Clear(colItems);
         
         //Set this to true and to run last

@@ -609,7 +609,6 @@
                                     10000
                                 );
                             );
-                            Clear(colItems);
                         PaddingBottom: =12
                         PaddingLeft: =12
                         PaddingRight: =12

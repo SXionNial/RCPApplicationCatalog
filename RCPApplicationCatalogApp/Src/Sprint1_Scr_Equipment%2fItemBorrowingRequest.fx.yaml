@@ -565,14 +565,7 @@
                                 )
                             );
                             
-                            /*If(
-                                numberOfRows != 0,
-                                "frue",
-                                "false"
-                            );*/
-                            
                             If(
-                                //CountRows(colItems) > 0 && !IsBlank(colItems.Equipment_x002f_Item), 
                                 equipmentFieldsCount = numberOfRows && quantityFieldsCount = numberOfRows && reasonFieldsCount = numberOfRows && numberOfRows <> 0,
                                 If(
                                     SubmitForm('frm_Equipment/ItemBorrowingRequest');
@@ -4039,134 +4032,6 @@
                                 Width: =30
                                 Wrap: =false
                                 Y: =DataCardKey16_3.Y
-                                ZIndex: =4
-
-                        "'Return Date and Time_DataCard1' As typedDataCard.dateEditCard":
-                            BorderColor: =RGBA(166, 166, 166, 1)
-                            BorderStyle: =BorderStyle.Solid
-                            DataField: ="ReturnDateandTime"
-                            Default: =ThisItem.'Return Date and Time'
-                            DisplayMode: |-
-                                =//Parent.DisplayMode
-                                
-                                If(
-                                    And(
-                                        DataCardValue6_1.Selected.Value = "Being Filled by HR",
-                                        CountRows(
-                                            Filter(
-                                                HRMembersfromSG,
-                                                mail = User().Email
-                                            )
-                                        ) > 0,
-                                        Parent.DisplayMode = DisplayMode.Edit
-                                    ),
-                                    DisplayMode.Edit,
-                                    DisplayMode.View
-                                )
-                            DisplayName: =DataSourceInfo([@rcp_sprint1_EquipmentBorrowingRequestList],DataSourceInfo.DisplayName,'Return Date and Time')
-                            Fill: =RGBA(0, 0, 0, 0)
-                            Height: =Parent.Height*0.15
-                            Required: =false
-                            Update: =DataCardValue24.SelectedDate
-                            Visible: |-
-                                =//true
-                                
-                                If('frm_Equipment/ItemBorrowingRequest'.Mode = FormMode.New,false,true)
-                            Width: =Parent.Width
-                            X: =0
-                            Y: =160
-                            ZIndex: =25
-
-                            DataCardKey24_1 As label:
-                                AutoHeight: =true
-                                BorderColor: =RGBA(0, 0, 0, 0)
-                                BorderStyle: =BorderStyle.None
-                                BorderThickness: =2
-                                Color: =RGBA(51, 51, 51, 1)
-                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                DisabledColor: =RGBA(166, 166, 166, 1)
-                                FocusedBorderThickness: =4
-                                Font: =Font.'Segoe UI'
-                                FontWeight: =FontWeight.Semibold
-                                Height: =34
-                                PaddingLeft: =0
-                                Size: =13
-                                Text: =Parent.DisplayName
-                                Width: =(Parent.Width - 60) * 0.4
-                                Wrap: =false
-                                X: =30
-                                Y: =DataCardValue24.Y + (DataCardValue24.Height / 2) - (Self.Height / 2)
-                                ZIndex: =1
-
-                            DataCardValue24 As datepicker:
-                                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                                CalendarHeaderFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
-                                Color: =RGBA(51, 51, 51, 1)
-                                DefaultDate: =Parent.Default
-                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                DisabledColor: =RGBA(166, 166, 166, 1)
-                                DisabledFill: =RGBA(244, 244, 244, 1)
-                                DisplayMode: =Parent.DisplayMode
-                                EndYear: =Year(Today())+100
-                                Font: =Font.'Segoe UI'
-                                HoverDateFill: =RGBA(200, 200, 200, 1)
-                                IconBackground: =RGBA(73, 130, 5, 1)
-                                IsEditable: =true
-                                PaddingBottom: =0
-                                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                                SelectedDateFill: =RGBA(73, 130, 5, 1)
-                                Size: =13
-                                StartYear: =1899
-                                Tooltip: =Parent.DisplayName
-                                Width: =(Parent.Width - 60) * 0.6
-                                X: =DataCardKey24_1.X + DataCardKey24_1.Width
-                                Y: =Parent.Height/2 - Parent.Height/4
-                                ZIndex: =2
-
-                            ErrorMessage24_1 As label:
-                                AutoHeight: =true
-                                BorderColor: =RGBA(0, 0, 0, 0)
-                                BorderStyle: =BorderStyle.None
-                                BorderThickness: =2
-                                Color: =RGBA(168, 0, 0, 1)
-                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                DisabledColor: =RGBA(168, 0, 0, 1)
-                                FocusedBorderThickness: =4
-                                Font: =Font.'Segoe UI'
-                                FontWeight: =FontWeight.Semibold
-                                Height: =10
-                                Live: =Live.Assertive
-                                PaddingBottom: =0
-                                PaddingLeft: =0
-                                PaddingRight: =0
-                                PaddingTop: =0
-                                Size: =13
-                                Text: =Parent.Error
-                                Visible: =Parent.DisplayMode=DisplayMode.Edit
-                                Width: =DataCardValue24.Width
-                                X: =DataCardValue24.X
-                                Y: =DataCardValue24.Y + DataCardValue24.Height
-                                ZIndex: =3
-
-                            StarVisible24_1 As label:
-                                Align: =Align.Center
-                                BorderColor: =RGBA(0, 0, 0, 0)
-                                BorderStyle: =BorderStyle.None
-                                BorderThickness: =2
-                                Color: =RGBA(51, 51, 51, 1)
-                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                DisabledColor: =RGBA(166, 166, 166, 1)
-                                FocusedBorderThickness: =4
-                                Font: =Font.'Segoe UI'
-                                FontWeight: =FontWeight.Semibold
-                                Height: =DataCardKey24_1.Height
-                                PaddingLeft: =0
-                                Size: =13
-                                Text: ="*"
-                                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                                Width: =30
-                                Wrap: =false
-                                Y: =DataCardKey24_1.Y
                                 ZIndex: =4
 
                         Remarks_DataCard1_1 As typedDataCard.textualEditCard:

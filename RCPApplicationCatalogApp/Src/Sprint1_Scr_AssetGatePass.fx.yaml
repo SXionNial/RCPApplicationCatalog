@@ -253,6 +253,8 @@ Sprint1_Scr_AssetGatePass As screen:
                     OnSelect: |-
                         =UpdateContext({ itemSelected: true, CurrentItem: ThisItem });
                         
+                        UpdateContext({ varAssetItemID: recordsGallery_AssetGatePass.Selected.ID});
+                        
                         UpdateContext(
                             {
                                 approvalStatusTable: Table(
@@ -1359,40 +1361,6 @@ Sprint1_Scr_AssetGatePass As screen:
                                     //(Parent.Height * 0.5)/2
                                 ZIndex: =1
 
-                        DataCard3_1 As typedDataCard.blankCard:
-                            BorderColor: =RGBA(166, 166, 166, 1)
-                            BorderStyle: =BorderStyle.Solid
-                            BorderThickness: =1
-                            DisplayMode: =DisplayMode.Edit
-                            Fill: =RGBA(0, 0, 0, 0)
-                            Height: =Parent.Height * 0.05
-                            Visible: |-
-                                =//true
-                                If(newMode, true, false)
-                            Width: =Parent.Width / 9
-                            X: =5
-                            Y: =85
-                            ZIndex: =1
-
-                            Label1_16 As label:
-                                BorderColor: =RGBA(0, 0, 0, 0)
-                                BorderStyle: =BorderStyle.None
-                                BorderThickness: =2
-                                Color: =RGBA(51, 51, 51, 1)
-                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                DisabledColor: =RGBA(166, 166, 166, 1)
-                                FocusedBorderThickness: =4
-                                Font: =Font.'Segoe UI'
-                                FontWeight: =FontWeight.Semibold
-                                Size: =11
-                                Text: ="Action"
-                                Width: =Parent.Width - 25
-                                X: =DataCardKey4_1.X * .50
-                                Y: |-
-                                    =Parent.Height/2 - Parent.Height/4
-                                    //(Parent.Height * 0.5)/2
-                                ZIndex: =1
-
                         AGP_itemGallery_Card As typedDataCard.blankCard:
                             BorderColor: =RGBA(166, 166, 166, 1)
                             BorderStyle: =BorderStyle.Solid
@@ -1712,6 +1680,40 @@ Sprint1_Scr_AssetGatePass As screen:
                                     X: =DataCard2_1.X + DataCard2_1.Width + 20
                                     ZIndex: =6
 
+                        DataCard3_1 As typedDataCard.blankCard:
+                            BorderColor: =RGBA(166, 166, 166, 1)
+                            BorderStyle: =BorderStyle.Solid
+                            BorderThickness: =1
+                            DisplayMode: =DisplayMode.Edit
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =Parent.Height * 0.05
+                            Visible: |-
+                                =//true
+                                If(newMode, true, false)
+                            Width: =Parent.Width / 9
+                            X: =5
+                            Y: =85
+                            ZIndex: =1
+
+                            Label1_16 As label:
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =RGBA(51, 51, 51, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FocusedBorderThickness: =4
+                                Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
+                                Size: =11
+                                Text: ="Action"
+                                Width: =Parent.Width - 25
+                                X: =DataCardKey4_1.X * .50
+                                Y: |-
+                                    =Parent.Height/2 - Parent.Height/4
+                                    //(Parent.Height * 0.5)/2
+                                ZIndex: =1
+
                         sectionHeader_ApprovalSection_AGP As typedDataCard.blankCard:
                             BorderColor: =RGBA(166, 166, 166, 1)
                             BorderStyle: =BorderStyle.Solid
@@ -1928,8 +1930,9 @@ Sprint1_Scr_AssetGatePass As screen:
                             BorderColor: =RGBA(166, 166, 166, 1)
                             BorderStyle: =BorderStyle.Solid
                             DataField: ="Title"
-                            Default: |
+                            Default: |-
                                 =//ThisItem.Title
+                                "AGPR_" & varAssetItemID
                             DisplayMode: =Parent.DisplayMode
                             DisplayName: =DataSourceInfo([@rcp_sprint1_AssetGatePassList],DataSourceInfo.DisplayName,Title)
                             Fill: =RGBA(0, 0, 0, 0)

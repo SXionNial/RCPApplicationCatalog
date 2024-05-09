@@ -46,7 +46,7 @@
       "MetaDataIDKey": "",
       "Name": "AGP_itemGallery_Card",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 18,
+      "ParentIndex": 17,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -888,7 +888,7 @@
       "MetaDataIDKey": "",
       "Name": "ARI_ApprovalStatusGalleryItem_ApprovalDate_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -1157,7 +1157,7 @@
       "MetaDataIDKey": "",
       "Name": "ARI_ApprovalStatusGalleryItem_Approver_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4557,7 +4557,7 @@
       "MetaDataIDKey": "",
       "Name": "DataCard3_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 17,
+      "ParentIndex": 18,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -24045,7 +24045,7 @@
         {
           "Category": "Behavior",
           "PropertyName": "OnSelect",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         }
       ],
       "StyleName": "",

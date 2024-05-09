@@ -521,18 +521,21 @@
                         HoverFill: =RGBA(0, 0, 0, 0)
                         Icon: =Icon.Check
                         OnSelect: |
-                            =If(
-                                Or(
-                                    !IsBlank(fldVal_EquipmentItem.Text),
-                                    !IsBlank(fldVal_Quantity.Text),
-                                    !IsBlank(fldVal_Reason.Text)
-                                );
-                                Notify(
-                                    fldVal_EquipmentItem.Text,
-                                    NotificationType.Error,
-                                    5000
-                                );
-                                ,
+                            =/*Set(
+                                emptyFieldsCount,
+                                Count(
+                                    ShowColumns(
+                                        Filter(
+                                            colItems,
+                                            IsBlank(Equipment_x002f_Item)
+                                        ),
+                                        "Equipment_x002f_Item"
+                                    )
+                                )
+                            );*/
+                            
+                            If(
+                                CountRows(colItems) < 1 && IsBlank(colItems.Equipment_x002f_Item), 
                                 If(
                                     SubmitForm('frm_Equipment/ItemBorrowingRequest');
                                     And(
@@ -555,7 +558,7 @@
                                         )
                                     );
                                     //add record id to Title
-                            UpdateContext({varRequestID: 'recordsGallery_Equipment/ItemBorrowingRequest'.Selected.ID});
+                                    UpdateContext({varRequestID: 'recordsGallery_Equipment/ItemBorrowingRequest'.Selected.ID});
                                     Patch(
                                         rcp_sprint1_EquipmentBorrowingRequestList,
                                         {Title: "EIBR_" & varRequestID}
@@ -568,17 +571,12 @@
                                         10000
                                     );
                                 );
-                                ,
+                                
                                 Notify(
-                                    fldVal_EquipmentItem.Text,
-                                    NotificationType.Error,
-                                    5000
-                                );
-                                /*Notify(
                                     "Please add equipments",
                                     NotificationType.Error,
                                     10000
-                                );*/
+                                );
                             );
                         PaddingBottom: =12
                         PaddingLeft: =12

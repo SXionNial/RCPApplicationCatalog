@@ -525,7 +525,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                         HoverFill: =RGBA(0, 0, 0, 0)
                         Icon: =Icon.Cancel
                         OnSelect: |-
-                            =ResetForm(frm_BereavementCashAssistanceList); UpdateContext({ editMode: false, newMode: false });
+                            =ResetForm(frm_BereavementCashAssistanceList);UpdateContext({editMode: false ,newMode: false });
                         PaddingBottom: =12
                         PaddingLeft: =12
                         PaddingRight: =12

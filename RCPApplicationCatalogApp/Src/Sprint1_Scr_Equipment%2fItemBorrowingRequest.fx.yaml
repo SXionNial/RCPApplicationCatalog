@@ -582,7 +582,7 @@
                                         Patch(
                                             rcp_sprint1_EquipmentBorrowingRequestItemsList,
                                             {
-                                                Title: "EIB" & col_Id,
+                                                Title: "ITM" & col_Id,
                                                 'Item ID': Value(colItemId),
                                                 'Equipment/Item': Equipment_x002f_Item,
                                                 Quantity: Quantity,

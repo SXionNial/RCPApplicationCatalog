@@ -658,6 +658,8 @@
                         OnSelect: |-
                             =ResetForm('frm_Equipment/ItemBorrowingRequest'); UpdateContext({ editMode: false, newMode: false });
                             Clear(colItems);
+                            
+                            // update context variables for red/mandatory fields to false when closing the form
                             UpdateContext({equFieldBlank: false});
                             UpdateContext({quaFieldBlank: false});
                             UpdateContext({resFieldBlank: false});
@@ -1172,6 +1174,11 @@
                                     OnSelect: |-
                                         =//Select(Parent)
                                         Remove(colItems,ThisItem);
+                                        
+                                        // update context variables for red/mandatory fields to false when closing the form
+                                        UpdateContext({equFieldBlank: false});
+                                        UpdateContext({quaFieldBlank: false});
+                                        UpdateContext({resFieldBlank: false});
                                     PaddingBottom: =10
                                     PaddingLeft: =5
                                     PaddingRight: =5

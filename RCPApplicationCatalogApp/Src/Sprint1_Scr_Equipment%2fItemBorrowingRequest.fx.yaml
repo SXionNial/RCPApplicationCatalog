@@ -1196,18 +1196,6 @@
                                         .X
                                     ZIndex: =4
 
-                        spacer As typedDataCard.blankCard:
-                            BorderColor: =RGBA(166, 166, 166, 1)
-                            BorderStyle: =BorderStyle.Solid
-                            DisplayMode: =DisplayMode.Edit
-                            Fill: =RGBA(0, 0, 0, 0)
-                            Height: =Parent.Height * .03
-                            Visible: =true
-                            Width: =Parent.Width
-                            X: =0
-                            Y: =130
-                            ZIndex: =1
-
                         "'Item ID_DataCard1_1' As typedDataCard.numberEditCard":
                             BorderColor: =RGBA(166, 166, 166, 1)
                             BorderStyle: =BorderStyle.Solid
@@ -1338,6 +1326,18 @@
                                 Wrap: =false
                                 Y: =DataCardKey2_3.Y
                                 ZIndex: =4
+
+                        spacer As typedDataCard.blankCard:
+                            BorderColor: =RGBA(166, 166, 166, 1)
+                            BorderStyle: =BorderStyle.Solid
+                            DisplayMode: =DisplayMode.Edit
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =Parent.Height * .03
+                            Visible: =true
+                            Width: =Parent.Width
+                            X: =0
+                            Y: =130
+                            ZIndex: =1
 
                         "'Date and Time From_DataCard1' As typedDataCard.dateTimeEditCard":
                             BorderColor: =RGBA(166, 166, 166, 1)

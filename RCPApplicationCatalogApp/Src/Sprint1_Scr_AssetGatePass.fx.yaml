@@ -2470,7 +2470,7 @@ Sprint1_Scr_AssetGatePass As screen:
                                 PressedColor: =RGBA(255, 255, 255, 1)
                                 PressedFill: =RGBA(73, 130, 5, 1)
                                 SearchFields: =["DisplayName"]
-                                SearchItems: =Choices(rcp_sprint1_AssetGatePassList.'Employee Name',DataCardValue2_1.SearchText)
+                                SearchItems: =[]
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
                                 Size: =13
@@ -2833,7 +2833,7 @@ Sprint1_Scr_AssetGatePass As screen:
                                 PressedColor: =RGBA(255, 255, 255, 1)
                                 PressedFill: =RGBA(73, 130, 5, 1)
                                 SearchFields: =["Value"]
-                                SearchItems: =Choices(rcp_sprint1_AssetGatePassList.'Job Level/Rank',DataCardValue14_1.SearchText)
+                                SearchItems: =[]
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
                                 Size: =13
@@ -2960,7 +2960,7 @@ Sprint1_Scr_AssetGatePass As screen:
                                 PressedColor: =RGBA(255, 255, 255, 1)
                                 PressedFill: =RGBA(73, 130, 5, 1)
                                 SearchFields: =["Value"]
-                                SearchItems: =Choices(rcp_sprint1_AssetGatePassList.'Office Location',DataCardValue15_1.SearchText)
+                                SearchItems: =[]
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
                                 Size: =13
@@ -3085,7 +3085,7 @@ Sprint1_Scr_AssetGatePass As screen:
                                 PressedColor: =RGBA(255, 255, 255, 1)
                                 PressedFill: =RGBA(73, 130, 5, 1)
                                 SearchFields: =["Value"]
-                                SearchItems: =Choices(rcp_sprint1_AssetGatePassList.'Work Arrangement',DataCardValue16_1.SearchText)
+                                SearchItems: =[]
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
                                 Size: =13
@@ -3685,7 +3685,7 @@ Sprint1_Scr_AssetGatePass As screen:
                                 PressedColor: =RGBA(255, 255, 255, 1)
                                 PressedFill: =RGBA(73, 130, 5, 1)
                                 SearchFields: =["Value"]
-                                SearchItems: =Choices(rcp_sprint1_AssetGatePassList.Status,fldVal_Status_AGP.SearchText)
+                                SearchItems: =[]
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
                                 Size: =13
@@ -3815,7 +3815,7 @@ Sprint1_Scr_AssetGatePass As screen:
                                 PressedColor: =RGBA(255, 255, 255, 1)
                                 PressedFill: =RGBA(73, 130, 5, 1)
                                 SearchFields: =["DisplayName"]
-                                SearchItems: =Choices(rcp_sprint1_AssetGatePassList.'Submitted By',DataCardValue7_1.SearchText)
+                                SearchItems: =[]
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
                                 Size: =13
@@ -3937,7 +3937,7 @@ Sprint1_Scr_AssetGatePass As screen:
                                 PressedColor: =RGBA(255, 255, 255, 1)
                                 PressedFill: =RGBA(73, 130, 5, 1)
                                 SearchFields: =["DisplayName"]
-                                SearchItems: =Choices(rcp_sprint1_AssetGatePassList.'Assigned To',DataCardValue8_1.SearchText)
+                                SearchItems: =[]
                                 SelectionFill: =RGBA(73, 130, 5, 1)
                                 SelectMultiple: =false
                                 Size: =13

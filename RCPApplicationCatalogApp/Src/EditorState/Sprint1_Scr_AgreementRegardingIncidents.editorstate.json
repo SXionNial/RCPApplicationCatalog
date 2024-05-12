@@ -24763,7 +24763,7 @@
         {
           "Category": "Data",
           "PropertyName": "Default",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Data",
@@ -34045,7 +34045,7 @@
         {
           "Category": "Behavior",
           "PropertyName": "OnChange",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         }
       ],
       "StyleName": "defaultComboBoxStyle",

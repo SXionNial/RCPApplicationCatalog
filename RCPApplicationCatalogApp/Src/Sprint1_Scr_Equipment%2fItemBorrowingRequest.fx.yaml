@@ -877,8 +877,6 @@
                                 TemplatePadding: =2
                                 TemplateSize: =global_approvalStatusSection_RowHeight
                                 Width: =Parent.Width
-                                X: =40
-                                Y: =40
                                 ZIndex: =1
 
                                 ARI_ApprovalStatusGalleryItem_ApprovalDate_2 As label:

@@ -1,0 +1,29 @@
+CommonSubmitButton As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =40
+    SubmitForm: |-
+        ={SampleStringField: "SampleText", SampleNumberField: 10, SampleBooleanField: true}
+    Width: =160
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    btnSubmit As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(73, 130, 5, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(73, 130, 5, 1), -10%)
+        PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -50%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+        Size: =15
+        Text: ="Submit"
+        ZIndex: =1
+

@@ -2,6 +2,7 @@
   "ComponentIndexes": {
     "BackButton": 7,
     "CommonButton": 5,
+    "CommonSubmitButton": 8,
     "NavBar": 6
   },
   "ControlUniqueGuids": {},
@@ -75,12 +76,14 @@
     "btnLabel_1": 9,
     "btnMainApplication_1": 7,
     "btnOverlay": 8,
+    "btnSubmit": 791,
     "CancelDeleteButton1": 35,
     "CancelDeleteButton1_1": 284,
     "CancelDeleteButton1_2": 449,
     "CancelDeleteButton1_3": 593,
     "Cause of Death_DataCard1": 536,
     "CommonButton": 6,
+    "CommonSubmitButton": 790,
     "ConfirmDeleteButton1": 36,
     "ConfirmDeleteButton1_1": 285,
     "ConfirmDeleteButton1_2": 450,
@@ -797,7 +800,7 @@
   },
   "FunctionParamsInvariantScripts": {},
   "FunctionParamsInvariantScriptsOnInstances": {},
-  "HeaderLastSavedDateTimeUTC": "05/23/2024 08:41:30",
+  "HeaderLastSavedDateTimeUTC": "05/23/2024 08:47:43",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalConnectionIDReferences": {
     "24958dea-cfa0-4f63-a8a7-1bd77700e2f2": "\"/providers/microsoft.powerapps/apis/shared_office365users/connections/12f4604cdcc942ed83b1fc9ac96d84e7\"",
@@ -812,12 +815,14 @@
   "OrderComponentMetadata": {
     "255573a7edc7424c963df313da08906b": 0,
     "76218de4038840cbb822fa97b20b6dbc": 2,
-    "8f98bb6c823843be9f83cbf099586c9f": 1
+    "8f98bb6c823843be9f83cbf099586c9f": 1,
+    "a2edafa34ca44d5ba6beec5a17121534": 3
   },
   "OrderComponentTemplate": {
     "255573a7edc7424c963df313da08906b": 0,
     "76218de4038840cbb822fa97b20b6dbc": 2,
-    "8f98bb6c823843be9f83cbf099586c9f": 1
+    "8f98bb6c823843be9f83cbf099586c9f": 1,
+    "a2edafa34ca44d5ba6beec5a17121534": 3
   },
   "OrderDataSource": {
     "ComboBoxSample": 3,
@@ -923,12 +928,14 @@
     "btnLabel_1": {},
     "btnMainApplication_1": {},
     "btnOverlay": {},
+    "btnSubmit": {},
     "CancelDeleteButton1": {},
     "CancelDeleteButton1_1": {},
     "CancelDeleteButton1_2": {},
     "CancelDeleteButton1_3": {},
     "Cause of Death_DataCard1": {},
     "CommonButton": {},
+    "CommonSubmitButton": {},
     "ConfirmDeleteButton1": {},
     "ConfirmDeleteButton1_1": {},
     "ConfirmDeleteButton1_2": {},
@@ -1715,12 +1722,14 @@
     "btnLabel_1": 772,
     "btnMainApplication_1": 770,
     "btnOverlay": 771,
+    "btnSubmit": 778,
     "CancelDeleteButton1": 18,
     "CancelDeleteButton1_1": 267,
     "CancelDeleteButton1_2": 432,
     "CancelDeleteButton1_3": 576,
     "Cause of Death_DataCard1": 520,
     "CommonButton": 3,
+    "CommonSubmitButton": 0,
     "ConfirmDeleteButton1": 19,
     "ConfirmDeleteButton1_1": 268,
     "ConfirmDeleteButton1_2": 433,

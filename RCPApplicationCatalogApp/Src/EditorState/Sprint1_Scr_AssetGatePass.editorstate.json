@@ -92,7 +92,7 @@
         {
           "Category": "Design",
           "PropertyName": "Height",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -2269,7 +2269,7 @@
         {
           "Category": "Data",
           "PropertyName": "Text",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Data",
@@ -11549,7 +11549,7 @@
         {
           "Category": "Data",
           "PropertyName": "InputTextPlaceholder",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Data",
@@ -11889,7 +11889,7 @@
         {
           "Category": "Data",
           "PropertyName": "InputTextPlaceholder",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Data",
@@ -15588,7 +15588,7 @@
       "MetaDataIDKey": "%DeleteConfirmDialogContainer.ID%",
       "Name": "DeleteConfirmDialogContainer1_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 0,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -21770,7 +21770,7 @@
         {
           "Category": "Design",
           "PropertyName": "Fill",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -22052,7 +22052,7 @@
         {
           "Category": "Design",
           "PropertyName": "Fill",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -22698,7 +22698,7 @@
         {
           "Category": "Design",
           "PropertyName": "Fill",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -23015,7 +23015,7 @@
         {
           "Category": "Design",
           "PropertyName": "Fill",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -23748,7 +23748,7 @@
         {
           "Category": "Design",
           "PropertyName": "Fill",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -24075,12 +24075,12 @@
         {
           "Category": "Design",
           "PropertyName": "TemplateFill",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Behavior",
           "PropertyName": "OnSelect",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         }
       ],
       "StyleName": "",
@@ -24459,7 +24459,7 @@
         {
           "Category": "Design",
           "PropertyName": "DisplayMode",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -29032,7 +29032,7 @@
         {
           "Category": "Behavior",
           "PropertyName": "OnSelect",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         }
       ],
       "StyleName": "defaultIconStyle",
@@ -29746,7 +29746,7 @@
         {
           "Category": "Behavior",
           "PropertyName": "OnSelect",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         }
       ],
       "StyleName": "defaultIconStyle",
@@ -30222,7 +30222,7 @@
         {
           "Category": "Design",
           "PropertyName": "Height",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -31388,7 +31388,7 @@
         {
           "Category": "Behavior",
           "PropertyName": "OnSelect",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         }
       ],
       "StyleName": "defaultIconStyle",
@@ -31475,7 +31475,7 @@
       "MetaDataIDKey": "%RightContainer.ID%",
       "Name": "RightContainer1_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -33092,7 +33092,7 @@
         {
           "Category": "Data",
           "PropertyName": "Text",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Data",
@@ -33481,7 +33481,7 @@
       "MetaDataIDKey": "%SidebarContainer.ID%",
       "Name": "SidebarContainer1_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -39206,7 +39206,7 @@
         {
           "Category": "Data",
           "PropertyName": "Text",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Data",
@@ -39982,7 +39982,7 @@
         {
           "Category": "Data",
           "PropertyName": "Default",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Data",

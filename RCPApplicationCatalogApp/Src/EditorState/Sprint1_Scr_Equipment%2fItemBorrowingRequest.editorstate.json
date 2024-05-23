@@ -241,7 +241,7 @@
       "MetaDataIDKey": "",
       "Name": "Assigned To_DataCard1_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2901,7 +2901,7 @@
       "MetaDataIDKey": "",
       "Name": "DataCard19",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 28,
+      "ParentIndex": 32,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -2952,7 +2952,7 @@
         {
           "Category": "Design",
           "PropertyName": "Visible",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         }
       ],
       "StyleName": "defaultTypedDataCardStyle",
@@ -3018,7 +3018,7 @@
       "MetaDataIDKey": "",
       "Name": "DataCard21",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 29,
+      "ParentIndex": 33,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3069,7 +3069,7 @@
         {
           "Category": "Design",
           "PropertyName": "Visible",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         }
       ],
       "StyleName": "defaultTypedDataCardStyle",
@@ -3135,7 +3135,7 @@
       "MetaDataIDKey": "",
       "Name": "DataCard22",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 30,
+      "ParentIndex": 34,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3186,7 +3186,7 @@
         {
           "Category": "Design",
           "PropertyName": "Visible",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         }
       ],
       "StyleName": "defaultTypedDataCardStyle",
@@ -3245,7 +3245,7 @@
       "MetaDataIDKey": "",
       "Name": "DataCard23",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 31,
+      "ParentIndex": 35,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3281,7 +3281,7 @@
         {
           "Category": "Design",
           "PropertyName": "Height",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -3296,7 +3296,7 @@
         {
           "Category": "Design",
           "PropertyName": "Visible",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         }
       ],
       "StyleName": "defaultTypedDataCardStyle",
@@ -18259,7 +18259,7 @@
       "MetaDataIDKey": "%DeleteConfirmDialogContainer.ID%",
       "Name": "DeleteConfirmDialogContainer1_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 0,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -18476,7 +18476,7 @@
       "MetaDataIDKey": "%DeleteIconButton.ID%",
       "Name": "DeleteIconButton1_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -18912,7 +18912,7 @@
       "MetaDataIDKey": "%EditIconButton.ID%",
       "Name": "EditIconButton1_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -19350,7 +19350,7 @@
       "MetaDataIDKey": "",
       "Name": "EIBR_ApprovalStatusGalleryItem_ApprovalDate_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -19421,7 +19421,7 @@
         {
           "Category": "Design",
           "PropertyName": "Width",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -19476,7 +19476,7 @@
         {
           "Category": "Design",
           "PropertyName": "X",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -19697,7 +19697,7 @@
         {
           "Category": "Design",
           "PropertyName": "X",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -19772,7 +19772,7 @@
         {
           "Category": "Design",
           "PropertyName": "Width",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -19902,7 +19902,7 @@
       "MetaDataIDKey": "",
       "Name": "EIBR_ApprovalStatusGalleryItem_ApproverName_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -20033,7 +20033,7 @@
         {
           "Category": "Design",
           "PropertyName": "Width",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -20053,7 +20053,7 @@
         {
           "Category": "Design",
           "PropertyName": "X",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -31569,7 +31569,7 @@
       "MetaDataIDKey": "",
       "Name": "Immediate Head Approval Date_DataCard1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 7,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -31730,7 +31730,7 @@
       "MetaDataIDKey": "",
       "Name": "Immediate Head_DataCard1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 6,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -31891,7 +31891,7 @@
       "MetaDataIDKey": "",
       "Name": "Item ID_DataCard1_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 25,
+      "ParentIndex": 24,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -39414,7 +39414,7 @@
       "MetaDataIDKey": "",
       "Name": "Remarks_DataCard1_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 35,
+      "ParentIndex": 30,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -39591,7 +39591,7 @@
       "MetaDataIDKey": "%ResetFormButton.ID%",
       "Name": "ResetFormButton1_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -39848,7 +39848,7 @@
       "MetaDataIDKey": "",
       "Name": "Return Date and Time_DataCard1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 33,
+      "ParentIndex": 29,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -40011,7 +40011,7 @@
       "MetaDataIDKey": "%RightContainer.ID%",
       "Name": "RightContainer1_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -40785,7 +40785,7 @@
       "MetaDataIDKey": "",
       "Name": "sectionHeader_ApplicantInfoSection_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -40897,7 +40897,7 @@
       "MetaDataIDKey": "",
       "Name": "sectionHeader_ApprovalSection_EIBR",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 34,
+      "ParentIndex": 31,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -40948,7 +40948,7 @@
         {
           "Category": "Design",
           "PropertyName": "Visible",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         }
       ],
       "StyleName": "defaultTypedDataCardStyle",
@@ -41118,7 +41118,7 @@
       "MetaDataIDKey": "",
       "Name": "sectionHeader_HR&AdminFormSection_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 32,
+      "ParentIndex": 28,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -42706,7 +42706,7 @@
       "MetaDataIDKey": "%SidebarContainer.ID%",
       "Name": "SidebarContainer1_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -42894,7 +42894,7 @@
       "MetaDataIDKey": "",
       "Name": "spacer",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 24,
+      "ParentIndex": 25,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -50142,7 +50142,7 @@
       "MetaDataIDKey": "",
       "Name": "Status_DataCard1_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -50314,7 +50314,7 @@
       "MetaDataIDKey": "%SubmitFormButton.ID%",
       "Name": "SubmitFormButton1_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -50550,7 +50550,7 @@
       "MetaDataIDKey": "",
       "Name": "Submitted By_DataCard1_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -51853,7 +51853,7 @@
       "MetaDataIDKey": "",
       "Name": "VP Approval Date_DataCard1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 9,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -52014,7 +52014,7 @@
       "MetaDataIDKey": "",
       "Name": "VP_DataCard1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 8,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

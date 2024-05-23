@@ -212,6 +212,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                         FocusedBorderThickness: =4
                         Font: =Font.'Segoe UI'
                         Height: =44
+                        OnSelect: |-
+                            =//false
+                            NewForm(frm_AgreementRegardingIncidents); UpdateContext({ newMode: true });
                         Size: =13
                         Text: ="New"
                         ZIndex: =11
@@ -455,7 +458,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                         TabIndex: =0
                         Visible: =If(Sprint1_Scr_AgreementRegardingIncidents.Size = ScreenSize.Small, And(!editMode, !newMode, !deleteMode), false)
                         Width: =50
-                        ZIndex: =16
+                        ZIndex: =1
 
                     SelectedRecordTitle1 As label:
                         AlignInContainer: =AlignInContainer.Stretch
@@ -492,7 +495,36 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                     )
                                 )
                             )
-                        ZIndex: =17
+                        ZIndex: =2
+
+                    Button1 As button:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        Fill: =RGBA(73, 130, 5, 1)
+                        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Semibold
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(73, 130, 5, 1), -10%)
+                        OnSelect: |-
+                            =If(Or(IsBlank(secIncValue_a.Value),IsBlank(secIncValue_b.Value),IsBlank(secIncValue_c.Value),IsBlank(secIncValue_d.Value),IsBlank(qualIncValue_a.Value),IsBlank(qualIncValue_b.Value),IsBlank(qualIncValue_c.Value),IsBlank(qualIncValue_d.Value),IsBlank(qualIncValue_e.Value),IsBlank(emergencyCaseValue_a.Value),IsBlank(emergencyCaseValue_b.Value),IsBlank(emergencyCaseValue_c.Value),IsBlank(fldVal_ImmMgr_ARI.SelectedItems),IsBlank(DataCardValue5.Text),IsBlank(DataCardValue2.Text)),
+                            Notify("Please Fill Out the Missing Fields", NotificationType.Error, 10000);SubmitForm(frm_AgreementRegardingIncidents),
+                            SubmitForm(frm_AgreementRegardingIncidents);
+                            )
+                        PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -50%)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =15
+                        Text: ="Submit"
+                        Visible: =Or(editMode, newMode)
+                        ZIndex: =3
 
                     SubmitFormButton1 As icon:
                         BorderColor: =RGBA(166, 166, 166, 1)
@@ -519,9 +551,9 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                         PressedColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
                         PressedFill: =RGBA(0, 0, 0, 0)
                         TabIndex: =0
-                        Visible: =Or(editMode, newMode)
+                        Visible: =//Or(editMode, newMode)
                         Width: =50
-                        ZIndex: =18
+                        ZIndex: =4
 
                     ResetFormButton1 As icon:
                         BorderColor: =RGBA(166, 166, 166, 1)
@@ -547,7 +579,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                         TabIndex: =0
                         Visible: =Or(editMode, newMode)
                         Width: =50
-                        ZIndex: =19
+                        ZIndex: =5
 
                     EditIconButton1 As icon:
                         BorderColor: =RGBA(166, 166, 166, 1)
@@ -575,7 +607,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                             =//And(!editMode, !newMode, !deleteMode)
                             false
                         Width: =50
-                        ZIndex: =20
+                        ZIndex: =6
 
                     DeleteIconButton1 As icon:
                         BorderColor: =RGBA(166, 166, 166, 1)
@@ -603,7 +635,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                             =//And(!editMode, !newMode, !deleteMode)
                             false
                         Width: =50
-                        ZIndex: =21
+                        ZIndex: =7
 
                 MainContainer1 As groupContainer.verticalAutoLayoutContainer:
                     DropShadow: =DropShadow.Light

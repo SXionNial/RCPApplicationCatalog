@@ -1108,7 +1108,7 @@ Sprint1_Scr_AssetGatePass As screen:
                                 )
                                 //Reads 0 from every user that creates, therefore here displays duplicate inquiry numbers
                             DisplayMode: =Parent.DisplayMode.View
-                            DisplayName: =DataSourceInfo([@rcp_sprint1_AssetGatePassList],DataSourceInfo.DisplayName,ItemID)
+                            DisplayName: =DataSourceInfo([@rcp_sprint1_AssetGatePassList],DataSourceInfo.DisplayName,'Item ID')
                             Fill: =RGBA(0, 0, 0, 0)
                             Height: =50
                             Required: =false
@@ -1563,7 +1563,7 @@ Sprint1_Scr_AssetGatePass As screen:
                                     Default: |-
                                         =//"Text input"
                                         //If(newMode, "",ThisItem.AssetTag)
-                                        ThisItem.AssetTag
+                                        ThisItem.'Asset Tag'
                                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                     DisabledColor: =RGBA(166, 166, 166, 1)
                                     DisabledFill: =RGBA(244, 244, 244, 1)
@@ -1614,7 +1614,7 @@ Sprint1_Scr_AssetGatePass As screen:
                                     Default: |-
                                         =//"Text input"
                                         //If(newMode, "",ThisItem.UnitModel)
-                                        ThisItem.UnitModel
+                                        ThisItem.'Unit Model'
                                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                     DisabledColor: =RGBA(166, 166, 166, 1)
                                     DisabledFill: =RGBA(244, 244, 244, 1)
@@ -1665,7 +1665,7 @@ Sprint1_Scr_AssetGatePass As screen:
                                     Default: |-
                                         =//"Text input"
                                         //If(newMode, "",ThisItem.SerialNumber)
-                                        ThisItem.SerialNumber
+                                        ThisItem.'Serial Number'
                                     DisabledBorderColor: =RGBA(0, 0, 0, 0)
                                     DisabledColor: =RGBA(166, 166, 166, 1)
                                     DisabledFill: =RGBA(244, 244, 244, 1)

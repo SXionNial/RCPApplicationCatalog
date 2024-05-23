@@ -97,7 +97,6 @@
                 ZIndex: =3
 
         BodyContainer1_3 As groupContainer.horizontalAutoLayoutContainer:
-            DropShadow: =DropShadow.Light
             LayoutGap: =16
             LayoutMinHeight: =100
             LayoutMinWidth: =250
@@ -413,7 +412,6 @@
                         ZIndex: =6
 
             RightContainer1_3 As groupContainer.verticalAutoLayoutContainer:
-                DropShadow: =DropShadow.Light
                 FillPortions: =7
                 LayoutAlignItems: =LayoutAlignItems.Stretch
                 LayoutDirection: =LayoutDirection.Vertical
@@ -663,10 +661,6 @@
                         PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -50%)
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
-                        RadiusBottomLeft: =0
-                        RadiusBottomRight: =0
-                        RadiusTopLeft: =0
-                        RadiusTopRight: =0
                         Size: =15
                         Text: ="Submit"
                         Tooltip: |-
@@ -828,7 +822,9 @@
                         PressedColor: =ColorFade(RGBA(73, 130, 5, 1), -30%)
                         PressedFill: =RGBA(0, 0, 0, 0)
                         TabIndex: =0
-                        Visible: =Or(editMode, newMode)
+                        Visible: |-
+                            =//Or(editMode, newMode)
+                            false
                         Width: =50
                         ZIndex: =4
 

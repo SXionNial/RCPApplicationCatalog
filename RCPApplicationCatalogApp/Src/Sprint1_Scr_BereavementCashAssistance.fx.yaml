@@ -532,14 +532,10 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                         PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -50%)
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
-                        RadiusBottomLeft: =0
-                        RadiusBottomRight: =0
-                        RadiusTopLeft: =0
-                        RadiusTopRight: =0
                         Size: =15
                         Text: ="Submit"
                         Tooltip: |-
-                            =/*
+                            =/* -- Todo
                             If(
                                 Or(
                                     IsBlank(secIncValue_a.Value),

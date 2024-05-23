@@ -503,7 +503,8 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                         DisabledColor: =RGBA(166, 166, 166, 1)
                         DisabledFill: =RGBA(244, 244, 244, 1)
                         DisplayMode: |-
-                            =//DisplayMode.Edit
+                            =DisplayMode.Edit
+                            /* -- Working just not implemented yet
                             If(
                                 Or(
                                     IsBlank(secIncValue_a.Value),
@@ -526,6 +527,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 DisplayMode.Edit
                                 
                             )
+                            */
                         Fill: =RGBA(73, 130, 5, 1)
                         FocusedBorderColor: =ColorFade(Self.Fill, -75%)
                         Font: =Font.'Segoe UI'
@@ -564,14 +566,11 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                         PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -50%)
                         PressedColor: =RGBA(255, 255, 255, 1)
                         PressedFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
-                        RadiusBottomLeft: =0
-                        RadiusBottomRight: =0
-                        RadiusTopLeft: =0
-                        RadiusTopRight: =0
                         Size: =15
                         Text: ="Submit"
                         Tooltip: |-
-                            =If(
+                            =/* -- Working -- just not presented for now
+                            If(
                                 Or(
                                     IsBlank(secIncValue_a.Value),
                                     IsBlank(secIncValue_b.Value),
@@ -593,6 +592,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 ""
                                 
                             )
+                            */
                         Visible: =Or(editMode, newMode)
                         ZIndex: =3
 

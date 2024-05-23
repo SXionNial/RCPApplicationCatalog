@@ -230,7 +230,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                         SortByColumns(
                             Filter(
                                 [@'rcp_sprnt1_Agreement Regarding Incidents List '],
-                                //Or('Submitted By'.Email = User().Email),
+                                Or('Created By'.Email = User().Email),
                                 StartsWith(ThisRecord.'Department Name', srchInput_AgreementRegardingIncidents.Text) ||
                                 StartsWith(ThisRecord.'Employee ID Number', srchInput_AgreementRegardingIncidents.Text) ||
                                 StartsWith(ThisRecord.'Employee Name'.DisplayName, srchInput_AgreementRegardingIncidents.Text)

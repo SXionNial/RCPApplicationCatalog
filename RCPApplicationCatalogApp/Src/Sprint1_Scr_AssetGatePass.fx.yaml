@@ -249,7 +249,7 @@ Sprint1_Scr_AssetGatePass As screen:
                         SortByColumns(
                             Filter(
                                 [@rcp_sprint1_AssetGatePassList],
-                                //Or('Submitted By'.Email = User().Email),
+                                Or('Created By'.Email = User().Email),
                                 StartsWith(ThisRecord.'Department Name', SearchInput1.Text) ||
                                 StartsWith(ThisRecord.'Employee ID Number', SearchInput1.Text) ||
                                 StartsWith(ThisRecord.'Employee Name'.DisplayName, SearchInput1.Text)

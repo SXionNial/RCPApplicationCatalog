@@ -241,7 +241,7 @@
                         SortByColumns(
                             Filter(
                                 [@rcp_sprint1_EquipmentBorrowingRequestList],
-                                //Or('Submitted By'.Email = User().Email),
+                                Or('Created By'.Email = User().Email),
                                 StartsWith(ThisRecord.'Department Name', 'srchInput_Equipment/ItemBorrowingRequestList'.Text) ||
                                 StartsWith(ThisRecord.'Employee ID Number', 'srchInput_Equipment/ItemBorrowingRequestList'.Text) ||
                                 StartsWith(ThisRecord.'Employee Name'.DisplayName, 'srchInput_Equipment/ItemBorrowingRequestList'.Text)

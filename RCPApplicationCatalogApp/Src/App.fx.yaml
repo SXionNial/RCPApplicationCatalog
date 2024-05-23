@@ -53,10 +53,9 @@ App As appinfo:
         // ---- (end) ---- //
         
         //-------- The following is for restricting editable group --------//
-        // ClearCollect(HRMembersfromSG,
-        //    Office365Groups.ListGroupMembers("49c94924-f183-4ba7-9986-c584674e62f7").value); // RGTC HR & Admin
-        ClearCollect(HRMembersfromSG,
-            Office365Groups.ListGroupMembers("21ee7c73-4318-4a8c-aa3d-19b02b5ee482").value); // test PDD
+        ClearCollect(HRMembersfromSG,Office365Groups.ListGroupMembers("49c94924-f183-4ba7-9986-c584674e62f7").value); // RGTC HR & Admin
+        //ClearCollect(HRMembersfromSG,Office365Groups.ListGroupMembers("21ee7c73-4318-4a8c-aa3d-19b02b5ee482").value); // test PDD
+        Collect(HRMembersfromSG,Office365Users.UserProfileV2("a695bd1d-d940-4bb0-a148-c5f2ed0b7683")); //add my object id for testing, get from Entra ID (formerly Azure AD) 
         
         // ClearCollect(ACMembersfromSG,
         //    Office365Groups.ListGroupMembers("199c0ef9-00ad-4a92-bdbb-9a045fcc8da0").value); // RGTC ACCOUNTING

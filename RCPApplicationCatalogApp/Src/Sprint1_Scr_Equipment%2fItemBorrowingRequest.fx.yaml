@@ -211,6 +211,9 @@
                         FocusedBorderThickness: =4
                         Font: =Font.'Segoe UI'
                         Height: =44
+                        OnSelect: |-
+                            =//false
+                            NewForm('frm_Equipment/ItemBorrowingRequest'); UpdateContext({ newMode: true });
                         Size: =13
                         Text: ="New"
                         ZIndex: =12
@@ -472,7 +475,7 @@
                         TabIndex: =0
                         Visible: =If('Sprint1_Scr_Equipment/ItemBorrowingRequest'.Size = ScreenSize.Small, And(!editMode, !newMode, !deleteMode), false)
                         Width: =50
-                        ZIndex: =17
+                        ZIndex: =1
 
                     SelectedRecordTitle1_3 As label:
                         AlignInContainer: =AlignInContainer.Stretch
@@ -506,7 +509,193 @@
                                     )
                                 )
                             )
-                        ZIndex: =18
+                        ZIndex: =2
+
+                    btn_SubmitForm_EIBR As button:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        DisplayMode: |-
+                            =DisplayMode.Edit
+                            /* -- Todo
+                            If(
+                                Or(
+                                    IsBlank(secIncValue_a.Value),
+                                    IsBlank(secIncValue_b.Value),
+                                    IsBlank(secIncValue_c.Value),
+                                    IsBlank(secIncValue_d.Value),
+                                    IsBlank(qualIncValue_a.Value),
+                                    IsBlank(qualIncValue_b.Value),
+                                    IsBlank(qualIncValue_c.Value),
+                                    IsBlank(qualIncValue_d.Value),
+                                    IsBlank(qualIncValue_e.Value),
+                                    IsBlank(emergencyCaseValue_a.Value),
+                                    IsBlank(emergencyCaseValue_b.Value),
+                                    IsBlank(emergencyCaseValue_c.Value),
+                                    IsBlank(fldVal_ImmMgr_ARI.SelectedItems),
+                                    IsBlank(DataCardValue5.Text),
+                                    IsBlank(DataCardValue2.Text)
+                                ),
+                                DisplayMode.Disabled,
+                                DisplayMode.Edit
+                                
+                            )
+                            */
+                        Fill: =RGBA(73, 130, 5, 1)
+                        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Semibold
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(73, 130, 5, 1), -10%)
+                        OnSelect: |-
+                            =Set(
+                                numberOfRows,
+                                CountRows(colItems)
+                            );
+                            
+                            Set(
+                                equipmentFieldsCount,
+                                CountRows(
+                                    ShowColumns(
+                                        Filter(
+                                            colItems,
+                                            !IsBlank(Equipment_x002f_Item)
+                                        ),
+                                        Equipment_x002f_Item
+                                    )
+                                )
+                            );
+                            
+                            Set(
+                                quantityFieldsCount,
+                                CountRows(
+                                    ShowColumns(
+                                        Filter(
+                                            colItems,
+                                            !IsBlank(Quantity)
+                                        ),
+                                        Quantity
+                                    )
+                                )
+                            );
+                            
+                            Set(
+                                reasonFieldsCount,
+                                CountRows(
+                                    ShowColumns(
+                                        Filter(
+                                            colItems,
+                                            !IsBlank(Reason)
+                                        ),
+                                        Reason
+                                    )
+                                )
+                            );
+                            
+                            If(
+                                numberOfRows <> 0,
+                                If(
+                                    equipmentFieldsCount = numberOfRows && quantityFieldsCount = numberOfRows && reasonFieldsCount = numberOfRows,
+                                    If(
+                                    SubmitForm('frm_Equipment/ItemBorrowingRequest');
+                                    And(
+                                        IsBlank('Job Level/Rank_DataCard1_2'.Error),
+                                        IsBlank('Office Location_DataCard1_2'.Error),
+                                        IsBlank('Date and Time From_DataCard1'.Error),
+                                        IsBlank('Date and Time To_DataCard1'.Error)
+                                    ),
+                                    ForAll(
+                                        colItems,
+                                        Patch(
+                                            rcp_sprint1_EquipmentBorrowingRequestItemsList,
+                                            {
+                                                Title: "ITM" & col_Id,
+                                                'Item ID': Value(colItemId),
+                                                'Equipment/Item': Equipment_x002f_Item,
+                                                Quantity: Quantity,
+                                                Reason: Reason
+                                            }
+                                        )
+                                    );
+                                    //add record id to Title (Update 05-09-2024: Moved this to the Title DataCard)
+                                    /*UpdateContext({varRequestID: 'recordsGallery_Equipment/ItemBorrowingRequest'.Selected.ID});
+                                    Patch(
+                                        rcp_sprint1_EquipmentBorrowingRequestList,
+                                        {Title: "EIBR_" & varRequestID}
+                                    );*/
+                                    Clear(colItems);
+                                    );
+                                    ,
+                                    If(
+                                        IsBlank(fldVal_EquipmentItem.Text),
+                                        UpdateContext({equFieldBlank: true})
+                                        ,
+                                        UpdateContext({equFieldBlank: false})
+                                    );
+                                    If(
+                                        IsBlank(fldVal_Quantity.Text),
+                                        UpdateContext({quaFieldBlank: true})
+                                        ,
+                                        UpdateContext({quaFieldBlank: false})
+                                    );
+                                    If(
+                                        IsBlank(fldVal_Reason.Text),
+                                        UpdateContext({resFieldBlank: true})
+                                        ,
+                                        UpdateContext({resFieldBlank: false})
+                                    );
+                                    Notify(
+                                        "Please fill out the missing fields",
+                                        NotificationType.Error,
+                                        10000
+                                    );
+                                    
+                                );
+                                ,
+                                Notify(
+                                    "Please add equipments",
+                                    NotificationType.Error,
+                                    10000
+                                );
+                            );
+                        PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -50%)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =15
+                        Text: ="Submit"
+                        Tooltip: |-
+                            =/* -- Todo
+                            If(
+                                Or(
+                                    IsBlank(secIncValue_a.Value),
+                                    IsBlank(secIncValue_b.Value),
+                                    IsBlank(secIncValue_c.Value),
+                                    IsBlank(secIncValue_d.Value),
+                                    IsBlank(qualIncValue_a.Value),
+                                    IsBlank(qualIncValue_b.Value),
+                                    IsBlank(qualIncValue_c.Value),
+                                    IsBlank(qualIncValue_d.Value),
+                                    IsBlank(qualIncValue_e.Value),
+                                    IsBlank(emergencyCaseValue_a.Value),
+                                    IsBlank(emergencyCaseValue_b.Value),
+                                    IsBlank(emergencyCaseValue_c.Value),
+                                    IsBlank(fldVal_ImmMgr_ARI.SelectedItems),
+                                    IsBlank(DataCardValue5.Text),
+                                    IsBlank(DataCardValue2.Text)
+                                ),
+                                "Please fill out the missing fields",
+                                ""
+                                
+                            )
+                            */
+                        Visible: =Or(editMode, newMode)
+                        ZIndex: =3
 
                     SubmitFormButton1_3 As icon:
                         BorderColor: =RGBA(166, 166, 166, 1)
@@ -641,7 +830,7 @@
                         TabIndex: =0
                         Visible: =Or(editMode, newMode)
                         Width: =50
-                        ZIndex: =19
+                        ZIndex: =4
 
                     ResetFormButton1_3 As icon:
                         BorderColor: =RGBA(166, 166, 166, 1)
@@ -673,7 +862,7 @@
                         TabIndex: =0
                         Visible: =Or(editMode, newMode)
                         Width: =50
-                        ZIndex: =20
+                        ZIndex: =5
 
                     EditIconButton1_3 As icon:
                         BorderColor: =RGBA(166, 166, 166, 1)
@@ -699,7 +888,7 @@
                         TabIndex: =0
                         Visible: =//And(!editMode, !newMode, !deleteMode)
                         Width: =50
-                        ZIndex: =21
+                        ZIndex: =6
 
                     DeleteIconButton1_3 As icon:
                         BorderColor: =RGBA(166, 166, 166, 1)
@@ -725,7 +914,7 @@
                         TabIndex: =0
                         Visible: =//And(!editMode, !newMode, !deleteMode)
                         Width: =50
-                        ZIndex: =22
+                        ZIndex: =7
 
                 MainContainer1_3 As groupContainer.verticalAutoLayoutContainer:
                     DropShadow: =DropShadow.Light
@@ -1196,6 +1385,18 @@
                                         .X
                                     ZIndex: =4
 
+                        spacer As typedDataCard.blankCard:
+                            BorderColor: =RGBA(166, 166, 166, 1)
+                            BorderStyle: =BorderStyle.Solid
+                            DisplayMode: =DisplayMode.Edit
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =Parent.Height * .03
+                            Visible: =true
+                            Width: =Parent.Width
+                            X: =0
+                            Y: =130
+                            ZIndex: =1
+
                         "'Item ID_DataCard1_1' As typedDataCard.numberEditCard":
                             BorderColor: =RGBA(166, 166, 166, 1)
                             BorderStyle: =BorderStyle.Solid
@@ -1326,18 +1527,6 @@
                                 Wrap: =false
                                 Y: =DataCardKey2_3.Y
                                 ZIndex: =4
-
-                        spacer As typedDataCard.blankCard:
-                            BorderColor: =RGBA(166, 166, 166, 1)
-                            BorderStyle: =BorderStyle.Solid
-                            DisplayMode: =DisplayMode.Edit
-                            Fill: =RGBA(0, 0, 0, 0)
-                            Height: =Parent.Height * .03
-                            Visible: =true
-                            Width: =Parent.Width
-                            X: =0
-                            Y: =130
-                            ZIndex: =1
 
                         "'Date and Time From_DataCard1' As typedDataCard.dateTimeEditCard":
                             BorderColor: =RGBA(166, 166, 166, 1)
@@ -1759,6 +1948,193 @@
                                 Y: =DataCardKey30.Y
                                 ZIndex: =7
 
+                        DataCard19 As typedDataCard.blankCard:
+                            BorderColor: =RGBA(166, 166, 166, 1)
+                            BorderStyle: =BorderStyle.Solid
+                            DisplayMode: =DisplayMode.Edit
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =Parent.Height * 0.05
+                            Visible: |-
+                                =//true
+                                
+                                If('frm_Equipment/ItemBorrowingRequest'.Mode = FormMode.New,false,true)
+                            Width: =Parent.Width/3
+                            X: =0
+                            Y: =190
+                            ZIndex: =1
+
+                            Label1_34 As label:
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =RGBA(51, 51, 51, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FocusedBorderThickness: =4
+                                Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
+                                Size: =13
+                                Text: ="Approver"
+                                Width: =Parent.Width - 50
+                                X: =DataCardKey4_1.X * .50
+                                Y: |-
+                                    =Parent.Height/2 - Parent.Height/4
+                                    //(Parent.Height * 0.5)/2
+                                ZIndex: =1
+
+                        DataCard21 As typedDataCard.blankCard:
+                            BorderColor: =RGBA(166, 166, 166, 1)
+                            BorderStyle: =BorderStyle.Solid
+                            DisplayMode: =DisplayMode.Edit
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =Parent.Height * 0.05
+                            Visible: |-
+                                =//true
+                                
+                                If('frm_Equipment/ItemBorrowingRequest'.Mode = FormMode.New,false,true)
+                            Width: =Parent.Width/3
+                            X: =1
+                            Y: =190
+                            ZIndex: =1
+
+                            Label1_35 As label:
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =RGBA(51, 51, 51, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FocusedBorderThickness: =4
+                                Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
+                                Size: =13
+                                Text: ="Approver Name"
+                                Width: =Parent.Width - 50
+                                X: |-
+                                    =//DataCardKey4.X * 0.88
+                                    4
+                                Y: |-
+                                    =Parent.Height/2 - Parent.Height/4
+                                    //(Parent.Height * 0.5)/2
+                                ZIndex: =1
+
+                        DataCard22 As typedDataCard.blankCard:
+                            BorderColor: =RGBA(166, 166, 166, 1)
+                            BorderStyle: =BorderStyle.Solid
+                            DisplayMode: =DisplayMode.Edit
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =Parent.Height * 0.05
+                            Visible: |-
+                                =//true
+                                
+                                If('frm_Equipment/ItemBorrowingRequest'.Mode = FormMode.New,false,true)
+                            Width: =Parent.Width/3
+                            X: =2
+                            Y: =190
+                            ZIndex: =1
+
+                            Label1_36 As label:
+                                BorderColor: =RGBA(0, 0, 0, 0)
+                                BorderStyle: =BorderStyle.None
+                                BorderThickness: =2
+                                Color: =RGBA(51, 51, 51, 1)
+                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                DisabledColor: =RGBA(166, 166, 166, 1)
+                                FocusedBorderThickness: =4
+                                Font: =Font.'Segoe UI'
+                                FontWeight: =FontWeight.Semibold
+                                Size: =13
+                                Text: ="Approval Date"
+                                Width: =Parent.Width - 50
+                                X: |-
+                                    =//DataCardKey4.X * 0.88
+                                    4
+                                Y: |-
+                                    =Parent.Height/2 - Parent.Height/4
+                                    //(Parent.Height * 0.5)/2
+                                ZIndex: =1
+
+                        DataCard23 As typedDataCard.blankCard:
+                            BorderColor: =RGBA(166, 166, 166, 1)
+                            BorderStyle: =BorderStyle.Solid
+                            DisplayMode: =DisplayMode.Edit
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: |-
+                                =Max(
+                                    global_approvalStatusSection_MinHeight,
+                                    (EIBR_ApprovalStatusGallery_3.TemplateHeight * EIBR_ApprovalStatusGallery_3.AllItemsCount) + 10
+                                )
+                                //117
+                            Visible: |-
+                                =//true
+                                
+                                If('frm_Equipment/ItemBorrowingRequest'.Mode = FormMode.New,false,true)
+                            Width: =Parent.Width
+                            X: =0
+                            Y: =200
+                            ZIndex: =1
+
+                            EIBR_ApprovalStatusGallery_3 As gallery.galleryVertical:
+                                '#CopilotOverlayLabel': ="Filtered"
+                                BorderColor: =RGBA(166, 166, 166, 1)
+                                DelayItemLoading: =true
+                                Height: =Parent.Height
+                                Items: =approvalStatusTable
+                                Layout: =Layout.Vertical
+                                LoadingSpinner: =LoadingSpinner.Data
+                                TemplatePadding: =2
+                                TemplateSize: =global_approvalStatusSection_RowHeight
+                                Width: =Parent.Width
+                                ZIndex: =1
+
+                                EIBR_ApprovalStatusGalleryItem_ApprovalDate_2 As label:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(51, 51, 51, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    OnSelect: =Select(Parent)
+                                    Size: =13
+                                    Text: =ThisItem.ApprovalDate
+                                    Width: =(Parent.TemplateWidth - 12) / 4
+                                    X: =DataCard22.X
+                                    ZIndex: =1
+
+                                EIBR_ApprovalStatusGalleryItem_ApproverName_2 As label:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(51, 51, 51, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    OnSelect: =Select(Parent)
+                                    Size: =13
+                                    Text: =ThisItem.ApproverName
+                                    Width: =(Parent.TemplateWidth - 12) / 4
+                                    X: =DataCard21.X
+                                    ZIndex: =2
+
+                                EIBR_ApprovalStatusGalleryItem_Approver_2 As label:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(51, 51, 51, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(166, 166, 166, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    OnSelect: =Select(Parent)
+                                    Size: =13
+                                    Text: =ThisItem.Approver
+                                    Width: =(Parent.TemplateWidth - 12) / 4
+                                    X: =Label1_34.X
+                                    ZIndex: =3
+
                         "'sectionHeader_HR&AdminFormSection_1' As typedDataCard.blankCard":
                             BorderColor: =RGBA(166, 166, 166, 1)
                             BorderStyle: =BorderStyle.Solid
@@ -2073,193 +2449,6 @@
                                 Text: ="APPROVAL STATUS"
                                 Width: =Parent.Width
                                 ZIndex: =1
-
-                        DataCard19 As typedDataCard.blankCard:
-                            BorderColor: =RGBA(166, 166, 166, 1)
-                            BorderStyle: =BorderStyle.Solid
-                            DisplayMode: =DisplayMode.Edit
-                            Fill: =RGBA(0, 0, 0, 0)
-                            Height: =Parent.Height * 0.05
-                            Visible: |-
-                                =//true
-                                
-                                If('frm_Equipment/ItemBorrowingRequest'.Mode = FormMode.New,false,true)
-                            Width: =Parent.Width/3
-                            X: =0
-                            Y: =190
-                            ZIndex: =1
-
-                            Label1_34 As label:
-                                BorderColor: =RGBA(0, 0, 0, 0)
-                                BorderStyle: =BorderStyle.None
-                                BorderThickness: =2
-                                Color: =RGBA(51, 51, 51, 1)
-                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                DisabledColor: =RGBA(166, 166, 166, 1)
-                                FocusedBorderThickness: =4
-                                Font: =Font.'Segoe UI'
-                                FontWeight: =FontWeight.Semibold
-                                Size: =13
-                                Text: ="Approver"
-                                Width: =Parent.Width - 50
-                                X: =DataCardKey4_1.X * .50
-                                Y: |-
-                                    =Parent.Height/2 - Parent.Height/4
-                                    //(Parent.Height * 0.5)/2
-                                ZIndex: =1
-
-                        DataCard21 As typedDataCard.blankCard:
-                            BorderColor: =RGBA(166, 166, 166, 1)
-                            BorderStyle: =BorderStyle.Solid
-                            DisplayMode: =DisplayMode.Edit
-                            Fill: =RGBA(0, 0, 0, 0)
-                            Height: =Parent.Height * 0.05
-                            Visible: |-
-                                =//true
-                                
-                                If('frm_Equipment/ItemBorrowingRequest'.Mode = FormMode.New,false,true)
-                            Width: =Parent.Width/3
-                            X: =1
-                            Y: =190
-                            ZIndex: =1
-
-                            Label1_35 As label:
-                                BorderColor: =RGBA(0, 0, 0, 0)
-                                BorderStyle: =BorderStyle.None
-                                BorderThickness: =2
-                                Color: =RGBA(51, 51, 51, 1)
-                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                DisabledColor: =RGBA(166, 166, 166, 1)
-                                FocusedBorderThickness: =4
-                                Font: =Font.'Segoe UI'
-                                FontWeight: =FontWeight.Semibold
-                                Size: =13
-                                Text: ="Approver Name"
-                                Width: =Parent.Width - 50
-                                X: |-
-                                    =//DataCardKey4.X * 0.88
-                                    4
-                                Y: |-
-                                    =Parent.Height/2 - Parent.Height/4
-                                    //(Parent.Height * 0.5)/2
-                                ZIndex: =1
-
-                        DataCard22 As typedDataCard.blankCard:
-                            BorderColor: =RGBA(166, 166, 166, 1)
-                            BorderStyle: =BorderStyle.Solid
-                            DisplayMode: =DisplayMode.Edit
-                            Fill: =RGBA(0, 0, 0, 0)
-                            Height: =Parent.Height * 0.05
-                            Visible: |-
-                                =//true
-                                
-                                If('frm_Equipment/ItemBorrowingRequest'.Mode = FormMode.New,false,true)
-                            Width: =Parent.Width/3
-                            X: =2
-                            Y: =190
-                            ZIndex: =1
-
-                            Label1_36 As label:
-                                BorderColor: =RGBA(0, 0, 0, 0)
-                                BorderStyle: =BorderStyle.None
-                                BorderThickness: =2
-                                Color: =RGBA(51, 51, 51, 1)
-                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                DisabledColor: =RGBA(166, 166, 166, 1)
-                                FocusedBorderThickness: =4
-                                Font: =Font.'Segoe UI'
-                                FontWeight: =FontWeight.Semibold
-                                Size: =13
-                                Text: ="Approval Date"
-                                Width: =Parent.Width - 50
-                                X: |-
-                                    =//DataCardKey4.X * 0.88
-                                    4
-                                Y: |-
-                                    =Parent.Height/2 - Parent.Height/4
-                                    //(Parent.Height * 0.5)/2
-                                ZIndex: =1
-
-                        DataCard23 As typedDataCard.blankCard:
-                            BorderColor: =RGBA(166, 166, 166, 1)
-                            BorderStyle: =BorderStyle.Solid
-                            DisplayMode: =DisplayMode.Edit
-                            Fill: =RGBA(0, 0, 0, 0)
-                            Height: |-
-                                =Max(
-                                    global_approvalStatusSection_MinHeight,
-                                    (EIBR_ApprovalStatusGallery_3.TemplateHeight * EIBR_ApprovalStatusGallery_3.AllItemsCount) + 10
-                                )
-                                //117
-                            Visible: |-
-                                =//true
-                                
-                                If('frm_Equipment/ItemBorrowingRequest'.Mode = FormMode.New,false,true)
-                            Width: =Parent.Width
-                            X: =0
-                            Y: =200
-                            ZIndex: =1
-
-                            EIBR_ApprovalStatusGallery_3 As gallery.galleryVertical:
-                                '#CopilotOverlayLabel': ="Filtered"
-                                BorderColor: =RGBA(166, 166, 166, 1)
-                                DelayItemLoading: =true
-                                Height: =Parent.Height
-                                Items: =approvalStatusTable
-                                Layout: =Layout.Vertical
-                                LoadingSpinner: =LoadingSpinner.Data
-                                TemplatePadding: =2
-                                TemplateSize: =global_approvalStatusSection_RowHeight
-                                Width: =Parent.Width
-                                ZIndex: =1
-
-                                EIBR_ApprovalStatusGalleryItem_ApprovalDate_2 As label:
-                                    BorderColor: =RGBA(0, 0, 0, 0)
-                                    BorderStyle: =BorderStyle.None
-                                    BorderThickness: =2
-                                    Color: =RGBA(51, 51, 51, 1)
-                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                    DisabledColor: =RGBA(166, 166, 166, 1)
-                                    FocusedBorderThickness: =4
-                                    Font: =Font.'Segoe UI'
-                                    OnSelect: =Select(Parent)
-                                    Size: =13
-                                    Text: =ThisItem.ApprovalDate
-                                    Width: =(Parent.TemplateWidth - 12) / 4
-                                    X: =DataCard22.X
-                                    ZIndex: =1
-
-                                EIBR_ApprovalStatusGalleryItem_ApproverName_2 As label:
-                                    BorderColor: =RGBA(0, 0, 0, 0)
-                                    BorderStyle: =BorderStyle.None
-                                    BorderThickness: =2
-                                    Color: =RGBA(51, 51, 51, 1)
-                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                    DisabledColor: =RGBA(166, 166, 166, 1)
-                                    FocusedBorderThickness: =4
-                                    Font: =Font.'Segoe UI'
-                                    OnSelect: =Select(Parent)
-                                    Size: =13
-                                    Text: =ThisItem.ApproverName
-                                    Width: =(Parent.TemplateWidth - 12) / 4
-                                    X: =DataCard21.X
-                                    ZIndex: =2
-
-                                EIBR_ApprovalStatusGalleryItem_Approver_2 As label:
-                                    BorderColor: =RGBA(0, 0, 0, 0)
-                                    BorderStyle: =BorderStyle.None
-                                    BorderThickness: =2
-                                    Color: =RGBA(51, 51, 51, 1)
-                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
-                                    DisabledColor: =RGBA(166, 166, 166, 1)
-                                    FocusedBorderThickness: =4
-                                    Font: =Font.'Segoe UI'
-                                    OnSelect: =Select(Parent)
-                                    Size: =13
-                                    Text: =ThisItem.Approver
-                                    Width: =(Parent.TemplateWidth - 12) / 4
-                                    X: =Label1_34.X
-                                    ZIndex: =3
 
                         Title_DataCard1 As typedDataCard.textualEditCard:
                             BorderColor: =RGBA(166, 166, 166, 1)

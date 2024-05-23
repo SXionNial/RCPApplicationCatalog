@@ -214,6 +214,13 @@ Sprint1_Scr_AssetGatePass As screen:
                         FocusedBorderThickness: =4
                         Font: =Font.'Segoe UI'
                         Height: =44
+                        OnSelect: |-
+                            =//false
+                            NewForm(frm_AssetGatePass); 
+                            Refresh(rcp_sprint1_AssetGatePassItemsList);
+                            Refresh(rcp_sprint1_AssetGatePassList);
+                            UpdateContext({ varAssetItemID: Last(rcp_sprint1_AssetGatePassList).ID + 1});
+                            UpdateContext({ newMode: true });
                         Size: =13
                         Text: ="New"
                         ZIndex: =12
@@ -493,6 +500,404 @@ Sprint1_Scr_AssetGatePass As screen:
                                 )
                             )
                         ZIndex: =2
+
+                    btn_SubmitForm_AGP As button:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(166, 166, 166, 1)
+                        DisabledFill: =RGBA(244, 244, 244, 1)
+                        DisplayMode: |-
+                            =//DisplayMode.Edit
+                            
+                            If(
+                                numberOfRows <> 0,
+                                If(assetDeviceFieldsCount = numberOfRows && assetTagFieldsCount = numberOfRows && unitModelFieldsCount = numberOfRows && purposeReasonFieldsCount = numberOfRows && serialNumberFieldsCount = numberOfRows, 
+                                DisplayMode.Edit,
+                                DisplayMode.Disabled
+                                ),
+                                DisplayMode.Disabled
+                            )
+                        Fill: =RGBA(73, 130, 5, 1)
+                        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Semibold
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(73, 130, 5, 1), -10%)
+                        OnSelect: |
+                            =Set(
+                                numberOfRows,
+                                CountRows(colAssets)
+                            );
+                            Set(
+                                assetDeviceFieldsCount,
+                                CountRows(
+                                    ShowColumns(
+                                        Filter(
+                                            colAssets,
+                                            !IsBlank(Asset_x002f_Device)
+                                        ),
+                                        Asset_x002f_Device
+                                    )
+                                )
+                            );
+                            Set(
+                                assetTagFieldsCount,
+                                CountRows(
+                                    ShowColumns(
+                                        Filter(
+                                            colAssets,
+                                            !IsBlank(AssetTag)
+                                        ),
+                                        AssetTag
+                                    )
+                                )
+                            );
+                            Set(
+                                unitModelFieldsCount,
+                                CountRows(
+                                    ShowColumns(
+                                        Filter(
+                                            colAssets,
+                                            !IsBlank(UnitModel)
+                                        ),
+                                        UnitModel
+                                    )
+                                )
+                            );
+                            Set(
+                                serialNumberFieldsCount,
+                                CountRows(
+                                    ShowColumns(
+                                        Filter(
+                                            colAssets,
+                                            !IsBlank(SerialNumber)
+                                        ),
+                                        SerialNumber
+                                    )
+                                )
+                            );
+                            Set(
+                                purposeReasonFieldsCount,
+                                CountRows(
+                                    ShowColumns(
+                                        Filter(
+                                            colAssets,
+                                            !IsBlank(Purpose_x002f_Reason)
+                                        ),
+                                        Purpose_x002f_Reason
+                                    )
+                                )
+                            );
+                            If(
+                                numberOfRows <> 0,
+                                If(
+                                    assetDeviceFieldsCount = numberOfRows && assetTagFieldsCount = numberOfRows && unitModelFieldsCount = numberOfRows && purposeReasonFieldsCount = numberOfRows && serialNumberFieldsCount = numberOfRows,
+                                    If(
+                                        SubmitForm(frm_AssetGatePass);
+                                        And(
+                                            IsBlank('Job Level/Rank_DataCard1'.Error),
+                                            IsBlank('Office Location_DataCard1'.Error),
+                                            IsBlank('Work Arrangement_DataCard1'.Error),
+                                            IsBlank('Date From_DataCard1'.Error),
+                                            IsBlank('Date To_DataCard1'.Error),
+                                            IsBlank('Location From_DataCard1'.Error),
+                                            IsBlank('Location To_DataCard1'.Error)
+                                        ),
+                                        ForAll(
+                                            colAssets,
+                                            Patch(
+                                                rcp_sprint1_AssetGatePassItemsList,
+                                                {
+                                                    Title: "ITM" & col_ID,
+                                                    'Item ID': Value(colAssetItemId)/*Value(fldVal_ItemID_AGPList.Text)*/,
+                                                    'Asset/Device': Asset_x002f_Device,
+                                                    'Asset Tag': AssetTag,
+                                                    'Unit Model': UnitModel,
+                                                    'Serial Number': SerialNumber,
+                                                    'Purpose/Reason': Purpose_x002f_Reason
+                                                }
+                                            )
+                                        );
+                                        //add record id to Title (Update 05-09-2024: Moved this to the Title DataCard)
+                                        /*UpdateContext({varRequestID: recordsGallery_AssetGatePass.Selected.ID});
+                                        Patch(
+                                            rcp_sprint1_AssetGatePassList,
+                                            {Title: "AGPR_" & varRequestID}
+                                        );*/
+                                        Clear(colAssets);
+                                    );
+                                    ,
+                                    If(
+                                        IsBlank(fldVal_PurposeReason.Text),
+                                        UpdateContext({resFieldBlank: true})
+                                        ,
+                                        UpdateContext({resFieldBlank: false})
+                                    );
+                                    If(
+                                        IsBlank(fldVal_SerialNumber.Text),
+                                        UpdateContext({serFieldBlank: true})
+                                        ,
+                                        UpdateContext({serFieldBlank: false})
+                                    );
+                                    If(
+                                        IsBlank(fldVal_UnitModel.Text),
+                                        UpdateContext({uniFieldBlank: true})
+                                        ,
+                                        UpdateContext({uniFieldBlank: false})
+                                    );
+                                    If(
+                                        IsBlank(fldVal_AssetTag.Text),
+                                        UpdateContext({astFieldBlank: true})
+                                        ,
+                                        UpdateContext({astFieldBlank: false})
+                                    );
+                                    If(
+                                        IsBlank(fldVal_AssetDevice.Text),
+                                        UpdateContext({asdFieldBlank: true})
+                                        ,
+                                        UpdateContext({asdFieldBlank: false})
+                                    );
+                                    ,
+                                    Notify(
+                                        "Please fill out the missing fields.",
+                                        NotificationType.Error,
+                                        10000
+                                    );
+                                );
+                                ,
+                                Notify(
+                                    "Please add assets.",
+                                    NotificationType.Error,
+                                    10000
+                                );
+                            );
+                            /* ---- Error (to be used as final test) ---- 
+                            If(
+                                Or( // error here, returns blank fields even if filled out
+                                    !IsBlank(fldVal_AssetDevice.Text),
+                                    !IsBlank(fldVal_AssetTag.Text),
+                                    !IsBlank(fldVal_UnitModel.Text),
+                                    !IsBlank(fldVal_SerialNumber.Text),
+                                    !IsBlank(fldVal_PurposeReason.Text)
+                                ),
+                                SubmitForm(frm_AssetGatePass);
+                                If(
+                                    Or(
+                                        IsBlank('Job Level/Rank_DataCard1'.Error),
+                                        IsBlank('Office Location_DataCard1'.Error),
+                                        IsBlank('Work Arrangement_DataCard1'.Error),
+                                        IsBlank('Date From_DataCard1'.Error),
+                                        IsBlank('Date To_DataCard1'.Error),
+                                        IsBlank('Location From_DataCard1'.Error),
+                                        IsBlank('Location To_DataCard1'.Error)
+                                    ),
+                                    ForAll(
+                                        colAssets,
+                                        Patch(
+                                            rcp_sprint1_AssetGatePassItemsList,
+                                            {
+                                                Title: "ITM" & col_ID,
+                                                'Item ID': Value(fldVal_ItemID_AGPList.Text),
+                                                'Asset/Device': Asset_x002f_Device,
+                                                'Asset Tag': AssetTag,
+                                                'Unit Model': UnitModel,
+                                                'Serial Number': SerialNumber,
+                                                'Purpose/Reason': Purpose_x002f_Reason
+                                            }
+                                        )
+                                    );
+                                    //add record id to Title
+                                    UpdateContext({varRequestID: recordsGallery_AssetGatePass.Selected.ID});
+                                    Patch(
+                                        rcp_sprint1_AssetGatePassList,
+                                        {Title: "AGPR_" & varRequestID}
+                                    );
+                                    Clear(colAssets);
+                                    ,
+                                    //SubmitForm(frm_AssetGatePass);
+                                    Notify(
+                                        "Please fill out the Missing Fields",
+                                        NotificationType.Error,
+                                        10000
+                                    );
+                                ),
+                                Notify(
+                                    "Please fill out the Missing Fields",
+                                    NotificationType.Error,
+                                    10000
+                                );
+                            )
+                            */
+                            /*  ------ For Validation Testing to show errors even without using SubmitForm() function
+                            If(
+                                Or(
+                                    IsBlank(DataCardValue14_1.Selected),
+                                    IsBlank(DataCardValue15_1.Selected)
+                                ),
+                                UpdateContext({requiredFieldsMissing: true});
+                                Notify(
+                                    "Please fill out the Missing Fields",
+                                    NotificationType.Error,
+                                    10000
+                                );
+                                Clear(colAssets);
+                                //SubmitForm(frm_AssetGatePass); 
+                                ,
+                                UpdateContext({requiredFieldsMissing: false}); 
+                            )
+                            */
+                            //--- Main Working Test ----
+                            /*If(
+                                Or(
+                                    IsBlank(DataCardValue14_1.SelectedItems),
+                                    IsBlank(DataCardValue15_1.SelectedItems),
+                                    IsBlank(DataCardValue16_1.SelectedItems),
+                                    IsBlank(DataCardValue17_1.SelectedDate),
+                                    IsBlank(DataCardValue18_1.SelectedDate),
+                                    IsBlank(DataCardValue19_1.Text),
+                                    IsBlank(DataCardValue20_1.Text)
+                                ),
+                                //UpdateContext({requiredFieldsMissing: false}); //for creating a variable to check if the field is blank and to change the color of the field
+                                Notify(
+                                    "Please fill out the Missing Fields",
+                                    NotificationType.Error,
+                                    10000
+                                );
+                                SubmitForm(frm_AssetGatePass)
+                                ,
+                                ForAll(
+                                    colAssets,
+                                    Patch(
+                                        rcp_sprint1_AssetGatePassItemsList,
+                                        {
+                                            Title: "ITM" & col_ID,
+                                            'Item ID': Value(fldVal_ItemID_AGPList.Text),
+                                            'Asset/Device': Asset_x002f_Device,
+                                            'Asset Tag': AssetTag,
+                                            'Unit Model': UnitModel,
+                                            'Serial Number': SerialNumber,
+                                            'Purpose/Reason': Purpose_x002f_Reason
+                                        }
+                                    )
+                                );
+                                //add record id to Title
+                                UpdateContext({varRequestID: recordsGallery_AssetGatePass.Selected.ID});
+                                Patch(
+                                    rcp_sprint1_AssetGatePassList,
+                                    {Title: "AGPR_" & varRequestID}
+                                );
+                                Clear(colAssets);
+                                SubmitForm(frm_AssetGatePass);
+                                
+                            )*/
+                            /* //TEST PATCHING TO TEST TABLE  ---- WoRKS
+                            ForAll(
+                                colAssets,
+                                Patch(
+                                    tbl_AssetGatePassItems,
+                                    {
+                                        Title: "ITM" & col_ID ,
+                                        itemID: Value(fldVal_ItemID_AGPList.Text),
+                                        assetOrDevice: Asset_x002f_Device,
+                                        assetTag: AssetTag,
+                                        unitModel: UnitModel,
+                                        serialNumber: SerialNumber,
+                                        purposeOrReason: Purpose_x002f_Reason
+                                    }
+                                )
+                            );
+                            */
+                            /*
+                            Patch(
+                                colAssets,
+                                Defaults(colAssets),
+                                {
+                                    colAssetItemId: Value(fldVal_ItemID_AGPList.Text),
+                                    Asset_x002f_Device: fldVal_AssetDevice.Text,
+                                    AssetTag: fldVal_AssetTag.Text,
+                                    UnitModel: fldVal_UnitModel.Text,
+                                    SerialNumber: fldVal_SerialNumber.Text,
+                                    Purpose_x002f_Reason: fldVal_PurposeReason.Text
+                                }
+                            );
+                            ForAll(
+                                recordGallery_AGPItems.AllItems,
+                                If(Patch(
+                                    colAssets,
+                                    //Defaults(colAssets),
+                                    {
+                                        colAssetItemId: Value(fldVal_ItemID_AGPList.Text),
+                                        Asset_x002f_Device: Value(fldVal_AssetDevice.Text),
+                                        AssetTag: fldVal_AssetTag.Text,
+                                        UnitModel: fldVal_UnitModel.Text,
+                                        SerialNumber: fldVal_SerialNumber.Text,
+                                        Purpose_x002f_Reason: fldVal_PurposeReason.Text
+                                    }
+                                ).colAssetItemId = fldVal_ItemID_AGPList.Text, Notify("Success Patching", NotificationType.Success), Notify("An error occurred during the patch operation.", NotificationType.Error))
+                            );
+                            */
+                        PressedBorderColor: =ColorFade(RGBA(73, 130, 5, 1), -50%)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =ColorFade(RGBA(73, 130, 5, 1), -30%)
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =15
+                        Text: ="Submit"
+                        Tooltip: |-
+                            =If(
+                                Or(
+                                    IsBlank(fldVal_PurposeReason.Text),
+                                    IsBlank(fldVal_SerialNumber.Text),
+                                    IsBlank(fldVal_UnitModel.Text),
+                                    IsBlank(fldVal_AssetDevice.Text),
+                                    IsBlank(fldVal_AssetTag.Text),
+                                    IsBlank(DataCardValue14_1.SelectedItems),
+                                    IsBlank(DataCardValue15_1.SelectedItems),
+                                    IsBlank(DataCardValue16_1.SelectedItems),
+                                    IsBlank(DataCardValue17_1.SelectedDate),
+                                    IsBlank(DataCardValue18_1.SelectedDate),
+                                    IsBlank(DataCardValue19_1.Text),
+                                    IsBlank(DataCardValue20_1.Text)
+                                ),
+                                "Please fill out the missing fields.",
+                                ""
+                            )
+                            /*
+                            If(
+                                numberOfRows <> 0,
+                                If(
+                                    assetDeviceFieldsCount = numberOfRows && assetTagFieldsCount = numberOfRows && unitModelFieldsCount = numberOfRows && purposeReasonFieldsCount = numberOfRows && serialNumberFieldsCount = numberOfRows,
+                                    If(
+                                        Or(IsBlank(fldVal_PurposeReason.Text),
+                                        IsBlank(fldVal_SerialNumber.Text), 
+                                        IsBlank(fldVal_UnitModel.Text), 
+                                        IsBlank(fldVal_AssetDevice.Text), 
+                                        IsBlank(fldVal_AssetTag.Text))
+                                    ,
+                                    "Please fill out the missing asset fields.",
+                                    "All fields are filled out."
+                                    )
+                                )
+                                ,
+                                If(
+                                        Or(IsBlank(DataCardValue14_1.SelectedItems),
+                                        IsBlank(DataCardValue15_1.SelectedItems), 
+                                        IsBlank(DataCardValue16_1.SelectedItems), 
+                                        IsBlank(DataCardValue17_1.SelectedDate),
+                                        IsBlank(DataCardValue18_1.SelectedDate), 
+                                        IsBlank(DataCardValue19_1.Text),
+                                        IsBlank(DataCardValue20_1.Text))
+                                    ,
+                                    "Please fill out the missing fields.",
+                                    "Please add assets."
+                                )
+                            )
+                            */
+                        Visible: =Or(editMode, newMode)
+                        ZIndex: =3
 
                     SubmitFormButton1_1 As icon:
                         BorderColor: =RGBA(166, 166, 166, 1)
@@ -829,7 +1234,7 @@ Sprint1_Scr_AssetGatePass As screen:
                         TabIndex: =0
                         Visible: =Or(editMode, newMode)
                         Width: =50
-                        ZIndex: =3
+                        ZIndex: =4
 
                     ResetFormButton1_1 As icon:
                         BorderColor: =RGBA(166, 166, 166, 1)
@@ -864,7 +1269,7 @@ Sprint1_Scr_AssetGatePass As screen:
                         TabIndex: =0
                         Visible: =Or(editMode, newMode)
                         Width: =50
-                        ZIndex: =4
+                        ZIndex: =5
 
                     EditIconButton1_1 As icon:
                         BorderColor: =RGBA(166, 166, 166, 1)
@@ -892,7 +1297,7 @@ Sprint1_Scr_AssetGatePass As screen:
                             =//And(!editMode, !newMode, !deleteMode)
                             false
                         Width: =50
-                        ZIndex: =5
+                        ZIndex: =6
 
                     DeleteIconButton1_1 As icon:
                         BorderColor: =RGBA(166, 166, 166, 1)
@@ -920,7 +1325,7 @@ Sprint1_Scr_AssetGatePass As screen:
                             =//And(!editMode, !newMode, !deleteMode)
                             false
                         Width: =50
-                        ZIndex: =6
+                        ZIndex: =7
 
                 MainContainer1_1 As groupContainer.verticalAutoLayoutContainer:
                     DropShadow: =DropShadow.Light

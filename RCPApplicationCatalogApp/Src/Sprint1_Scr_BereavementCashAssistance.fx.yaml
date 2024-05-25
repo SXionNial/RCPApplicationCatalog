@@ -1,7 +1,16 @@
 Sprint1_Scr_BereavementCashAssistance As screen:
     LoadingSpinnerColor: =RGBA(73, 130, 5, 1)
     OnVisible: |-
-        =UpdateContext({CurrentItem:{}});
+        =//UpdateContext({CurrentItem:{}});
+        If (isFirstLoad && !IsBlank(Param("sysparm_bca_id")),
+            UpdateContext({
+                CurrentItem: LookUp('rcp_sprint1_Bereavement Cash Assistance List',
+                                ID = Value(Param("sysparm_bca_id")))
+            });
+            Select(reload_BereavementCashAssistance),
+            UpdateContext({CurrentItem:{}});
+        );
+        Set(isFirstLoad, false);
 
     ScreenContainer1_2 As groupContainer.verticalAutoLayoutContainer:
         DropShadow: =DropShadow.Light
@@ -65,7 +74,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
                     "[Application Form] Bereavement Cash Assistance Application Form"
                 ZIndex: =2
 
-            "'reload_ BereavementCashAssistance' As icon.Reload":
+            reload_BereavementCashAssistance As icon.Reload:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 Color: =RGBA(255, 255, 255, 1)
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)

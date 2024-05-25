@@ -62,7 +62,7 @@ Sprint1_Scr_AssetGatePass As screen:
                     "[Application Form] Asset Gate Pass"
                 ZIndex: =2
 
-            reload_AgreementRegardingIncidents_1 As icon.Reload:
+            reload_AssetGatePass As icon.Reload:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 Color: =RGBA(255, 255, 255, 1)
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)

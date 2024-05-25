@@ -1544,19 +1544,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.TableNameContainer1_1.reload_AgreementRegardingIncidents_1.AccessibleLabel"
+                  "fullyQualifiedName": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.TableNameContainer1_1.reload_AssetGatePass.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.TableNameContainer1_1.reload_AgreementRegardingIncidents_1.AccessibleLabel",
+                  "fullyQualifiedName": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.TableNameContainer1_1.reload_AssetGatePass.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Sprint1_Scr_AssetGatePass",
-                "type": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.TableNameContainer1_1.reload_AgreementRegardingIncidents_1"
+                "type": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.TableNameContainer1_1.reload_AssetGatePass"
               }
             }
           ],
@@ -1574,19 +1574,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.TableNameContainer1_1.reload_AgreementRegardingIncidents_1.TabIndex"
+                  "fullyQualifiedName": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.TableNameContainer1_1.reload_AssetGatePass.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.TableNameContainer1_1.reload_AgreementRegardingIncidents_1.TabIndex",
+                  "fullyQualifiedName": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.TableNameContainer1_1.reload_AssetGatePass.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "Sprint1_Scr_AssetGatePass",
-                "type": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.TableNameContainer1_1.reload_AgreementRegardingIncidents_1"
+                "type": "Sprint1_Scr_AssetGatePass.ScreenContainer1_1.TableNameContainer1_1.reload_AssetGatePass"
               }
             }
           ],

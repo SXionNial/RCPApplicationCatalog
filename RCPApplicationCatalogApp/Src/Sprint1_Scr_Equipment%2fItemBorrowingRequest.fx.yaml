@@ -2,7 +2,16 @@
     Fill: =Color.White
     LoadingSpinnerColor: =RGBA(73, 130, 5, 1)
     OnVisible: |-
-        =UpdateContext({CurrentItem:{}});
+        =//UpdateContext({CurrentItem:{}});
+        If (isFirstLoad && !IsBlank(Param("sysparm_ebr_id")),
+            UpdateContext({
+                CurrentItem: LookUp(rcp_sprint1_EquipmentBorrowingRequestList,
+                                ID = Value(Param("sysparm_ebr_id")))
+            });
+            Select(reload_EquipmentItemBorrowingRequest),
+            UpdateContext({CurrentItem:{}});
+        );
+        //Set(isFirstLoad, false);
 
     ScreenContainer1_3 As groupContainer.verticalAutoLayoutContainer:
         DropShadow: =DropShadow.Light
@@ -64,7 +73,7 @@
                 Text: =DataSourceInfo([@rcp_sprint1_EquipmentBorrowingRequestList], DataSourceInfo.DisplayName)
                 ZIndex: =2
 
-            "'reload_ Equipment/ItemBorrowingRequest' As icon.Reload":
+            reload_EquipmentItemBorrowingRequest As icon.Reload:
                 BorderColor: =RGBA(166, 166, 166, 1)
                 Color: =RGBA(255, 255, 255, 1)
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)

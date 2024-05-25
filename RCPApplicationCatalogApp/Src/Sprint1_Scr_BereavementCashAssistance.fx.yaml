@@ -10,7 +10,7 @@ Sprint1_Scr_BereavementCashAssistance As screen:
             Select(reload_BereavementCashAssistance),
             UpdateContext({CurrentItem:{}});
         );
-        Set(isFirstLoad, false);
+        //Set(isFirstLoad, false);
 
     ScreenContainer1_2 As groupContainer.verticalAutoLayoutContainer:
         DropShadow: =DropShadow.Light

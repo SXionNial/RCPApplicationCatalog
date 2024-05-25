@@ -18617,7 +18617,7 @@
       "MetaDataIDKey": "%DeleteConfirmDialogContainer.ID%",
       "Name": "DeleteConfirmDialogContainer1_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -39353,7 +39353,7 @@
       "StyleName": "primary2RectangleStyle",
       "Type": "ControlInfo"
     },
-    "reload_ Equipment/ItemBorrowingRequest": {
+    "reload_EquipmentItemBorrowingRequest": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Icon",
@@ -39518,7 +39518,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "reload_ Equipment/ItemBorrowingRequest",
+      "Name": "reload_EquipmentItemBorrowingRequest",
       "OptimizeForDevices": "Off",
       "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
@@ -40389,7 +40389,7 @@
       "MetaDataIDKey": "%RightContainer.ID%",
       "Name": "RightContainer1_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -43084,7 +43084,7 @@
       "MetaDataIDKey": "%SidebarContainer.ID%",
       "Name": "SidebarContainer1_3",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 0,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

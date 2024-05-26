@@ -197,7 +197,9 @@
                         HoverFill: =RGBA(0, 0, 0, 0)
                         Icon: =Icon.Add
                         OnSelect: |-
-                            =NewForm('frm_Equipment/ItemBorrowingRequest'); UpdateContext({ newMode: true });
+                            =NewForm('frm_Equipment/ItemBorrowingRequest'); 
+                            UpdateContext({ varEIBRItemID: Last(rcp_sprint1_EquipmentBorrowingRequestList).ID + 1});
+                            UpdateContext({ newMode: true });
                         PaddingBottom: =10
                         PaddingLeft: =10
                         PaddingRight: =10
@@ -221,7 +223,9 @@
                         Height: =44
                         OnSelect: |-
                             =//false
-                            NewForm('frm_Equipment/ItemBorrowingRequest'); UpdateContext({ newMode: true });
+                            NewForm('frm_Equipment/ItemBorrowingRequest'); 
+                            UpdateContext({ varEIBRItemID: Last(rcp_sprint1_EquipmentBorrowingRequestList).ID + 1});
+                            UpdateContext({ newMode: true });
                         Size: =13
                         Text: ="New"
                         ZIndex: =12
@@ -2464,7 +2468,7 @@
                                 
                                 If(
                                     'frm_Equipment/ItemBorrowingRequest'.Mode = FormMode.New,
-                                    "EIBR_" & varRequestID,
+                                    "EIBR_" & varEIBRItemID,
                                     ThisItem.'Item ID'
                                 )
                             DisplayMode: =Parent.DisplayMode

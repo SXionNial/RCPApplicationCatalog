@@ -105,7 +105,7 @@ MainScreen As screen:
         NavbarTitle: ="RGTC Application Forms "
         ShowBackButton: =false
         ShowSubmit: =false
-        Width: =1366
+        Width: =Parent.Width
         ZIndex: =4
 
     Icon3 As icon.Reload:

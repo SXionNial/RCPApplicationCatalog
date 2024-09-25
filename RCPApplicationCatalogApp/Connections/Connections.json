@@ -75,8 +75,7 @@
           "rcp_sprint1_Bereavement Cash Assistance List": {
             "tableName": "88be242a-4d9a-4bc0-9c48-a158abcb96f9",
             "tableNameOverride": {
-              "environmentVariableName": "new_rcp_sprint1_BereavementCashAssistanceList",
-              "name": "88be242a-4d9a-4bc0-9c48-a158abcb96f9"
+              "environmentVariableName": "new_rcp_sprint1_BereavementCashAssistanceList"
             }
           },
           "rcp_sprint1_EquipmentBorrowingRequestItemsList": {
@@ -96,8 +95,7 @@
           "rcp_sprnt1_Agreement Regarding Incidents List ": {
             "tableName": "532f14da-100a-4c2c-aa44-0d574ceff9fb",
             "tableNameOverride": {
-              "environmentVariableName": "new_rcp_sprnt1_AgreementRegardingIncidentsList",
-              "name": "532f14da-100a-4c2c-aa44-0d574ceff9fb"
+              "environmentVariableName": "new_rcp_sprnt1_AgreementRegardingIncidentsList"
             }
           }
         }

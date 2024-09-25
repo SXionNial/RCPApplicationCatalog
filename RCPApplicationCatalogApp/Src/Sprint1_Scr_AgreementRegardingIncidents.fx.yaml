@@ -4385,6 +4385,7 @@ Sprint1_Scr_AgreementRegardingIncidents As screen:
                                 AutoHeight: =true
                                 HtmlText: |-
                                     ="※If you are only able to report via email, please send it to <a href='mailto:report@rococoglobaltech.com'><font color=blue><b>report@rococoglobaltech.com</b></font></a> along with the email address of the intended receiver."
+                                Size: =13
                                 Width: =Parent.Width - 60
                                 X: =DataCardKey4.X
                                 ZIndex: =1
